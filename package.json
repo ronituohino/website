@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "docker-build": "docker build -t nextjs-docker .",
-    "docker-run": "docker run -p 3000:3000 nextjs-docker"
+    "docker-run": "docker run -p 3000:3000 nextjs-docker",
+    "create-env": "printenv > .env"
   },
   "dependencies": {
     "@next/font": "13.1.1",
