@@ -1,12 +1,12 @@
 # portfolio
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 A portfolio page for Roni Tuohino with a blogging area for some stuff I want to
 write about :)
 
 ## Next.js
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with
+[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -14,6 +14,7 @@ To learn more about Next.js, take a look at the following resources:
   features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js/) - your
-feedback and contributions are welcome!
+## Prisma
+
+This project uses [Prisma](https://www.prisma.io/) to communicate with it's
+database.

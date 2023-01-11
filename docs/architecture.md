@@ -38,5 +38,5 @@ Setting up: https://firebase.google.com/docs/hosting/nextjs
 
 ## Database
 
-The application database is on some free DBaaS service from here:
-https://free-for.dev/#/?id=dbaas
+The application database is on [bit.io](https://bit.io).  
+DBaaS resources here: https://free-for.dev/#/?id=dbaas
