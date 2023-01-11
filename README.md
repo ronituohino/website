@@ -18,3 +18,7 @@ To learn more about Next.js, take a look at the following resources:
 
 This project uses [Prisma](https://www.prisma.io/) to communicate with it's
 database.
+
+## Deploy to Google Cloud Run
+
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
