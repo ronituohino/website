@@ -21,6 +21,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
+ARG database_url
+ENV DATABASE_URL $database_url
 
 RUN npx prisma generate
 RUN yarn build
