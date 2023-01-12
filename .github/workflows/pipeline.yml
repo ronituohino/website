@@ -1,0 +1,45 @@
+name: Deployment
+
+env:
+  SERVICE: portfolio
+  REGION: europe-north1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v1"
+
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+
+      - name: Build and Push Container
+        run: |-
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }} .
+          docker push gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }}
+
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: "google-github-actions/deploy-cloudrun@v1"
+        with:
+          service: ${{ env.SERVICE }}
+          image:
+            gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+          region: ${{ env.REGION }}
+
+      - name: "Print url"
+        run: 'curl "${{ steps.deploy.outputs.url }}"'
