@@ -36,7 +36,8 @@ displays info that I do freelancing & consulting.
 
 Blog browser displays a grid of blogs with thumbnails and titles. Blogs are
 coded into the app itself, so I have full freedom to put any kind of content I
-wish on there. Blogs can be liked by anonymous users.
+wish on there. Blogs can be liked by anonymous users. There is a views counter
+on each blog post.
 
 ## Functionality
 
@@ -48,3 +49,4 @@ wish on there. Blogs can be liked by anonymous users.
   - [ ] Blog browser
   - [ ] Blog page
   - [ ] Blog liking
+  - [ ] Blog views count

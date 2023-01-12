@@ -47,5 +47,5 @@ jobs:
           region: ${{ env.REGION }}
           env_vars_file: .env
 
-      - name: "Print url"
+      - name: "Service output"
         run: 'curl "${{ steps.deploy.outputs.url }}"'
