@@ -27,9 +27,13 @@ jobs:
       - name: Authorize Docker push
         run: gcloud auth configure-docker
 
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
       - name: Build and Push Container
         run: |-
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }} --build-arg database_url=${{ secrets.DATABASE_URL }} .
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }} .
           docker push gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }}
 
       - name: Deploy to Cloud Run
@@ -38,9 +42,10 @@ jobs:
         with:
           service: ${{ env.SERVICE }}
           image:
-            gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha
+            gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{ github.sha
             }}
           region: ${{ env.REGION }}
+          env_vars_file: .env
 
       - name: "Print url"
         run: 'curl "${{ steps.deploy.outputs.url }}"'
