@@ -28,6 +28,8 @@ jobs:
         run: gcloud auth configure-docker
 
       - name: Build and Push Container
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |-
           docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }} .
           docker push gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha }}
