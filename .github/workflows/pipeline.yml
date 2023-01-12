@@ -38,7 +38,8 @@ jobs:
         with:
           service: ${{ env.SERVICE }}
           image:
-            gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+            gcr.io/${{ secrets.GCP_PROJECT }}/${{ env.SERVICE }}:${{  github.sha
+            }}
           region: ${{ env.REGION }}
 
       - name: "Print url"
