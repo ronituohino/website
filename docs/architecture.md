@@ -20,7 +20,8 @@ application.
 `/public` contains statically served files.  
 `/styles` contains global css style declarations.  
 `/docs` contains all the application documentation.  
-`/test` contains all application tests.
+`/test` contains all application tests.  
+`/prisma` contains the database models.
 
 ### Ignored folders
 
@@ -31,10 +32,9 @@ Next.js to rebuild the application.
 
 ## Hosting
 
-The application is hosted using
-[Firebase Hosting](https://firebase.google.com/docs/hosting).
-
-Setting up: https://firebase.google.com/docs/hosting/nextjs
+The application is hosted in a Docker container in
+[Google Cloud Run](https://cloud.google.com/run). The deployment is automated
+using GitHub Actions.
 
 ## Database
 
