@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "pnpm dlx playwright test --reporter=html",
     "docker-build": "docker build -t nextjs-docker .",
     "docker-run": "docker run -p 3000:3000 nextjs-docker"
   },
@@ -26,6 +27,7 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.2",
     "prisma": "^4.8.1"
   }
 }
