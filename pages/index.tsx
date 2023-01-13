@@ -8,10 +8,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Roni Tuohino Portfolio</title>
+        <title>Roni Tuohino</title>
         <meta name="description" content="Roni Tuohino portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <p>Normal font</p>
