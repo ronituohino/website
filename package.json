@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "dotenv -e .env.development -- pnpm dlx prisma migrate dev && NODE_ENV=development next dev",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production next start",
     "lint": "next lint",
+    "test": "dotenv -e .env.test -- pnpm dlx prisma db push --force-reset && pnpm dlx playwright test",
+    "test-server": "NODE_ENV=test next dev",
     "docker-build": "docker build -t nextjs-docker .",
     "docker-run": "docker run -p 3000:3000 nextjs-docker"
   },
@@ -26,6 +28,7 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.2",
     "prisma": "^4.8.1"
   }
 }

@@ -19,6 +19,8 @@ To learn more about Next.js, take a look at the following resources:
 This project uses [Prisma](https://www.prisma.io/) to communicate with it's
 database.
 
-## Deploy to Google Cloud Run
+## Google Cloud Run
 
-[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
+This project is hosted on [Google Cloud Run](https://cloud.google.com/run).
+Whenever something is pushed to the main branch, GitHub Actions builds a new
+Docker image and uploads it to the cloud, and deploys the page.
