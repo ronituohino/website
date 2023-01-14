@@ -37,8 +37,8 @@ jobs:
         run: |
           echo "${{ secrets.TEST_ENV_FILE }}" > .env.test
 
-      - name: Install pnpm & dotenv
-        run: npm install -g pnpm dotenv
+      - name: Install pnpm & dotenv-cli
+        run: npm install -g pnpm dotenv-cli
 
       - name: Install dependencies
         run: pnpm install
