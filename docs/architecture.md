@@ -34,9 +34,9 @@ Next.js to rebuild the application.
 
 The application is hosted in a Docker container in
 [Google Cloud Run](https://cloud.google.com/run). The deployment is automated
-using GitHub Actions.
+using GitHub Actions [here](../.github/workflows/pipeline.yml).
 
 ## Database
 
 The application database is on [bit.io](https://bit.io).  
-DBaaS resources here: https://free-for.dev/#/?id=dbaas
+Free DBaaS resources here: https://free-for.dev/#/?id=dbaas

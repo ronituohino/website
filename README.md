@@ -8,12 +8,6 @@ write about :)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
 ## Prisma
 
 This project uses [Prisma](https://www.prisma.io/) to communicate with it's
@@ -23,4 +17,11 @@ database.
 
 This project is hosted on [Google Cloud Run](https://cloud.google.com/run).
 Whenever something is pushed to the main branch, GitHub Actions builds a new
-Docker image and uploads it to the cloud, and deploys the page.
+Docker image, uploads it to the cloud, and deploys the page.
+
+## Docs
+
+[Setting up the dev environment](./docs/development.md)  
+[More on project architecture](./docs/architecture.md)  
+[Project requirements](./docs/requirements.md)  
+[Testing docs](./docs/testing.md)
