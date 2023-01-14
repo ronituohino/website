@@ -28,10 +28,6 @@ yarn-error.log*
 # .env files
 .env*
 
-# prisma migrations
-# comment this out when there is permanent data in production!
-prisma/migrations
-
 # vercel
 .vercel
 
