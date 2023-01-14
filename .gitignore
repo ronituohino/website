@@ -25,11 +25,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# prisma .env
-.env
+# .env files
+.env*
 
-# local env files
-.env*.local
+# prisma migrations
+# comment this out when there is permanent data in production!
+prisma/migrations
 
 # vercel
 .vercel

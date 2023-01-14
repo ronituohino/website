@@ -13,15 +13,13 @@ const config: PlaywrightTestConfig = {
   timeout: 30 * 1000,
   // Test directory
   testDir: path.join(__dirname, "tests"),
-  // If a test fails, retry it once
-  retries: 1,
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: "test-results/",
 
   // Run local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
   webServer: {
-    command: "NODE_ENV=test pnpm run dev",
+    command: "pnpm run test-server",
     url: baseURL,
     timeout: 120 * 1000,
   },

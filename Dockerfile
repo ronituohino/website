@@ -11,7 +11,6 @@ COPY . .
 COPY package.json pnpm-lock.yaml* ./
 RUN yarn global add pnpm && pnpm i --frozen-lockfile --prod
 
-RUN npx prisma generate
 RUN pnpm build
 
 

@@ -1,5 +1,7 @@
 node_modules
 .next
+tests
+playwright.config.ts
 docs
 README.md
 .gitignore
