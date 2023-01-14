@@ -15,6 +15,7 @@ const config: PlaywrightTestConfig = {
   testDir: path.join(__dirname, "tests"),
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: "test-results/",
+  workers: "100%",
 
   // Run local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
