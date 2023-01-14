@@ -33,12 +33,12 @@ jobs:
         with:
           node-version: 18
 
-      - name: Create .env file
+      - name: Create .env.test file
         run: |
           echo "${{ secrets.TEST_ENV_FILE }}" > .env.test
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Install pnpm & dotenv
+        run: npm install -g pnpm dotenv
 
       - name: Install dependencies
         run: pnpm install

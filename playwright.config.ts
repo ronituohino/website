@@ -47,6 +47,18 @@ const config: PlaywrightTestConfig = {
       },
     },
     {
+      name: "Desktop Chrome",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+    },
+    {
+      name: "Desktop Edge",
+      use: {
+        ...devices["Desktop Edge"],
+      },
+    },
+    {
       name: "Mobile Chrome",
       use: {
         ...devices["Pixel 5"],
