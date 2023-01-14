@@ -104,7 +104,7 @@ jobs:
             gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE
             }}:${{ github.sha }}
           region: ${{ env.REGION }}
-          env_vars_file: .env
+          env_vars_file: .env.production
 
       - name: "Service output"
         run: 'curl "${{ steps.deploy.outputs.url }}"'
