@@ -37,6 +37,9 @@ jobs:
         run: |
           echo "${{ secrets.TEST_ENV_FILE }}" > .env.test
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
         run: pnpm install
 
