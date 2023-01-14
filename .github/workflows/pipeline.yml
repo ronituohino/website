@@ -85,13 +85,15 @@ jobs:
           DOCKER_BUILDKIT=1 docker build -t gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} .
           docker push gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
 
-      # For Prisma database migration to production
       - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: "Sync Prisma model to database"
-        run: npx prisma migrate deploy
+      - name: Install pnpm & dotenv-cli
+        run: npm install -g pnpm dotenv-cli
+
+      - name: Sync Prisma model to database
+        run: dotenv -e .env.production -- pnpm dlx prisma migrate deploy
 
       - name: Deploy container to Cloud Run
         id: deploy
