@@ -1,7 +1,7 @@
 # portfolio
 
-A portfolio page for Roni Tuohino with a blogging area for some stuff I want to
-write about :)
+My portfolio website with a blogging area for some stuff I want to write about
+:)
 
 ## Next.js
 
