@@ -7,8 +7,8 @@
 
   --primary: #000000;
 
-  --bg-stripe1: #e66465;
-  --bg-stripe2: #9198e5;
+  --bg-stripe1: #111129;
+  --bg-stripe2: #0b0b25;
 }
 
 * {
@@ -28,9 +28,9 @@ html {
   box-shadow: inset 0 0 100px black;
   background-image: repeating-linear-gradient(
     var(--bg-stripe1),
-    var(--bg-stripe1) 1vh,
-    var(--bg-stripe2) 1vh,
-    var(--bg-stripe2) 2vh
+    var(--bg-stripe1) 1mm,
+    var(--bg-stripe2) 1mm,
+    var(--bg-stripe2) 2mm
   );
 }
 
