@@ -19,12 +19,8 @@ html {
   height: 100%;
   padding: 32px;
   box-shadow: inset 0 0 100px black;
-  background-image: repeating-linear-gradient(
-    var(--bg-stripe1),
-    var(--bg-stripe1) 1mm,
-    var(--bg-stripe2) 1mm,
-    var(--bg-stripe2) 2mm
-  );
+  background-image: url("/bg.png");
+  background-size: cover;
 }
 
 a {

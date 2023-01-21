@@ -21,7 +21,9 @@ application.
 `/styles` contains global css style declarations.  
 `/docs` contains all the application documentation.  
 `/test` contains all application tests.  
-`/prisma` contains the database models.
+`/prisma` contains the database models.  
+`/assets` contains assets which I needed to create some of the content on the
+website. (Blender files)
 
 ### Ignored folders
 
