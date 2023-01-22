@@ -1,0 +1,11 @@
+.title {
+  font-size: min(84px, 10vw);
+  color: #f3ec78;
+  text-shadow: 3px 3px 0px #af4261, 0px 0px 5px #f3ec78;
+}
+
+.subtitle {
+  font-size: min(72px, 10vw);
+  color: #88dd77;
+  text-shadow: 0px 0px 5px #88dd77;
+}

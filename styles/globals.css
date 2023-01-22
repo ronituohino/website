@@ -1,6 +1,7 @@
 :root {
   --bg-stripe1: #111129;
   --bg-stripe2: #0b0b25;
+  font-size: 18px;
 }
 
 * {
