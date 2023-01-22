@@ -1,0 +1,19 @@
+.link {
+  --link-color: rgb(75, 75, 75);
+  --link-hover-color: white;
+  color: var(--link-color);
+  filter: drop-shadow(0px 0px 5px var(--link-color));
+
+  -webkit-transition: 0.15s -webkit-filter linear;
+  -moz-transition: 0.15s -moz-filter linear;
+  -moz-transition: 0.15s filter linear;
+  -ms-transition: 0.15s -ms-filter linear;
+  -o-transition: 0.15s -o-filter linear;
+  transition: 0.15s filter linear, 0.15s -webkit-filter linear;
+  transition: color 0.15s linear;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
+  filter: drop-shadow(0px 0px 5px var(--link-hover-color));
+}

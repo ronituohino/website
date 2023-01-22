@@ -1,22 +1,21 @@
 import Link from "next/link";
+import type { NextPageContext } from "next";
 
-import { Text } from "../components/Text";
 import Title from "../components/Title";
+import { Button } from "../components/Button";
 
 export default function Home() {
   return (
     <>
       <section>
         <Title />
-        <h1>Roni Tuohino</h1>
         <Link target="_blank" href="/sample.jpg">
-          CV
+          <Button color="red">Check out my CV</Button>
         </Link>
       </section>
 
       <section>
         <h2>Projects</h2>
-        <Text>Cool text!</Text>
       </section>
 
       <section>
@@ -24,4 +23,11 @@ export default function Home() {
       </section>
     </>
   );
+}
+
+// This is run on the server, and the props are passed to the component above
+export async function getStaticProps({ req }: NextPageContext) {
+  return {
+    props: {},
+  };
 }
