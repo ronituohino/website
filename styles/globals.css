@@ -1,16 +1,17 @@
 :root {
   --bg-1: #000218;
-  --bg-2: #00065a;
+  --bg-2: #000874;
 
   --title-1: rgb(225, 74, 255);
   --title-2: rgb(143, 0, 119);
   --subtitle: rgb(92, 250, 237);
 
   --border-radius: 16px;
+  --page-padding: 32px;
 }
 
 * {
-  font-size: 18px;
+  font-size: 20px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -25,7 +26,6 @@ body {
 
 body {
   background: linear-gradient(to bottom, var(--bg-1), var(--bg-2));
-  padding: 32px;
 }
 
 a {

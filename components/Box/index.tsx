@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 
-import styles from "./Button.module.css";
+import styles from "./Box.module.css";
 
-type ButtonProps = {
+type BoxProps = {
   color: string;
   children?: ReactNode;
 };
 
-export function Button({ color, children }: ButtonProps) {
+export function Box({ color, children }: BoxProps) {
   return (
-    <button
-      className={styles.button}
+    <div
+      className={styles.box}
       style={{
         color,
         textShadow: `0px 0px 10px ${color}`,
@@ -20,6 +20,6 @@ export function Button({ color, children }: ButtonProps) {
       }}
     >
       {children}
-    </button>
+    </div>
   );
 }

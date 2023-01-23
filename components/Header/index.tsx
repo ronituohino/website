@@ -10,8 +10,8 @@ import { LinkIcon } from "../LinkIcon";
 
 export function Header() {
   return (
-    <header>
-      <Link href="/">
+    <header className={styles.header}>
+      <Link href="/" className={styles.profileContainer}>
         <Image
           src="/profile.svg"
           width="48"

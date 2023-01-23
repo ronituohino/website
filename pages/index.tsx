@@ -1,22 +1,13 @@
-import Link from "next/link";
 import type { NextPageContext } from "next";
 
-import Title from "../components/Title";
-import { Button } from "../components/Button";
+import { Hero } from "../components/Hero";
+import { Projects } from "../components/Projects";
 
 export default function Home() {
   return (
     <>
-      <section>
-        <Title />
-        <Link target="_blank" href="/sample.jpg">
-          <Button color="red">Check out my CV</Button>
-        </Link>
-      </section>
-
-      <section>
-        <h2>Projects</h2>
-      </section>
+      <Hero />
+      <Projects />
 
       <section>
         <h2>Contact</h2>

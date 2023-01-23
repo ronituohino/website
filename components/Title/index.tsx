@@ -1,11 +1,10 @@
 import { Zen_Tokyo_Zoo, Hurricane } from "@next/font/google";
-
 const zen = Zen_Tokyo_Zoo({ weight: "400" });
 const hurricane = Hurricane({ weight: "400" });
 
 import styles from "./Title.module.css";
 
-export default function Title() {
+export function Title() {
   return (
     <div className={styles.container}>
       <div className={zen.className}>
