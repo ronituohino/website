@@ -13,6 +13,10 @@ RUN yarn global add pnpm && pnpm i --frozen-lockfile --prod
 
 RUN pnpm build
 
+# Remove .env.production, but don't throw error if not found
+RUN rm ./.next/standalone/.env.production || true
+
+
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
