@@ -9,8 +9,8 @@
     "lint": "next lint",
     "test": "dotenv -e .env.test -- pnpm dlx prisma db push --force-reset && pnpm dlx playwright test",
     "test-server": "NODE_ENV=test next dev",
-    "docker-build": "docker build -t nextjs-docker .",
-    "docker-run": "docker run -p 3000:3000 nextjs-docker"
+    "docker-build": "DOCKER_BUILDKIT=1 docker build -t nextjs-docker .",
+    "docker-run": "docker run -p 3000:3000 --env-file ./.env.production nextjs-docker"
   },
   "dependencies": {
     "@next/font": "13.1.1",
