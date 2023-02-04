@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/font': 13.1.1
-  '@playwright/test': ^1.29.2
+  '@playwright/test': ^1.30.0
   '@prisma/client': ^4.8.1
   '@types/node': 18.11.18
   '@types/react': 18.0.26
@@ -33,7 +33,7 @@ dependencies:
   typescript: 4.9.4
 
 devDependencies:
-  '@playwright/test': 1.29.2
+  '@playwright/test': 1.30.0
   prisma: 4.8.1
 
 packages:
@@ -246,13 +246,13 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@playwright/test/1.29.2:
-    resolution: {integrity: sha512-+3/GPwOgcoF0xLz/opTnahel1/y42PdcgZ4hs+BZGIUjtmEFSXGg+nFoaH3NSmuc7a6GSFwXDJ5L7VXpqzigNg==}
+  /@playwright/test/1.30.0:
+    resolution: {integrity: sha512-SVxkQw1xvn/Wk/EvBnqWIq6NLo1AppwbYOjNLmyU0R1RoQ3rLEBtmjTnElcnz8VEtn11fptj1ECxK0tgURhajw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
       '@types/node': 18.11.18
-      playwright-core: 1.29.2
+      playwright-core: 1.30.0
     dev: true
 
   /@prisma/client/4.8.1_prisma@4.8.1:
@@ -1848,8 +1848,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: false
 
-  /playwright-core/1.29.2:
-    resolution: {integrity: sha512-94QXm4PMgFoHAhlCuoWyaBYKb92yOcGVHdQLoxQ7Wjlc7Flg4aC/jbFW7xMR52OfXMVkWicue4WXE7QEegbIRA==}
+  /playwright-core/1.30.0:
+    resolution: {integrity: sha512-7AnRmTCf+GVYhHbLJsGUtskWTE33SwMZkybJ0v6rqR1boxq2x36U7p1vDRV7HO2IwTZgmycracLxPEJI49wu4g==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

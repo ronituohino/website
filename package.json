@@ -28,7 +28,7 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "^1.30.0",
     "prisma": "^4.8.1"
   }
 }
