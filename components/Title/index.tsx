@@ -8,7 +8,7 @@ export function Title() {
   return (
     <div className={styles.container}>
       <div className={zen.className}>
-        <h1 className={styles.title}>FULLSTACK</h1>
+        <h1 className={styles.title}>Fullstack</h1>
       </div>
 
       <div className={hurricane.className}>

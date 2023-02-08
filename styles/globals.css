@@ -8,6 +8,11 @@
 
   --border-radius: 16px;
   --page-padding: 32px;
+
+  --animation-hover-time: 0.1s;
+
+  --not-hovered-color: rgb(110, 110, 110);
+  --hover-color: white;
 }
 
 * {

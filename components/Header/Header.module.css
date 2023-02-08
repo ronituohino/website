@@ -8,7 +8,27 @@
 .profileContainer {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+.profileContainer > span {
+  color: var(--hover-color);
+  opacity: 0.6;
+  transition: opacity var(--animation-hover-time) linear;
+}
+
+.profileContainer:hover > span {
+  opacity: 1;
+}
+
+.blogLink {
+  color: var(--hover-color);
+  opacity: 0.6;
+  transition: opacity var(--animation-hover-time) linear;
+}
+
+.blogLink:hover {
+  opacity: 1;
 }
 
 .picture {
