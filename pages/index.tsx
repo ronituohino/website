@@ -1,4 +1,5 @@
 import type { NextPageContext } from "next";
+import { Brush } from "../components/SVG";
 
 import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
@@ -8,6 +9,13 @@ export default function Home() {
     <>
       <Hero />
       <Projects />
+
+      <Brush
+        width={256}
+        height={256}
+        className="brush"
+        title="picture of a brush"
+      />
 
       <section>
         <h2>Contact</h2>

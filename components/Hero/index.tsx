@@ -16,7 +16,7 @@ export function Hero() {
 
       <div className={styles.links}>
         <LinkIcon
-          icon={<BsArrowDownCircle size={35} />}
+          icon={<BsArrowDownCircle size={35} title="Download my CV" />}
           href="/sample.jpg"
           openInNewTab
           rightText="CV"
