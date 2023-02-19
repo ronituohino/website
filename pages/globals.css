@@ -1,0 +1,44 @@
+:root {
+  --main-font: "Short Stack";
+  --page-padding: 32px;
+
+  --bg-color: rgb(32, 32, 32);
+  --bg-stripe-color: rgb(37, 37, 37);
+}
+
+* {
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Short Stack";
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@font-face {
+  font-family: "Short Stack";
+  src: url("/fonts/ShortStack.eot");
+  src: url("/fonts/ShortStack.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/ShortStack.woff2") format("woff2"),
+    url("/fonts/ShortStack.woff") format("woff"),
+    url("/fonts/ShortStack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

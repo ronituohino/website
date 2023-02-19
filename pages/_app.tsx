@@ -1,10 +1,10 @@
-import "../styles/globals.css";
+import "./globals.css";
+import styles from "./app.module.css";
+
 import Head from "next/head";
 import type { AppProps } from "next/app";
 
-import { Comfortaa } from "@next/font/google";
 import { Header } from "../components/Header";
-const roboto = Comfortaa({ weight: "400" });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className={roboto.className}>
+      <div className={styles.background}>
         <Header />
         <main>
           <Component {...pageProps} />

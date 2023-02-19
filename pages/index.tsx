@@ -1,14 +1,49 @@
 import type { NextPageContext } from "next";
 import { Brush } from "../components/SVG";
 
-import { Hero } from "../components/Hero";
-import { Projects } from "../components/Projects";
+import { Title } from "../components/Title";
+import Link from "next/link";
+
+import styles from "./index.module.css";
+
+import { LinkIcon } from "../components/LinkIcon";
+import { BsArrowDownCircle } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import { MdOutlineMail } from "react-icons/md";
+import { CiLinkedin } from "react-icons/ci";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Projects />
+      <section className={styles.container}>
+        <Title />
+
+        <div className={styles.links}>
+          <LinkIcon
+            icon={<BsArrowDownCircle size={35} title="Download my CV" />}
+            href="/sample.jpg"
+            openInNewTab
+            rightText="CV"
+          />
+
+          <LinkIcon
+            href="https://github.com/ronituohino"
+            openInNewTab
+            icon={<BsGithub size={32} />}
+          />
+
+          <LinkIcon
+            href="https://www.linkedin.com/in/ronituohino/"
+            openInNewTab
+            icon={<CiLinkedin size={40} strokeWidth={0.5} />}
+          />
+
+          <LinkIcon
+            href="mailto:tuohinoroni@gmail.com"
+            icon={<MdOutlineMail size={42} />}
+          />
+        </div>
+      </section>
 
       <Brush
         width={256}
