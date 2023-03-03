@@ -1,19 +1,14 @@
-import { Zen_Tokyo_Zoo, Hurricane } from "@next/font/google";
-const zen = Zen_Tokyo_Zoo({ weight: "400" });
-const hurricane = Hurricane({ weight: "400" });
-
 import styles from "./Title.module.css";
+import { Gym, Disco, Controller } from "../SVG";
 
 export function Title() {
   return (
     <div className={styles.container}>
-      <div className={zen.className}>
-        <h1 className={styles.title}>Fullstack</h1>
-      </div>
-
-      <div className={hurricane.className}>
-        <h1 className={styles.subtitle}>Developer</h1>
-      </div>
+      <h1 className={styles.name}>Roni Tuohino</h1>
+      <h2 className={styles.title}>Fullstack Developer</h2>
+      <Gym title="gym barbell" />
+      <Disco title="discoball" />
+      <Controller title="console controller" />
     </div>
   );
 }

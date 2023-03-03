@@ -8,30 +8,47 @@ is SVG to have good scaling. Here's how I'm creating them:
 The style is cartoonish, with semi-thick black lines between color areas. I'm
 drawing them on a whiteboard with a whiteboard marker.
 
-### Digitization (1 min)
+### Digitization (2 min)
 
 After the drawing is done, I take a picture of the drawing with my phone and
 transfer the picture to my computer.
 
-### Cleanup (3 mins)
+### Inkscape cleanup & coloring (5 mins)
 
 I open the picture on [Inkscape](https://inkscape.org/).  
+I transform the picture to a vector image (Path -> Trace Bitmap).
+
+- Brightness cutoff
+- Brightness threshold ~0.5
+
 I run the image through a simplification algorithm (Path -> Simplify).  
 I manually delete extra nodes ("dirt") in the image.
 
-### Colorization (2 mins)
-
-I add paths in the empty areas of the SVG and select the fill color.  
-Now I can save the file and exit Inkscape.
+I break the vector lands into individual objects (Select all nodes -> Path ->
+Break Apart).  
+I delete the backmost object, set the background to white, fix layering, and set
+colors for lands.  
+I set the image position to zero, and fix document size.  
+Save image.
 
 ### Optimization (1 min)
 
 I run the image through a handy SVG optimizer called
 [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
+Settings:
+
+- Prettify markup: `true`
+- Number precision: `2`
+- Transform precision: `4`
+- Every feature toggled on except `Remove xmlns`
+
+This process usually saves ~35% of space.
+
 ### Import to project (3 min)
 
 I create a new entry in the `components/SVG` folder and copy the SVG code into a
 React component.  
 I translate some HTML attributes (the ones with hyphens) to React props.  
-I add some React props I want to support for all my SVG's.
+I add some React props I want to support for all my SVGs (look at existing
+SVGs).

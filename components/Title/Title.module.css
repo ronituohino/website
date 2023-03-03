@@ -1,56 +1,7 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.name {
+  font-size: 3vw;
 }
 
 .title {
-  font-size: 10vw;
-  text-transform: uppercase;
-  font-style: italic;
-  color: var(--title-1);
-  text-shadow: 2px 2px 0px var(--title-2), 0px 0px 6px var(--title-1),
-    0px 0px 150px var(--title-1);
-
-  opacity: 0;
-
-  animation-name: title-anim;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes title-anim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.subtitle {
-  font-size: 10vw;
-  rotate: -7deg;
-  translate: 0% -55%;
-  margin-bottom: -4vw;
-  color: var(--subtitle);
-  text-shadow: 0px 0px 6px var(--subtitle), 0px 0px 100px var(--subtitle);
-
-  opacity: 0;
-  animation-name: subtitle-anim;
-  animation-duration: 2s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes subtitle-anim {
-  0% {
-    opacity: 0;
-    translate: 0% -40%;
-  }
-  100% {
-    opacity: 1;
-    translate: 0% -55%;
-  }
+  font-size: 1vw;
 }

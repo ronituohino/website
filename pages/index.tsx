@@ -1,8 +1,6 @@
 import type { NextPageContext } from "next";
-import { Brush } from "../components/SVG";
 
 import { Title } from "../components/Title";
-import Link from "next/link";
 
 import styles from "./index.module.css";
 
@@ -44,13 +42,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      <Brush
-        width={256}
-        height={256}
-        className="brush"
-        title="picture of a brush"
-      />
 
       <section>
         <h2>Contact</h2>
