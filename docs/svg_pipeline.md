@@ -21,8 +21,8 @@ I transform the picture to a vector image (Path -> Trace Bitmap).
 - Brightness cutoff
 - Brightness threshold ~0.5
 
-I run the image through a simplification algorithm (Path -> Simplify).  
-I manually delete extra nodes ("dirt") in the image.
+I manually delete extra nodes ("dirt") in the image.  
+I run the image through a simplification algorithm (Path -> Simplify).
 
 I break the vector lands into individual objects (Select all nodes -> Path ->
 Break Apart).  
