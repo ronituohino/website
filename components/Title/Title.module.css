@@ -5,3 +5,8 @@
 .title {
   font-size: 1vw;
 }
+
+.glossary {
+  display: flex;
+  flex-wrap: wrap;
+}

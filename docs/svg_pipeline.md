@@ -39,11 +39,12 @@ I run the image through a handy SVG optimizer called
 Settings:
 
 - Prettify markup: `true`
-- Number precision: `2`
+- Multipass: `true`
+- Number precision: `1`
 - Transform precision: `4`
 - Every feature toggled on except `Remove xmlns`
 
-This process usually saves ~35% of space.
+This process usually saves ~70% of space.
 
 ### Import to project (3 min)
 
