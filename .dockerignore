@@ -6,3 +6,4 @@ docs
 README.md
 .gitignore
 .github
+tsconfig.json
