@@ -1,7 +1,5 @@
 import type { NextPageContext } from "next";
 
-import { Title } from "../components/Title";
-
 import styles from "./index.module.css";
 
 import { LinkIcon } from "../components/LinkIcon";
@@ -10,12 +8,28 @@ import { BsGithub } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { CiLinkedin } from "react-icons/ci";
 
+import { Title } from "../components/Title";
+import { Recom } from "../components/Projects/Recom";
+import { GParticles } from "../components/Projects/GParticles";
+import { BattleSheep } from "../components/Projects/BattleSheep";
+import { Viitevarasto } from "../components/Projects/Viitevarasto";
+
 export default function Home() {
   return (
     <>
       <section className={styles.container}>
         <Title />
+      </section>
 
+      <section>
+        <Recom />
+        <Viitevarasto />
+        <BattleSheep />
+        <GParticles />
+      </section>
+
+      <section>
+        <h2>Contact</h2>
         <div className={styles.links}>
           <LinkIcon
             icon={<BsArrowDownCircle size={35} title="Download my CV" />}
@@ -41,10 +55,6 @@ export default function Home() {
             icon={<MdOutlineMail size={42} />}
           />
         </div>
-      </section>
-
-      <section>
-        <h2>Contact</h2>
       </section>
     </>
   );

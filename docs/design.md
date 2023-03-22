@@ -10,19 +10,24 @@ of custom assets.
 I also want to maintain responsiveness, so people can view the site well on
 mobile also. Accessibility is also a priority.
 
-# Title
+## Title
 
-I want my name to pop up with a smooth animation, and my story to be presented
-with hand-drawn icons that pop up sequentially forming a sort of path. This path
-will also function as a hint to the user, that the site can be scrolled down to
-see my projects and contact stuff.
+Short introduction, some artistic elements. Get user to scroll page down to most
+recent projects.
 
-Path:
+## Projects
 
-- Starts near my name
-- First group shows my interest to gaming along with introduction to programming
-  (Controller, Minecraft, Minecraft redstone, Destiny)
-- Second group shows first programming languages and projects (Python, Unity C#)
-- Third group shows transition over to military & university (University, Disco,
-  Camo, Gym)
-- Fourth group shows interest in web dev (React, TS, Docker, Postgres, Node)
+Latest first. Dividing hand-drawn elements seperating projects in cool different
+ways. Lots of animations and custom elements. Hidden projects (user can
+optionally view smaller projects in between)?
+
+- Recom
+- Viitevarasto
+- Battle Sheep
+- GParticles
+
+CTA to check out my Github for more stuff!
+
+## Contact
+
+A short CTA to send an email or connect somewhere else.

@@ -12,9 +12,6 @@ index page
   - Title
   - Short description
   - Call to action? (Resume?)
-- [] About
-  - Longer description
-  - Favorite tech
 - [] Projects
   - Name
   - Short description
@@ -53,12 +50,14 @@ coded into the app itself, so I have full freedom to put any kind of content I
 wish on there. Blogs can be liked by anonymous users. There is a views counter
 on each blog post.
 
+More on [design](design.md).
+
 ## Functionality
 
 - [ ] Home
   - [ ] About/Landing section
-  - [ ] Contacts/Consulting section
   - [ ] Projects section
+  - [ ] Contacts/Consulting section
 - [ ] Blogs
   - [ ] Blog browser
   - [ ] Blog page

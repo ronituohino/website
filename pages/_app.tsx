@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <div className={styles.background}>
         <Header />
-        <main>
+        <main className={styles.main}>
           <Component {...pageProps} />
         </main>
       </div>
