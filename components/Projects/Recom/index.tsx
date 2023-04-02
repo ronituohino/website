@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactLogo, NodeJS } from "../../SVG";
+import { ReactLogo, NodeJS, GraphQL, MongoDB } from "../../SVG";
 
 export function Recom() {
   return (
@@ -22,6 +22,8 @@ export function Recom() {
         Tech used:
         <ReactLogo title="" width={200} />
         <NodeJS title="" width={200} />
+        <GraphQL title="" width={200} />
+        <MongoDB title="" width={200} />
       </p>
       <Link href="https://github.com/ronituohino/recom">GitHub here </Link>
       <Link href="https://ronituohino.fi">Livelink here</Link>

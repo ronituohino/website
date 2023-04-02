@@ -40,8 +40,7 @@ Settings:
 
 - Prettify markup: `true`
 - Multipass: `true`
-- Number precision: `1`
-- Transform precision: `4`
+- Precision: `1`
 - Every feature toggled on except `Remove xmlns`
 
 This process usually saves ~70% of space.
