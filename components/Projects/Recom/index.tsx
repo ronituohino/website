@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { ReactLogo, NodeJS, GraphQL, MongoDB } from "../../SVG";
+import { Picture } from "../../Picture";
+
+import orderingImage from "./ordering.png";
+import storepageImage from "./storepage.png";
 
 export function Recom() {
   return (
@@ -17,6 +21,10 @@ export function Recom() {
         consists of four parts: a client app, a backend, database, and an admin
         tool.
       </p>
+
+      <Picture title="" width={200} frame="paper" href={orderingImage.src} />
+      <Picture title="" width={200} frame="board" href={storepageImage.src} />
+
       <p>Insert images here...</p>
       <p>
         Tech used:
@@ -26,7 +34,7 @@ export function Recom() {
         <MongoDB title="" width={200} />
       </p>
       <Link href="https://github.com/ronituohino/recom">GitHub here </Link>
-      <Link href="https://ronituohino.fi">Livelink here</Link>
+      <Link href="https://recom-pnxd5duksa-lz.a.run.app">Livelink here</Link>
     </>
   );
 }
