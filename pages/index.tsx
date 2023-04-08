@@ -2,17 +2,17 @@ import type { NextPageContext } from "next";
 
 import styles from "./index.module.css";
 
-import { LinkIcon } from "../components/LinkIcon";
-import { BsArrowDownCircle } from "react-icons/bs";
-import { BsGithub } from "react-icons/bs";
-import { MdOutlineMail } from "react-icons/md";
-import { CiLinkedin } from "react-icons/ci";
-
 import { Title } from "../components/Title";
 import { Recom } from "../components/Projects/Recom";
-import { GParticles } from "../components/Projects/GParticles";
-import { BattleSheep } from "../components/Projects/BattleSheep";
 import { Viitevarasto } from "../components/Projects/Viitevarasto";
+import { BattleSheep } from "../components/Projects/BattleSheep";
+import { GParticles } from "../components/Projects/GParticles";
+
+import { LinkIcon } from "../components/LinkIcon";
+import { Download } from "../components/SVG";
+import { GitHub } from "../components/SVG";
+import { LinkedIn } from "../components/SVG";
+import { Email } from "../components/SVG";
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
         <h2>Contact</h2>
         <div className={styles.links}>
           <LinkIcon
-            icon={<BsArrowDownCircle size={35} title="Download my CV" />}
+            icon={<Download title="" width={36} />}
             href="/sample.jpg"
             openInNewTab
             rightText="CV"
@@ -41,18 +41,18 @@ export default function Home() {
           <LinkIcon
             href="https://github.com/ronituohino"
             openInNewTab
-            icon={<BsGithub size={32} />}
+            icon={<GitHub title="" width={46} />}
           />
 
           <LinkIcon
             href="https://www.linkedin.com/in/ronituohino/"
             openInNewTab
-            icon={<CiLinkedin size={40} strokeWidth={0.5} />}
+            icon={<LinkedIn title="" width={36} />}
           />
 
           <LinkIcon
             href="mailto:tuohinoroni@gmail.com"
-            icon={<MdOutlineMail size={42} />}
+            icon={<Email title="" width={42} />}
           />
         </div>
       </section>

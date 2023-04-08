@@ -39,7 +39,6 @@ export function Picture({
       <title>{title}</title>
       {frames[frame]}
       <image
-        id="image"
         href={href}
         width={imgWidth}
         height={imgHeight}
