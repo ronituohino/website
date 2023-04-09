@@ -5,18 +5,22 @@ import { Picture } from "../../Picture";
 import menuImage from "./menu.png";
 import addingImage from "./adding.png";
 
-export function Viitevarasto() {
+type ViitevarastoProps = {
+  className?: string;
+};
+
+export function Viitevarasto({ className }: ViitevarastoProps) {
   return (
-    <>
+    <article className={className}>
       <h1>Viitevarasto</h1>
-      <p>University group project for a software production course.</p>
+      <p>References management application for BibTeX.</p>
       <p>
-        This is a references management application for BibTeX. The idea is that
-        the user can upload their references onto the application and select
-        which ones to compile into a BibTeX file for whatever document they are
-        working on. This avoids having to manually manage the BibTeX file and
-        updating the references throughout the document, and it also makes
-        adding new references easier.
+        University group project for a software production course. The idea is
+        that the user can upload their references onto the application and
+        select which ones to compile into a BibTeX file for whatever document
+        they are working on. This avoids having to manually manage the BibTeX
+        file and updating the references throughout the document, and it also
+        makes adding new references easier.
       </p>
 
       <Picture
@@ -40,6 +44,6 @@ export function Viitevarasto() {
 
       <Link href="https://github.com/Perttu-Kangas/ohtu-mini">GitHub here</Link>
       <Link href="https://viitevarasto.fly.dev/">Livelink here</Link>
-    </>
+    </article>
   );
 }

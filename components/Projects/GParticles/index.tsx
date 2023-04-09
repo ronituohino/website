@@ -5,18 +5,22 @@ import { Picture } from "../../Picture";
 import pinkishpurpleImage from "./pinkishpurple.jpg";
 import yellowishgreenImage from "./yellowishgreen.jpg";
 
-export function GParticles() {
+type GParticlesProps = {
+  className?: string;
+};
+
+export function GParticles({ className }: GParticlesProps) {
   return (
-    <>
+    <article className={className}>
       <h1>GParticles</h1>
-      <p>Unity mobile hobby project.</p>
+      <p>Art project</p>
       <p>
-        A really quick artsy project I wanted to try. The main idea was to
-        achieve some cool effects with particles and physics. For some reason
-        this kind of took off in the Play Store. I tried to optimize it by
-        moving all the calculations to the GPU but I had some other stuff come
-        up while trying to learn compute shaders. I guess now I could just ask
-        ChatGPT to write the shader lol.
+        A really quick Unity project. The main idea was to achieve some cool
+        effects with particles and physics. For some reason this kind of took
+        off in the Play Store. I tried to optimize it by moving all the
+        calculations to the GPU but I had some other stuff come up while trying
+        to learn compute shaders. I guess now I could just ask ChatGPT to write
+        the shader lol.
       </p>
 
       <Picture
@@ -41,6 +45,6 @@ export function GParticles() {
       <Link href="https://play.google.com/store/apps/details?id=com.Tuohino.GParticles">
         Google Play
       </Link>
-    </>
+    </article>
   );
 }

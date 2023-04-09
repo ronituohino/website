@@ -1,40 +1,18 @@
-import styles from "./Title.module.css";
-import {
-  Camo,
-  Controller,
-  Destiny,
-  Disco,
-  Gym,
-  Minecraft,
-  Redstone,
-  University,
-} from "../SVG";
+type TitleProps = {
+  className?: string;
+};
 
-export function Title() {
+export function Title({ className }: TitleProps) {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.name}>Hello, my name is Roni.</h1>
-      <h2 className={styles.title}>
+    <header className={className}>
+      <h1>Hello, my name is Roni.</h1>
+      <h2>
         I&apos;m a Finnish full-stack developer, and I like coding cool stuff!
       </h2>
-      <h2 className={styles.title}>
+      <h2>
         Here is a little glossary of what I&apos;ve built over the past few
         years.
       </h2>
-      <div className={styles.glossary}>
-        <Camo title="" width={200} />
-        <Controller title="" width={200} />
-
-        <Destiny title="" width={200} />
-        <Disco title="" width={200} />
-
-        <Gym title="" width={200} />
-        <Minecraft title="" width={200} />
-
-        <Redstone title="" width={200} />
-
-        <University title="" width={200} />
-      </div>
-    </div>
+    </header>
   );
 }

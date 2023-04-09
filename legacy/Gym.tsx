@@ -1,4 +1,4 @@
-import type { IconProps } from ".";
+import type { IconProps } from "../components/SVG";
 
 export function Gym({ title, className, width, height }: IconProps) {
   return (

@@ -1,13 +1,16 @@
 :root {
   --main-font: "Short Stack";
-  --page-padding: 32px;
 
   --bg-color: rgb(32, 32, 32);
   --bg-stripe-color: rgb(37, 37, 37);
+
+  --text-color: #dddddd;
+  --link-color: #fff9a2;
+  --link-hover-color: #ffde49;
 }
 
 * {
-  font-size: 20px;
+  font-size: 8px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -17,7 +20,9 @@ html,
 body {
   font-family: "Short Stack";
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  color: var(--text-color);
 }
 
 a {

@@ -9,8 +9,3 @@
   );
   min-height: 100vh;
 }
-
-.main {
-  padding-left: var(--page-padding);
-  padding-right: var(--page-padding);
-}

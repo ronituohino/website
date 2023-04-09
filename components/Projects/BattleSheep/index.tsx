@@ -5,18 +5,22 @@ import Link from "next/link";
 import gameImage from "./game.png";
 import movementImage from "./movement.png";
 
-export function BattleSheep() {
+type BattleSheepProps = {
+  className?: string;
+};
+
+export function BattleSheep({ className }: BattleSheepProps) {
   return (
-    <>
+    <article className={className}>
       <h1>Battle Sheep</h1>
+      <p>- on the web with AI.</p>
       <p>
-        Another school project, this time an algorithms course. I wanted to make
-        an AI for Battle Sheep, a board game about controlling as much area on
-        the board as possible but with limited movement. I managed to get the AI
-        working with game trees, alpha-beta pruning, and some optimization
-        tricks. It proves quite a formidable opponent especially on the
-        &apos;open&apos; map. I wanted to optimize it further by multithreading
-        the algorithm using web workers, but I had no time for that.
+        Battle Sheep is a board game about controlling as much area on the board
+        as possible but with limited movement. I managed to get the AI working
+        with game trees, alpha-beta pruning, and some optimization tricks. The
+        AI proves quite a formidable opponent especially on the &apos;open&apos;
+        map. I wanted to optimize it further by multithreading the algorithm
+        using web workers, but I had no time for that.
       </p>
 
       <Picture
@@ -40,6 +44,6 @@ export function BattleSheep() {
 
       <Link href="https://github.com/ronituohino/tiralabra">GitHub here</Link>
       <Link href="https://battle-sheep-game.web.app/">Livelink here</Link>
-    </>
+    </article>
   );
 }

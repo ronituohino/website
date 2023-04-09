@@ -1,0 +1,9 @@
+.inlineLink {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.1s ease-in-out;
+}
+
+.inlineLink:hover {
+  color: var(--link-hover-color);
+}

@@ -4,23 +4,27 @@ import { Picture } from "../../Picture";
 
 import storepageImage from "./storepage.png";
 import orderingImage from "./ordering.png";
+import { InlineLink } from "../../InlineLink";
 
-export function Recom() {
+type RecomProps = {
+  className?: string;
+};
+
+export function Recom({ className }: RecomProps) {
   return (
-    <>
+    <article className={className}>
       <h1>Recom</h1>
+      <p>Online shopping platform, &apos;React e-commerce&apos;.</p>
       <p>
         Final project for a{" "}
-        <Link href="https://fullstackopen.com/en/">
+        <InlineLink href="https://fullstackopen.com/en/">
           Full stack web development course
-        </Link>
-      </p>
-      <p>
-        This was my first major web project. It consists of four parts: a store
-        app, a backend server, a database, and an admin app. The store and admin
-        applications are built with React and MUI, and they are communicating
-        with the server via GraphQL. All of the store and user information are
-        stored in MongoDB.
+        </InlineLink>
+        . This was my first major web project. It consists of four parts: a
+        store app, a backend server, a database, and an admin app. The store and
+        admin applications are built with React and MUI, and they are
+        communicating with the server via GraphQL. All of the store and user
+        information are stored in MongoDB.
       </p>
 
       <Picture
@@ -45,6 +49,6 @@ export function Recom() {
 
       <Link href="https://github.com/ronituohino/recom">GitHub here </Link>
       <Link href="https://recom-pnxd5duksa-lz.a.run.app">Livelink here</Link>
-    </>
+    </article>
   );
 }
