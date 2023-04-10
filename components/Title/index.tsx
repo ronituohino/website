@@ -1,3 +1,4 @@
+import { Profile } from "../SVG";
 import styles from "./Title.module.css";
 
 type TitleProps = {
@@ -7,12 +8,18 @@ type TitleProps = {
 export function Title({ className }: TitleProps) {
   return (
     <header className={`${styles.container} ${className || ""}`}>
-      <h1>Hello, my name is Roni.</h1>
-      <h2>
-        I&apos;m a Finnish full-stack developer, and I like coding cool stuff!
-        Here is a little glossary of what I&apos;ve built over the past few
-        years.
-      </h2>
+      <div className={styles.left}>
+        <h1>Hello, I&apos;m Roni.</h1>
+        <h2>
+          I&apos;m a Finnish full-stack developer, and I like coding cool stuff!
+        </h2>
+      </div>
+
+      <Profile
+        title="Illustration of me: a guy with blonde hair and a gray turtleneck."
+        width="100%"
+        className={styles.profile}
+      />
     </header>
   );
 }

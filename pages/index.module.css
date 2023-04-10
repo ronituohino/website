@@ -1,18 +1,27 @@
 .background {
-  background-color: black;
-}
-
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  max-width: 1200px;
-
   background-image: radial-gradient(
     var(--bg-dot-color) 20%,
     var(--bg-color) 20%
   );
   background-position: 0 0;
   background-size: 30px 30px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+  max-width: var(--bp-large);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  align-self: center;
+  margin-bottom: 10rem;
+  margin-top: 8rem;
+  max-width: 768px;
 }
 
 .links {

@@ -1,33 +1,52 @@
 .container {
   position: relative;
-  padding: 16px;
-  margin: 64px;
+
+  padding: 1rem;
   background-color: var(--bg-color);
   box-shadow: 0 0 25px var(--bg-color), 0 0 29px var(--bg-color),
     0 0 30px var(--bg-color);
   border-radius: var(--border-radius);
+
   display: flex;
+  gap: 2rem;
+}
+
+.left {
+  flex-basis: 100%;
+}
+
+.left > h3 {
+  margin-bottom: 1rem;
 }
 
 .right {
   position: relative;
+  flex-basis: 100%;
 }
 
-.right svg:nth-child(1) {
-  position: absolute;
-  rotate: 6deg;
-  top: 70px;
-  right: 0;
+.right svg {
+  min-width: 128px;
+  max-width: 256px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.right svg:hover {
+  transform: scale(1.2);
 }
 
 .description {
   color: lightgray;
 }
 
+.links {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .technologies svg {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  right: -100;
   transition: transform 0.1s ease-in-out;
 }
 

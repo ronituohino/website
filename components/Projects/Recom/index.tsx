@@ -15,7 +15,7 @@ type RecomProps = {
 export function Recom({ className }: RecomProps) {
   return (
     <article className={`${styles.container}${className || ""}`}>
-      <div>
+      <div className={styles.left}>
         <h3>Recom - Online shopping platform</h3>
 
         <div className={styles.description}>
@@ -33,29 +33,33 @@ export function Recom({ className }: RecomProps) {
       <div className={styles.right}>
         <Picture
           title="Ordering page where the user is selecting a postal delivery point."
-          width="100"
+          width="100%"
           imgWidth="150"
           frame="paper"
           href={orderingImage.src}
         />
         <Picture
           title="Storepage for a pair of sneakers with multiple images of the sneakers."
-          width="300"
-          imgXOffset="-10"
-          imgWidth="180"
+          width="100%"
+          imgXOffset="-50"
+          imgWidth="170"
           frame="paper"
           href={storepageImage.src}
         />
 
-        <Link href="https://github.com/ronituohino/recom">GitHub here </Link>
-        <Link href="https://recom-pnxd5duksa-lz.a.run.app">Livelink here</Link>
+        <div className={styles.links}>
+          <Link href="https://github.com/ronituohino/recom">GitHub here </Link>
+          <Link href="https://recom-pnxd5duksa-lz.a.run.app">
+            Livelink here
+          </Link>
+        </div>
       </div>
 
       <div className={styles.technologies}>
-        <MongoDB title="MongoDB" width="200" />
-        <GraphQL title="GraphQL" width="200" />
-        <NodeJS title="NodeJS" width="200" />
-        <ReactLogo title="React" width="200" />
+        <MongoDB title="MongoDB" width="15vw" />
+        <GraphQL title="GraphQL" width="15vw" />
+        <NodeJS title="NodeJS" width="15vw" />
+        <ReactLogo title="React" width="15vw" />
       </div>
     </article>
   );
