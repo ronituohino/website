@@ -5,13 +5,15 @@ import Link from "next/link";
 import gameImage from "./game.png";
 import movementImage from "./movement.png";
 
+import styles from "./BattleSheep.module.css";
+
 type BattleSheepProps = {
   className?: string;
 };
 
 export function BattleSheep({ className }: BattleSheepProps) {
   return (
-    <article className={className}>
+    <article className={`${styles.container} ${className || ""}`}>
       <h1>Battle Sheep</h1>
       <p>- on the web with AI.</p>
       <p>

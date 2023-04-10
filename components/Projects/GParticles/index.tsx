@@ -5,13 +5,15 @@ import { Picture } from "../../Picture";
 import pinkishpurpleImage from "./pinkishpurple.jpg";
 import yellowishgreenImage from "./yellowishgreen.jpg";
 
+import styles from "./GParticles.module.css";
+
 type GParticlesProps = {
   className?: string;
 };
 
 export function GParticles({ className }: GParticlesProps) {
   return (
-    <article className={className}>
+    <article className={`${styles.container} ${className || ""}`}>
       <h1>GParticles</h1>
       <p>Art project</p>
       <p>

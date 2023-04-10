@@ -10,10 +10,10 @@ const frames = {
 type PictureProps = IconProps & {
   frame: keyof typeof frames;
   href: string;
-  imgWidth?: number;
-  imgHeight?: number;
-  imgXOffset?: number;
-  imgYOffset?: number;
+  imgWidth?: string;
+  imgHeight?: string;
+  imgXOffset?: string;
+  imgYOffset?: string;
 };
 
 export function Picture({

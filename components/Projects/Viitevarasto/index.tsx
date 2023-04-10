@@ -5,13 +5,15 @@ import { Picture } from "../../Picture";
 import menuImage from "./menu.png";
 import addingImage from "./adding.png";
 
+import styles from "./Viitevarasto.module.css";
+
 type ViitevarastoProps = {
   className?: string;
 };
 
 export function Viitevarasto({ className }: ViitevarastoProps) {
   return (
-    <article className={className}>
+    <article className={`${styles.container} ${className || ""}`}>
       <h1>Viitevarasto</h1>
       <p>References management application for BibTeX.</p>
       <p>
@@ -25,22 +27,22 @@ export function Viitevarasto({ className }: ViitevarastoProps) {
 
       <Picture
         title="Viitevarasto main menu, with a list of added references and controls for manipulating references."
-        width={200}
-        imgWidth={100}
+        width="200"
+        imgWidth="100"
         frame="board"
         href={menuImage.src}
       />
       <Picture
         title="Viitevarasto reference adding menu, with a form for adding a reference into the application."
-        width={200}
-        imgWidth={100}
+        width="200"
+        imgWidth="100"
         frame="paper"
         href={addingImage.src}
       />
 
-      <Python title="Python" width={200} />
-      <Postgres title="Postgres" width={200} />
-      <Docker title="Docker" width={200} />
+      <Python title="Python" width="200" />
+      <Postgres title="Postgres" width="200" />
+      <Docker title="Docker" width="200" />
 
       <Link href="https://github.com/Perttu-Kangas/ohtu-mini">GitHub here</Link>
       <Link href="https://viitevarasto.fly.dev/">Livelink here</Link>
