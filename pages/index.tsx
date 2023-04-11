@@ -2,12 +2,7 @@ import styles from "./index.module.css";
 
 import { Title } from "../components/Title";
 
-import {
-  Recom,
-  GParticles,
-  Viitevarasto,
-  BattleSheep,
-} from "../components/ProjectCards";
+import { ProjectCard } from "../components/ProjectCard";
 
 import { LinkIcon } from "../components/LinkIcon";
 import { Download } from "../components/SVG";
@@ -22,10 +17,34 @@ export default function Home() {
         <Title className={styles.title} />
 
         <section className={styles.projects}>
-          <Recom className={styles.recom} />
-          <Viitevarasto className={styles.viitevarasto} />
-          <BattleSheep className={styles.battleSheep} />
-          <GParticles className={styles.gparticles} />
+          <ProjectCard
+            projectName="Recom"
+            projectImageSrc="/pictures/recom-storepage.png"
+            projectImageWidth="140"
+            frame="roundBox1"
+            href="/projects/recom"
+          />
+          <ProjectCard
+            projectName="Viitevarasto"
+            projectImageSrc="/pictures/viitevarasto-menu.png"
+            projectImageWidth="140"
+            frame="box2"
+            href="/projects/viitevarasto"
+          />
+          <ProjectCard
+            projectName="Battle Sheep"
+            projectImageSrc="/pictures/battlesheep-game.png"
+            projectImageWidth="120"
+            frame="box1"
+            href="/projects/battle-sheep"
+          />
+          <ProjectCard
+            projectName="GParticles"
+            projectImageSrc="/pictures/gparticles-pinkishpurple.jpg"
+            projectImageWidth="80"
+            frame="phone"
+            href="/projects/gparticles"
+          />
         </section>
 
         <footer className={styles.links}>

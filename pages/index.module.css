@@ -27,6 +27,10 @@
   gap: 1rem;
 }
 
+.projects > * {
+  width: 20rem;
+}
+
 .links {
   display: flex;
   gap: 16px;

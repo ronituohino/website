@@ -19,13 +19,17 @@ const frames = {
   phone: Phone() satisfies FrameType,
 };
 
+export type FrameKeys = keyof typeof frames;
+
 type PictureProps = IconProps & {
-  frame: keyof typeof frames;
-  href: string;
+  frame: FrameKeys;
+  src: string;
+  href?: string;
   imgWidth?: string;
   imgHeight?: string;
   imgXOffset?: string;
   imgYOffset?: string;
+  children?: ReactNode;
 };
 
 export function Picture({
@@ -34,13 +38,30 @@ export function Picture({
   width,
   height,
   frame,
+  src,
   href,
   imgWidth,
   imgHeight,
   imgXOffset,
   imgYOffset,
+  children,
 }: PictureProps) {
   const frameData = frames[frame];
+  const coreElements = (
+    <>
+      {frameData.element}
+      <image
+        href={src}
+        width={imgWidth}
+        height={imgHeight}
+        x={imgXOffset}
+        y={imgYOffset}
+        clipPath={`url(#${frame}FrameClip)`}
+      />
+      {children}
+    </>
+  );
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,19 +71,7 @@ export function Picture({
       viewBox={frameData.viewBox}
     >
       <title>{title}</title>
-      {frameData.element}
-      <image
-        href={href}
-        width={imgWidth}
-        height={imgHeight}
-        x={imgXOffset}
-        y={imgYOffset}
-        clipPath={`url(#${frame}FrameClip)`}
-      />
+      {href ? <a href={href}>{coreElements}</a> : <>{coreElements}</>}
     </svg>
   );
 }
-
-/*
-
-*/
