@@ -2,7 +2,7 @@ import type { NextPageContext } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-type Blog = {
+type Article = {
   id: string;
   title: string;
   href: string;
@@ -12,23 +12,23 @@ type Blog = {
   imgAlt: string;
 };
 
-type BlogProps = {
-  blogs: Blog[];
+type ArticleProps = {
+  articles: Article[];
 };
 
-export default function Blog({ blogs }: BlogProps) {
+export default function Article({ articles }: ArticleProps) {
   return (
     <>
-      <h1>Blogs</h1>
-      {blogs.map(blog => {
+      <h1>Articles</h1>
+      {articles.map(article => {
         return (
-          <Link href={`/blog/${blog.href}`} key={blog.id}>
-            <h3>{blog.title}</h3>
+          <Link href={`/articles/${article.href}`} key={article.id}>
+            <h3>{article.title}</h3>
             <Image
-              src={blog.imgSrc}
-              alt={blog.imgAlt}
-              width={blog.imgWidth}
-              height={blog.imgHeight}
+              src={article.imgSrc}
+              alt={article.imgAlt}
+              width={article.imgWidth}
+              height={article.imgHeight}
             />
           </Link>
         );
@@ -40,7 +40,7 @@ export default function Blog({ blogs }: BlogProps) {
 export async function getStaticProps({ req }: NextPageContext) {
   return {
     props: {
-      blogs: [
+      articles: [
         {
           id: "0",
           title: "Data Fetching",
@@ -51,6 +51,6 @@ export async function getStaticProps({ req }: NextPageContext) {
           imgAlt: "random image",
         },
       ],
-    } satisfies BlogProps,
+    } satisfies ArticleProps,
   };
 }

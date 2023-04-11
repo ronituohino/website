@@ -1,10 +1,13 @@
 import styles from "./index.module.css";
 
 import { Title } from "../components/Title";
-import { Recom } from "../components/Projects/Recom";
-import { Viitevarasto } from "../components/Projects/Viitevarasto";
-import { BattleSheep } from "../components/Projects/BattleSheep";
-import { GParticles } from "../components/Projects/GParticles";
+
+import {
+  Recom,
+  GParticles,
+  Viitevarasto,
+  BattleSheep,
+} from "../components/ProjectCards";
 
 import { LinkIcon } from "../components/LinkIcon";
 import { Download } from "../components/SVG";
@@ -18,13 +21,14 @@ export default function Home() {
       <main className={styles.container}>
         <Title className={styles.title} />
 
-        <Recom className={styles.recom} />
-        <Viitevarasto className={styles.viitevarasto} />
-        <BattleSheep className={styles.battleSheep} />
-        <GParticles className={styles.gparticles} />
+        <section className={styles.projects}>
+          <Recom className={styles.recom} />
+          <Viitevarasto className={styles.viitevarasto} />
+          <BattleSheep className={styles.battleSheep} />
+          <GParticles className={styles.gparticles} />
+        </section>
 
-        <h2>Contact</h2>
-        <div className={styles.links}>
+        <footer className={styles.links}>
           <LinkIcon
             icon={<Download title="" width="36" />}
             href="/sample.jpg"
@@ -48,7 +52,7 @@ export default function Home() {
             href="mailto:tuohinoroni@gmail.com"
             icon={<Email title="" width="42" />}
           />
-        </div>
+        </footer>
       </main>
     </div>
   );

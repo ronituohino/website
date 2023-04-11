@@ -1,7 +1,7 @@
-# portfolio
+# home
 
-My portfolio website with a blogging area for some stuff I want to write about
-:)
+My home website with a portfolio and an article area for some stuff I want to
+write about :)
 
 ## Next.js
 

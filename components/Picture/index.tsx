@@ -1,10 +1,22 @@
+import type { ReactNode } from "react";
 import type { IconProps } from "../SVG";
-import { Board } from "./Board";
-import { Paper } from "./Paper";
+import { Box1 } from "./Box1";
+import { Box2 } from "./Box2";
+import { Phone } from "./Phone";
+import { RoundBox1 } from "./RoundBox1";
+import { RoundBox2 } from "./RoundBox2";
+
+export type FrameType = {
+  viewBox: string;
+  element: ReactNode;
+};
 
 const frames = {
-  paper: Paper(),
-  board: Board(),
+  box1: Box1() satisfies FrameType,
+  box2: Box2() satisfies FrameType,
+  roundBox1: RoundBox1() satisfies FrameType,
+  roundBox2: RoundBox2() satisfies FrameType,
+  phone: Phone() satisfies FrameType,
 };
 
 type PictureProps = IconProps & {
@@ -28,16 +40,17 @@ export function Picture({
   imgXOffset,
   imgYOffset,
 }: PictureProps) {
+  const frameData = frames[frame];
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
       className={className}
-      viewBox="0 0 84.6 103.2"
+      viewBox={frameData.viewBox}
     >
       <title>{title}</title>
-      {frames[frame]}
+      {frameData.element}
       <image
         href={href}
         width={imgWidth}

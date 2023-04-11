@@ -1,6 +1,5 @@
-import { Postgres, Python, Docker } from "../../SVG";
 import Link from "next/link";
-import { Picture } from "../../Picture";
+import { Picture } from "../../../components/Picture";
 
 import menuImage from "./menu.png";
 import addingImage from "./adding.png";
@@ -11,7 +10,7 @@ type ViitevarastoProps = {
   className?: string;
 };
 
-export function Viitevarasto({ className }: ViitevarastoProps) {
+export default function Viitevarasto({ className }: ViitevarastoProps) {
   return (
     <article className={`${styles.container} ${className || ""}`}>
       <h1>Viitevarasto</h1>
@@ -39,10 +38,6 @@ export function Viitevarasto({ className }: ViitevarastoProps) {
         frame="paper"
         href={addingImage.src}
       />
-
-      <Python title="Python" width="200" />
-      <Postgres title="Postgres" width="200" />
-      <Docker title="Docker" width="200" />
 
       <Link href="https://github.com/Perttu-Kangas/ohtu-mini">GitHub here</Link>
       <Link href="https://viitevarasto.fly.dev/">Livelink here</Link>

@@ -8,12 +8,10 @@ type TitleProps = {
 export function Title({ className }: TitleProps) {
   return (
     <header className={`${styles.container} ${className || ""}`}>
-      <div className={styles.left}>
-        <h1>Hello, I&apos;m Roni.</h1>
-        <h2>
-          I&apos;m a Finnish full-stack developer, and I like coding cool stuff!
-        </h2>
-      </div>
+      <h1 className={styles.title}>Hi, I&apos;m Roni.</h1>
+      <h2 className={styles.description}>
+        I&apos;m a developer, and I like tinkering and design.
+      </h2>
 
       <Profile
         title="Illustration of me: a guy with blonde hair and a gray turtleneck."

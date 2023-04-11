@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.right > h3 {
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--side-text-color);
+}
+
+.links {
+  display: flex;
+  gap: 0.5rem;
+}

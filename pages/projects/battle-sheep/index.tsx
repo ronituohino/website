@@ -1,5 +1,4 @@
-import { TypeScript, Firebase, Vite } from "../../SVG";
-import { Picture } from "../../Picture";
+import { Picture } from "../../../components/Picture";
 import Link from "next/link";
 
 import gameImage from "./game.png";
@@ -11,7 +10,7 @@ type BattleSheepProps = {
   className?: string;
 };
 
-export function BattleSheep({ className }: BattleSheepProps) {
+export default function BattleSheep({ className }: BattleSheepProps) {
   return (
     <article className={`${styles.container} ${className || ""}`}>
       <h1>Battle Sheep</h1>
@@ -27,22 +26,18 @@ export function BattleSheep({ className }: BattleSheepProps) {
 
       <Picture
         title="Main game screen with the game board and movement controls."
-        width={200}
-        imgWidth={100}
+        width="200"
+        imgWidth="100"
         frame="paper"
         href={gameImage.src}
       />
       <Picture
         title="The player selecting a new square onto which move their pieces."
-        width={200}
-        imgWidth={100}
+        width="200"
+        imgWidth="100"
         frame="board"
         href={movementImage.src}
       />
-
-      <TypeScript title="TypeScript" width={200} />
-      <Firebase title="Firebase" width={200} />
-      <Vite title="Vite" width={200} />
 
       <Link href="https://github.com/ronituohino/tiralabra">GitHub here</Link>
       <Link href="https://battle-sheep-game.web.app/">Livelink here</Link>

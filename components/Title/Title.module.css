@@ -1,21 +1,32 @@
 .container {
   padding: 1rem;
-  background-color: var(--bg-color);
-  box-shadow: 0 0 25px var(--bg-color), 0 0 29px var(--bg-color),
-    0 0 30px var(--bg-color);
-  border-radius: var(--border-radius);
-
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "title profile"
+    "description description";
+  place-items: center;
+  gap: 1rem;
 }
 
-.left > h1 {
-  margin-bottom: 1rem;
+@media (min-width: 43rem) {
+  .container {
+    grid-template-areas:
+      "title profile"
+      "description profile";
+  }
+}
+
+.title {
+  grid-area: title;
+}
+
+.description {
+  grid-area: description;
 }
 
 .profile {
-  min-width: 128px;
-  max-width: 256px;
+  grid-area: profile;
+  min-width: 6rem;
+  max-width: 14rem;
   border-radius: 50%;
 }
