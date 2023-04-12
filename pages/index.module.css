@@ -22,16 +22,27 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.projects > * {
-  width: 20rem;
+  display: grid;
+  max-width: inherit;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
+  place-items: center;
+  justify-content: center;
+  grid-gap: 1rem;
 }
 
 .links {
   display: flex;
   gap: 16px;
+}
+
+.links > a {
+  transition: transform 0.1s ease-in-out;
+}
+
+.links > a:hover:nth-child(odd) {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.links > a:hover:nth-child(even) {
+  transform: scale(1.1) rotate(-10deg);
 }

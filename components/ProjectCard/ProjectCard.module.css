@@ -3,15 +3,43 @@
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .card:hover .title {
   opacity: 1;
 }
 
+.card:hover .backdrop {
+  opacity: 0.6;
+}
+
 .title {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
-  font-size: 0.5rem;
+  font-size: 0.9rem;
+  fill: var(--text-color);
+}
+
+.backdrop {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+@media (min-width: 20rem) {
+  .title {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 43rem) {
+  .title {
+    font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .title {
+    font-size: 0.4rem;
+  }
 }

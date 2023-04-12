@@ -19,29 +19,29 @@ export default function Home() {
         <section className={styles.projects}>
           <ProjectCard
             projectName="Recom"
-            projectImageSrc="/pictures/recom-storepage.png"
-            projectImageWidth="140"
+            src="/pictures/recom-storepage.png"
+            imgWidth="140"
             frame="roundBox1"
             href="/projects/recom"
           />
           <ProjectCard
             projectName="Viitevarasto"
-            projectImageSrc="/pictures/viitevarasto-menu.png"
-            projectImageWidth="140"
+            src="/pictures/viitevarasto-menu.png"
+            imgWidth="140"
             frame="box2"
             href="/projects/viitevarasto"
           />
           <ProjectCard
             projectName="Battle Sheep"
-            projectImageSrc="/pictures/battlesheep-game.png"
-            projectImageWidth="120"
+            src="/pictures/battlesheep-game.png"
+            imgWidth="120"
             frame="box1"
             href="/projects/battle-sheep"
           />
           <ProjectCard
             projectName="GParticles"
-            projectImageSrc="/pictures/gparticles-pinkishpurple.jpg"
-            projectImageWidth="80"
+            src="/pictures/gparticles-pinkishpurple.jpg"
+            imgWidth="80"
             frame="phone"
             href="/projects/gparticles"
           />
