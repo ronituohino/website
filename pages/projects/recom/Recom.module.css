@@ -1,3 +1,13 @@
+.background {
+  background-image: radial-gradient(
+    var(--bg-dot-color) 20%,
+    var(--bg-color) 20%
+  );
+  background-position: 0 0;
+  background-size: 30px 30px;
+  min-height: 100vh;
+}
+
 .container {
   position: relative;
   padding: 1rem;

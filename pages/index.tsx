@@ -1,8 +1,10 @@
+import type { NextPageContext } from "next";
+
 import styles from "./index.module.css";
 
 import { Title } from "../components/Title";
 
-import { ProjectCard } from "../components/ProjectCard";
+import { LinkCard } from "../components/LinkCard";
 
 import { LinkIcon } from "../components/LinkIcon";
 import { Download } from "../components/SVG";
@@ -17,29 +19,29 @@ export default function Home() {
         <Title className={styles.title} />
 
         <section className={styles.projects}>
-          <ProjectCard
-            projectName="Recom"
+          <LinkCard
+            title="Recom"
             src="/pictures/recom-storepage.png"
             imgWidth="140"
             frame="roundBox1"
             href="/projects/recom"
           />
-          <ProjectCard
-            projectName="Viitevarasto"
+          <LinkCard
+            title="Viitevarasto"
             src="/pictures/viitevarasto-menu.png"
             imgWidth="140"
             frame="box2"
             href="/projects/viitevarasto"
           />
-          <ProjectCard
-            projectName="Battle Sheep"
+          <LinkCard
+            title="Battle Sheep"
             src="/pictures/battlesheep-game.png"
             imgWidth="120"
             frame="box1"
             href="/projects/battle-sheep"
           />
-          <ProjectCard
-            projectName="GParticles"
+          <LinkCard
+            title="GParticles"
             src="/pictures/gparticles-pinkishpurple.jpg"
             imgWidth="80"
             frame="phone"

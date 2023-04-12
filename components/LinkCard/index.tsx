@@ -2,10 +2,10 @@ import Link from "next/link";
 import type { FrameKeys } from "../Frame";
 import { frames } from "../Frame";
 
-import styles from "./ProjectCard.module.css";
+import styles from "./LinkCard.module.css";
 
-type ProjectCardProps = {
-  projectName: string;
+type LinkCardProps = {
+  title: string;
   href: string;
   frame: FrameKeys;
   src?: string;
@@ -18,8 +18,8 @@ type ProjectCardProps = {
   className?: string;
 };
 
-export function ProjectCard({
-  projectName,
+export function LinkCard({
+  title,
   href,
   frame,
   src,
@@ -28,7 +28,7 @@ export function ProjectCard({
   imgXOffset,
   imgYOffset,
   className,
-}: ProjectCardProps) {
+}: LinkCardProps) {
   const frameData = frames[frame];
   return (
     <svg
@@ -59,7 +59,7 @@ export function ProjectCard({
           textAnchor="middle"
           className={styles.title}
         >
-          {projectName}
+          {title}
         </text>
       </Link>
     </svg>
