@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Roni Tuohino</title>
         <meta name="description" content="Roni Tuohino portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Component {...pageProps} />
