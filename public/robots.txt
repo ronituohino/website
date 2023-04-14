@@ -1,0 +1,9 @@
+# ronituohino.fi/robots.txt
+# Tell Google not to crawl any URLs in the pictures folder,
+# because they won't be useful in Google Search results.
+
+# https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+# https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
+User-agent: googlebot
+Disallow: /pictures/
