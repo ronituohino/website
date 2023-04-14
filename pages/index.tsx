@@ -1,9 +1,7 @@
-import type { NextPageContext } from "next";
+import type { FrameKeys } from "../components/Frame";
 
-import styles from "./index.module.css";
-
+import Head from "next/head";
 import { Title } from "../components/Title";
-
 import { LinkCard } from "../components/LinkCard";
 
 import { LinkIcon } from "../components/LinkIcon";
@@ -12,69 +10,91 @@ import { GitHub } from "../components/SVG";
 import { LinkedIn } from "../components/SVG";
 import { Email } from "../components/SVG";
 
-export default function Home() {
+import styles from "./index.module.css";
+
+export type Project = {
+  id: string;
+  name: string;
+  urlName: string;
+  img: {
+    src: string;
+    width: string;
+    frame: FrameKeys;
+  };
+};
+
+type IndexProps = {
+  projects: [Project];
+};
+
+export default function Index({ projects }: IndexProps) {
   return (
-    <div className={styles.background}>
-      <main className={styles.container}>
-        <Title className={styles.title} />
+    <>
+      <Head>
+        <title>Roni Tuohino</title>
+        <meta name="description" content="Welcome to my portfolio!" />
+      </Head>
+      <div className={styles.background}>
+        <main className={styles.container}>
+          <Title className={styles.title} />
 
-        <section className={styles.projects}>
-          <LinkCard
-            title="Recom"
-            src="/pictures/recom-storepage.png"
-            imgWidth="140"
-            frame="roundBox1"
-            href="/projects/recom"
-          />
-          <LinkCard
-            title="Viitevarasto"
-            src="/pictures/viitevarasto-menu.png"
-            imgWidth="140"
-            frame="box2"
-            href="/projects/viitevarasto"
-          />
-          <LinkCard
-            title="Battle Sheep"
-            src="/pictures/battlesheep-game.png"
-            imgWidth="120"
-            frame="box1"
-            href="/projects/battle-sheep"
-          />
-          <LinkCard
-            title="GParticles"
-            src="/pictures/gparticles-pinkishpurple.jpg"
-            imgWidth="80"
-            frame="phone"
-            href="/projects/gparticles"
-          />
-        </section>
+          <li className={styles.projects}>
+            {projects.map(project => {
+              return (
+                <LinkCard
+                  key={project.id}
+                  title={project.name}
+                  src={`/pictures/projects/${project.img.src}`}
+                  imgWidth={project.img.width}
+                  frame={project.img.frame}
+                  href={`/projects/${project.urlName}`}
+                />
+              );
+            })}
+          </li>
 
-        <footer className={styles.links}>
-          <LinkIcon
-            icon={<Download title="" width="36" />}
-            href="/sample.jpg"
-            openInNewTab
-            rightText="CV"
-          />
+          <footer className={styles.links}>
+            <LinkIcon
+              icon={<Download title="" width="36" />}
+              href="/sample.jpg"
+              openInNewTab
+              rightText="CV"
+            />
 
-          <LinkIcon
-            href="https://github.com/ronituohino"
-            openInNewTab
-            icon={<GitHub title="" width="46" />}
-          />
+            <LinkIcon
+              href="https://github.com/ronituohino"
+              openInNewTab
+              icon={<GitHub title="" width="46" />}
+            />
 
-          <LinkIcon
-            href="https://www.linkedin.com/in/ronituohino/"
-            openInNewTab
-            icon={<LinkedIn title="" width="36" />}
-          />
+            <LinkIcon
+              href="https://www.linkedin.com/in/ronituohino/"
+              openInNewTab
+              icon={<LinkedIn title="" width="36" />}
+            />
 
-          <LinkIcon
-            href="mailto:tuohinoroni@gmail.com"
-            icon={<Email title="" width="42" />}
-          />
-        </footer>
-      </main>
-    </div>
+            <LinkIcon
+              href="mailto:tuohinoroni@gmail.com"
+              icon={<Email title="" width="42" />}
+            />
+          </footer>
+        </main>
+      </div>
+    </>
   );
+}
+
+// Run on build, loads projects from public folder at /public/api/projects.json
+import fsPromises from "fs/promises";
+import path from "path";
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), "public", "api", "projects.json");
+  const fileBuffer = await fsPromises.readFile(filePath);
+  const projects = JSON.parse(fileBuffer.toString());
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }
