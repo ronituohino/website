@@ -1,7 +1,8 @@
-import type { FrameKeys } from "../components/Frame";
+import type { Project } from "../utils/getProjects";
 
 import Head from "next/head";
-import { Title } from "../components/Title";
+import { Profile } from "../components/SVG";
+
 import { LinkCard } from "../components/LinkCard";
 
 import { LinkIcon } from "../components/LinkIcon";
@@ -11,17 +12,7 @@ import { LinkedIn } from "../components/SVG";
 import { Email } from "../components/SVG";
 
 import styles from "./index.module.css";
-
-export type Project = {
-  id: string;
-  name: string;
-  urlName: string;
-  img: {
-    src: string;
-    width: string;
-    frame: FrameKeys;
-  };
-};
+import { getProjects } from "../utils/getProjects";
 
 type IndexProps = {
   projects: [Project];
@@ -36,7 +27,18 @@ export default function Index({ projects }: IndexProps) {
       </Head>
       <div className={styles.background}>
         <main className={styles.container}>
-          <Title className={styles.title} />
+          <header className={styles.header}>
+            <h1 className={styles.title}>Hi, I&apos;m Roni.</h1>
+            <h2 className={styles.description}>
+              I&apos;m a developer, and I like tinkering and design.
+            </h2>
+
+            <Profile
+              title="Illustration of me: a guy with blonde hair and a gray turtleneck."
+              width="100%"
+              className={styles.profile}
+            />
+          </header>
 
           <li className={styles.projects}>
             {projects.map(project => {
@@ -84,17 +86,11 @@ export default function Index({ projects }: IndexProps) {
   );
 }
 
-// Run on build, loads projects from public folder at /public/api/projects.json
-import fsPromises from "fs/promises";
-import path from "path";
+// Run on build
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "public", "api", "projects.json");
-  const fileBuffer = await fsPromises.readFile(filePath);
-  const projects = JSON.parse(fileBuffer.toString());
-
   return {
     props: {
-      projects,
+      projects: await getProjects(),
     },
   };
 }

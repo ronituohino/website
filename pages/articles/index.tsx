@@ -1,18 +1,7 @@
-import type { FrameKeys } from "../../components/Frame";
+import { Article, getArticles } from "../../utils/getArticles";
 
 import Head from "next/head";
 import { LinkCard } from "../../components/LinkCard";
-
-export type Article = {
-  id: string;
-  name: string;
-  urlName: string;
-  img: {
-    src: string;
-    width: string;
-    frame: FrameKeys;
-  };
-};
 
 type ArticlesProps = {
   articles: [Article];
@@ -44,17 +33,11 @@ export default function Articles({ articles }: ArticlesProps) {
   );
 }
 
-// Run on build, loads articles from public folder at /public/api/articles.json
-import fsPromises from "fs/promises";
-import path from "path";
+// Run on build
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "public", "api", "articles.json");
-  const fileBuffer = await fsPromises.readFile(filePath);
-  const articles = JSON.parse(fileBuffer.toString());
-
   return {
     props: {
-      articles,
+      articles: await getArticles(),
     },
   };
 }

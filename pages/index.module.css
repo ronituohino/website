@@ -18,8 +18,37 @@
   gap: 2rem;
 }
 
+.header {
+  padding: 1rem;
+  display: grid;
+  grid-template-areas:
+    "title profile"
+    "description description";
+  place-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 20rem) {
+  .header {
+    grid-template-areas:
+      "title profile"
+      "description profile";
+  }
+}
+
 .title {
-  max-width: 26rem;
+  grid-area: title;
+}
+
+.description {
+  grid-area: description;
+}
+
+.profile {
+  grid-area: profile;
+  min-width: 6rem;
+  max-width: 14rem;
+  border-radius: 50%;
 }
 
 .projects {
