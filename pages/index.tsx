@@ -1,7 +1,6 @@
 import type { Project } from "../utils/getProjects";
 
 import Head from "next/head";
-import { Profile } from "../components/SVG";
 
 import { LinkCard } from "../components/LinkCard";
 
@@ -13,6 +12,7 @@ import { Email } from "../components/SVG";
 
 import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
+import { ThemeSwitch } from "../components/ThemeSwitch";
 
 type IndexProps = {
   projects: [Project];
@@ -34,6 +34,7 @@ export default function Index({ projects }: IndexProps) {
               I&apos;m a developer, and I like tinkering and design.
             </h2>
           </header>
+          <ThemeSwitch className={styles.themeSwitch} />
         </div>
 
         <div className={styles.projectsBackground}>

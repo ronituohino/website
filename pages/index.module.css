@@ -29,11 +29,17 @@
   }
 }
 
-.profile {
-  grid-area: profile;
-  min-width: 6rem;
-  max-width: 14rem;
-  border-radius: 50%;
+.themeSwitch {
+  position: absolute;
+  top: -6.8vw;
+  right: -6.8vw;
+  width: 15vw;
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(90deg);
+}
+
+[data-theme="light"] .themeSwitch {
+  transform: rotate(-12deg);
 }
 
 .projectsBackground::before {
