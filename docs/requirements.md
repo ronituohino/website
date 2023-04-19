@@ -7,32 +7,32 @@ Here are some items I want to include in the website:
 
 index page
 
-- [] Hero
+- [ ] Hero
   - Name
   - Title
   - Short description
   - Call to action? (Resume?)
-- [] Projects
+- [ ] Projects
   - Name
   - Short description
   - Image
   - Tech used
   - GitHub link
   - Live link
-- [] Contact (Freelancing & Consulting)
+- [ ] Contact (Freelancing & Consulting)
   - GitHub
   - LinkedIn
   - Email (mailto)
-- [] Link to article area
+- [ ] Link to article area
 
 article page
 
-- [] Browser
+- [ ] Browser
   - Article card
   - Article views
   - Article likes
-- [] Article page
-- [] Link to index page
+- [ ] Article page
+- [ ] Link to index page
 
 ## UI
 

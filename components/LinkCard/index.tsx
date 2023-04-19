@@ -36,7 +36,7 @@ export function LinkCard({
       className={`${styles.card} ${className || ""}`}
       viewBox={frameData[1].viewBox}
     >
-      <Link href={href}>
+      <Link href={href} className={styles.link}>
         {frameData[0]}
         <image
           href={src}

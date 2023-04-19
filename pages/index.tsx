@@ -25,21 +25,18 @@ export default function Index({ projects }: IndexProps) {
         <title>Roni Tuohino</title>
         <meta name="description" content="Welcome to my portfolio!" />
       </Head>
-      <div className={styles.background}>
-        <main className={styles.container}>
+
+      <main className={styles.container}>
+        <div className={styles.headerBackground}>
           <header className={styles.header}>
             <h1 className={styles.title}>Hi, I&apos;m Roni.</h1>
             <h2 className={styles.description}>
               I&apos;m a developer, and I like tinkering and design.
             </h2>
-
-            <Profile
-              title="Illustration of me: a guy with blonde hair and a gray turtleneck."
-              width="100%"
-              className={styles.profile}
-            />
           </header>
+        </div>
 
+        <div className={styles.projectsBackground}>
           <li className={styles.projects}>
             {projects.map(project => {
               return (
@@ -54,8 +51,10 @@ export default function Index({ projects }: IndexProps) {
               );
             })}
           </li>
+        </div>
 
-          <footer className={styles.links}>
+        <div className={styles.footerBackground}>
+          <footer className={styles.footer}>
             <LinkIcon
               icon={<Download title="" width="36" />}
               href="/sample.jpg"
@@ -80,8 +79,8 @@ export default function Index({ projects }: IndexProps) {
               icon={<Email title="" width="42" />}
             />
           </footer>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 }

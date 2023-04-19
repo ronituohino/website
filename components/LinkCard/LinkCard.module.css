@@ -6,11 +6,13 @@
   transform: scale(1.03);
 }
 
-.card:hover .title {
+.card:hover .title,
+.link:focus-visible .title {
   opacity: 1;
 }
 
-.card:hover .backdrop {
+.card:hover .backdrop,
+.link:focus-visible .backdrop {
   opacity: 0.6;
 }
 

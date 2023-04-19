@@ -1,47 +1,32 @@
-.background {
-  background-image: radial-gradient(
-    var(--bg-dot-color) 20%,
-    var(--bg-color) 20%
-  );
-  background-position: 0 0;
-  background-size: 30px 30px;
-  min-height: 100vh;
+.container {
+  overflow: hidden;
 }
 
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  max-width: 82rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.headerBackground {
+  background-color: var(--bg-color);
 }
 
 .header {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 82rem;
   padding: 1rem;
-  display: grid;
-  grid-template-areas:
-    "title profile"
-    "description description";
-  place-items: center;
-  gap: 1rem;
-}
-
-@media (min-width: 20rem) {
-  .header {
-    grid-template-areas:
-      "title profile"
-      "description profile";
-  }
 }
 
 .title {
-  grid-area: title;
+  margin-bottom: 1rem;
 }
 
 .description {
-  grid-area: description;
+  color: var(--text-side-color);
+}
+
+@media (min-width: 43rem) {
+  .header {
+    max-width: 43rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 .profile {
@@ -51,28 +36,66 @@
   border-radius: 50%;
 }
 
+.projectsBackground::before {
+  content: "";
+  height: 12px;
+  width: 100vw;
+  position: absolute;
+  background: url("/pictures/line.svg") repeat-x top;
+  background-size: auto 100%;
+  top: -6px;
+}
+
+.projectsBackground {
+  background-image: url("/pictures/pattern.svg");
+  background-position: 0 0;
+  background-color: var(--bg-color);
+  background-size: 200px 200px;
+  position: relative;
+}
+
 .projects {
+  margin: 0 auto;
+  max-width: 82rem;
+  padding: 1rem;
   display: grid;
-  max-width: inherit;
   grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
   place-items: center;
   justify-content: center;
   grid-gap: 1rem;
 }
 
-.links {
-  display: flex;
-  gap: 16px;
+.projectsBackground::after {
+  content: "";
+  height: 12px;
+  width: 100vw;
+  position: absolute;
+  background: url("/pictures/line.svg") repeat-x top;
+  background-size: auto 100%;
+  bottom: -6px;
 }
 
-.links > a {
+.footerBackground {
+  background-color: var(--bg-color);
+}
+
+.footer {
+  margin: 0 auto;
+  max-width: 82rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer > a {
   transition: transform 0.1s ease-in-out;
 }
 
-.links > a:hover:nth-child(odd) {
+.footer > a:hover:nth-child(odd) {
   transform: scale(1.1) rotate(10deg);
 }
 
-.links > a:hover:nth-child(even) {
+.footer > a:hover:nth-child(even) {
   transform: scale(1.1) rotate(-10deg);
 }
