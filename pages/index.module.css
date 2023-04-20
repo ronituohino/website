@@ -1,5 +1,6 @@
 .container {
   overflow: hidden;
+  position: relative;
 }
 
 .headerBackground {
@@ -17,6 +18,10 @@
   margin-bottom: 1rem;
 }
 
+.happy {
+  margin-inline-start: 1rem;
+}
+
 .description {
   color: var(--text-side-color);
 }
@@ -31,15 +36,9 @@
 
 .themeSwitch {
   position: absolute;
-  top: -6.8vw;
-  right: -6.8vw;
-  width: 15vw;
-  transition: transform 0.2s ease-in-out;
-  transform: rotate(90deg);
-}
-
-[data-theme="light"] .themeSwitch {
-  transform: rotate(-12deg);
+  top: -4.6rem;
+  right: -4.6rem;
+  width: 10rem;
 }
 
 .projectsBackground::before {

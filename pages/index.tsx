@@ -5,10 +5,7 @@ import Head from "next/head";
 import { LinkCard } from "../components/LinkCard";
 
 import { LinkIcon } from "../components/LinkIcon";
-import { Download } from "../components/SVG";
-import { GitHub } from "../components/SVG";
-import { LinkedIn } from "../components/SVG";
-import { Email } from "../components/SVG";
+import { Download, Happy, GitHub, LinkedIn, Email } from "../components/SVG";
 
 import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
@@ -29,7 +26,15 @@ export default function Index({ projects }: IndexProps) {
       <main className={styles.container}>
         <div className={styles.headerBackground}>
           <header className={styles.header}>
-            <h1 className={styles.title}>Hi, I&apos;m Roni.</h1>
+            <h1 className={styles.title}>
+              Hi, I&apos;m Roni.
+              <Happy
+                className={styles.happy}
+                width="1.5rem"
+                title="Hand drawn happy face."
+              />
+            </h1>
+
             <h2 className={styles.description}>
               I&apos;m a developer, and I like tinkering and design.
             </h2>

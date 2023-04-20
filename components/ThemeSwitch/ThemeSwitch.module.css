@@ -1,0 +1,12 @@
+.switch {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(90deg);
+}
+
+.tablet {
+  cursor: pointer;
+}
+
+[data-theme="light"] .switch {
+  transform: rotate(-12deg);
+}
