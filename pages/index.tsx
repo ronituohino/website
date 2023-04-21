@@ -61,22 +61,24 @@ export default function Index({ projects }: IndexProps) {
 
         <footer className={styles.footer}>
           <CV width="20rem" />
-          <LinkIcon
-            href="https://github.com/ronituohino"
-            openInNewTab
-            icon={<GitHub title="" width="60" />}
-          />
+          <div className={styles.links}>
+            <LinkIcon
+              href="https://github.com/ronituohino"
+              openInNewTab
+              icon={<GitHub title="" width="3rem" />}
+            />
 
-          <LinkIcon
-            href="https://www.linkedin.com/in/ronituohino/"
-            openInNewTab
-            icon={<LinkedIn title="" width="50" />}
-          />
+            <LinkIcon
+              href="https://www.linkedin.com/in/ronituohino/"
+              openInNewTab
+              icon={<LinkedIn title="" width="3rem" />}
+            />
 
-          <LinkIcon
-            href="mailto:tuohinoroni@gmail.com"
-            icon={<Email title="" width="50" />}
-          />
+            <LinkIcon
+              href="mailto:tuohinoroni@gmail.com"
+              icon={<Email title="" width="3rem" />}
+            />
+          </div>
         </footer>
       </main>
     </>

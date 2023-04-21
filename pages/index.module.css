@@ -77,18 +77,25 @@
   max-width: 82rem;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.links {
+  display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-.footer > a {
+.links > a {
   transition: transform 0.1s ease-in-out;
 }
 
-.footer > a:hover:nth-child(odd) {
+.links > a:hover:nth-child(odd) {
   transform: scale(1.1) rotate(10deg);
 }
 
-.footer > a:hover:nth-child(even) {
+.links > a:hover:nth-child(even) {
   transform: scale(1.1) rotate(-10deg);
 }
