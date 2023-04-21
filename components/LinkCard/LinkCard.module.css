@@ -19,29 +19,11 @@
 .title {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
-  font-size: 0.9rem;
+  font-size: 10px;
   fill: var(--white);
 }
 
 .backdrop {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
-}
-
-@media (min-width: 20rem) {
-  .title {
-    font-size: 0.6rem;
-  }
-}
-
-@media (min-width: 43rem) {
-  .title {
-    font-size: 0.5rem;
-  }
-}
-
-@media (min-width: 62rem) {
-  .title {
-    font-size: 0.4rem;
-  }
 }
