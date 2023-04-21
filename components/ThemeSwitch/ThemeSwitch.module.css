@@ -1,14 +1,11 @@
 .switch {
   transition: transform 0.2s ease-in-out, scale 0.1s ease-in-out;
-  transform: rotate(90deg);
-}
-
-.tablet {
+  transform: rotate(0deg);
   cursor: pointer;
 }
 
 [data-theme="light"] .switch {
-  transform: rotate(-12deg);
+  transform: rotate(-108deg);
 }
 
 .switch:hover {
