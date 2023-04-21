@@ -6,7 +6,10 @@ export type Project = {
   urlName: string;
   img: {
     src: string;
-    width: string;
+    width?: string;
+    height?: string;
+    xOffset?: string;
+    yOffset?: string;
     frame: FrameKeys;
   };
 };

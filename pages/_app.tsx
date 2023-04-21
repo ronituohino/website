@@ -1,8 +1,11 @@
+import type { AppProps } from "next/app";
 import "./globals.css";
 
 import Head from "next/head";
-import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
+import { ThemeSwitch } from "../components/ThemeSwitch";
+
+import styles from "./app.module.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <ThemeProvider>
+        <nav className={styles.navContainer}>
+          <ThemeSwitch className={styles.themeSwitch} />
+        </nav>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -35,8 +35,10 @@
     "urlName": "gparticles",
     "img": {
       "src": "gparticles-pinkishpurple.jpg",
-      "width": "80",
-      "frame": "phone"
+      "width": "120",
+      "frame": "roundBox2",
+      "yOffset": "-20",
+      "xOffset": "-7"
     }
   }
 ]

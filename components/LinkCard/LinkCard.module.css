@@ -20,7 +20,7 @@
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
   font-size: 0.9rem;
-  fill: var(--text-color);
+  fill: var(--white);
 }
 
 .backdrop {

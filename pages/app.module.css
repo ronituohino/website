@@ -1,0 +1,12 @@
+.navContainer {
+  overflow: hidden;
+  position: relative;
+  height: 5rem;
+}
+
+.themeSwitch {
+  position: absolute;
+  top: -4.6rem;
+  right: -4.6rem;
+  width: 10rem;
+}

@@ -23,6 +23,9 @@ export default function Articles({ articles }: ArticlesProps) {
               title={article.name}
               src={`/pictures/articles/${article.img.src}`}
               imgWidth={article.img.width}
+              imgHeight={article.img.height}
+              imgXOffset={article.img.xOffset}
+              imgYOffset={article.img.yOffset}
               frame={article.img.frame}
               href={`/articles/${article.urlName}`}
             />
