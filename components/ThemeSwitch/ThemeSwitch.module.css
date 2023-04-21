@@ -1,5 +1,5 @@
 .switch {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, scale 0.1s ease-in-out;
   transform: rotate(90deg);
 }
 
@@ -9,4 +9,8 @@
 
 [data-theme="light"] .switch {
   transform: rotate(-12deg);
+}
+
+.switch:hover {
+  scale: 1.05;
 }
