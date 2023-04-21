@@ -9,6 +9,7 @@ import { Download, Happy, GitHub, LinkedIn, Email } from "../components/SVG";
 
 import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
+import { CV } from "../components/CV";
 
 type IndexProps = {
   projects: [Project];
@@ -59,6 +60,7 @@ export default function Index({ projects }: IndexProps) {
         </div>
 
         <footer className={styles.footer}>
+          <CV width="20rem" />
           <LinkIcon
             href="https://github.com/ronituohino"
             openInNewTab
