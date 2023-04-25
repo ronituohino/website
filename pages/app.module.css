@@ -4,6 +4,11 @@
   height: 3.5rem;
 }
 
+.links > svg {
+  position: absolute;
+  width: 4rem;
+}
+
 .themeSwitch {
   position: absolute;
   top: -3rem;

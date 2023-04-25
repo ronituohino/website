@@ -1,13 +1,13 @@
 import Link from "next/link";
-import type { FrameKeys } from "../Frame";
-import { frames } from "../Frame";
+import type { PictureFrameKeys } from "../PictureFrame";
+import { pictureFrames } from "../PictureFrame";
 
 import styles from "./LinkCard.module.css";
 
 type LinkCardProps = {
   title: string;
   href: string;
-  frame: FrameKeys;
+  frame: PictureFrameKeys;
   src?: string;
   width?: string;
   height?: string;
@@ -29,7 +29,7 @@ export function LinkCard({
   imgYOffset,
   className,
 }: LinkCardProps) {
-  const frameData = frames[frame];
+  const frameData = pictureFrames[frame];
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

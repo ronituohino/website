@@ -1,11 +1,11 @@
 import type { IconProps } from "../SVG";
 import type { ReactNode } from "react";
 
-import type { FrameKeys } from "../Frame";
-import { frames } from "../Frame";
+import type { PictureFrameKeys } from "../PictureFrame";
+import { pictureFrames } from "../PictureFrame";
 
 type PictureProps = IconProps & {
-  frame: FrameKeys;
+  frame: PictureFrameKeys;
   children?: ReactNode;
   src?: string;
   imgWidth?: string;
@@ -27,7 +27,7 @@ export function Picture({
   imgXOffset,
   imgYOffset,
 }: PictureProps) {
-  const frameData = frames[frame];
+  const frameData = pictureFrames[frame];
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

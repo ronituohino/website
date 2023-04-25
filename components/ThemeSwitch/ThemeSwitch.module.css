@@ -6,7 +6,7 @@
 }
 
 [data-theme="light"] .switch {
-  transform: rotate(-108deg);
+  transform: rotate(-105deg);
 }
 
 .switch:focus-visible,

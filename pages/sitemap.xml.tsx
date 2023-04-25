@@ -3,12 +3,12 @@ import type { NextPageContext } from "next";
 const BASE_URL = "https://ronituohino.fi";
 
 import { getProjects } from "../utils/getProjects";
-import { getArticles } from "../utils/getArticles";
+import { getBlogs } from "../utils/getBlogs";
 
 // https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps
 async function generateSiteMap() {
   const projects = await getProjects();
-  const articles = await getArticles();
+  const blogs = await getBlogs();
 
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -28,12 +28,12 @@ async function generateSiteMap() {
        })
        .join("")}
 
-       <!--Articles pages-->
-       ${articles
-         .map(article => {
+       <!--Blogs pages-->
+       ${blogs
+         .map(blog => {
            return `
         <url>
-            <loc>${BASE_URL}/articles/${article.urlName}</loc>
+            <loc>${BASE_URL}/blogs/${blog.urlName}</loc>
         </url>
       `;
          })

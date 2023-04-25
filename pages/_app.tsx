@@ -7,6 +7,8 @@ import { ThemeSwitch } from "../components/ThemeSwitch";
 
 import styles from "./app.module.css";
 
+import { buttonFrames } from "../components/ButtonFrame";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -17,6 +19,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <ThemeProvider>
         <nav className={styles.navContainer}>
+          <li className={styles.links}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox={buttonFrames.large[1].viewBox}
+            >
+              {buttonFrames.large[0]}
+            </svg>
+          </li>
           <ThemeSwitch className={styles.themeSwitch} />
         </nav>
         <Component {...pageProps} />

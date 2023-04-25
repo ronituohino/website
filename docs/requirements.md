@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The purpose of this application is to serve as a portfolio and article website.
+The purpose of this application is to serve as a portfolio and blog website.
 Here are some items I want to include in the website:
 
 index page
@@ -23,15 +23,15 @@ index page
   - GitHub
   - LinkedIn
   - Email (mailto)
-- [ ] Link to article area
+- [ ] Link to blog area
 
-article page
+blog page
 
 - [ ] Browser
-  - Article card
-  - Article views
-  - Article likes
-- [ ] Article page
+  - Blog card
+  - Blog views
+  - Blog likes
+- [ ] Blog page
 - [ ] Link to index page
 
 ## UI
@@ -45,10 +45,10 @@ two separate things about me, or combine them into one.
 The projects section displays a list of my previous projects and some
 information about them.
 
-Article browser displays a grid of articless with thumbnails and titles.
-Articles are coded into the app itself, so I have full freedom to put any kind
-of content I wish on there. Articles can be liked by anonymous users. There is a
-views counter on each article.
+Blog browser displays a grid of blogs with thumbnails and titles. Blogs are
+coded into the app itself, so I have full freedom to put any kind of content I
+wish on there. Blogs can be liked by anonymous users. There is a views counter
+on each blog.
 
 More on [design](design.md).
 
@@ -58,7 +58,7 @@ More on [design](design.md).
   - [ ] about/landing section
   - [ ] projects section
   - [ ] contacts/consulting section
-- [ ] Articles
+- [ ] Blogs
   - [ ] browser
   - [ ] page
   - [ ] liking

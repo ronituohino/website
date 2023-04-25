@@ -1,7 +1,7 @@
 # website
 
-My main website with a portfolio and an article area for some stuff I want to
-write about 😄
+My main website with a portfolio and a blog area for some stuff I want to write
+about 😄
 
 ## Next.js
 
