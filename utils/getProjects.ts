@@ -12,6 +12,10 @@ export type Project = {
     yOffset?: string;
     frame: PictureFrameKeys;
   };
+  btn?: {
+    text: string;
+    href: string;
+  };
 };
 
 import fsPromises from "fs/promises";

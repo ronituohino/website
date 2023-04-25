@@ -1,13 +1,13 @@
 import Link from "next/link";
-import styles from "./CV.module.css";
+import styles from "./CVButton.module.css";
 
 import { buttonFrames } from "../ButtonFrame";
 
-type CVProps = {
+type CVButtonProps = {
   width?: string;
 };
 
-export function CV({ width }: CVProps) {
+export function CVButton({ width }: CVButtonProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

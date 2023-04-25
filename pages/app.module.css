@@ -6,7 +6,8 @@
 
 .links > svg {
   position: absolute;
-  width: 4rem;
+  width: 5rem;
+  top: -1rem;
 }
 
 .themeSwitch {
