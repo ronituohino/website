@@ -80,7 +80,7 @@
 .demoButton {
   position: absolute;
   width: 50%;
-  bottom: -15%;
+  bottom: -13%;
   left: 25%;
   transition: transform 0.1s ease-in-out;
   cursor: pointer;
@@ -88,7 +88,7 @@
 
 .demoButton:focus-visible,
 .demoButton:hover {
-  transform: scale(1.05);
+  transform: translate(0, 0.25rem);
 }
 
 .footer {

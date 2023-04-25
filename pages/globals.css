@@ -54,6 +54,11 @@ a {
   text-decoration: none;
 }
 
+ul,
+li {
+  list-style-type: none;
+}
+
 @font-face {
   font-family: "Short Stack";
   src: url("/fonts/ShortStack.eot");

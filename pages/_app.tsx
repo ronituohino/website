@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { ThemeSwitch } from "../components/ThemeSwitch";
 
 import styles from "./app.module.css";
+import { LinkButton } from "../components/LinkButton";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <ThemeProvider>
         <nav className={styles.navContainer}>
-          <li className={styles.links}></li>
+          <li className={styles.links}>
+            <LinkButton variant="large" text="Home" href="/" />
+            <LinkButton variant="large" text="Blog" href="/blogs" />
+          </li>
           <ThemeSwitch className={styles.themeSwitch} />
         </nav>
         <Component {...pageProps} />

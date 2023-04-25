@@ -19,7 +19,6 @@ type LinkCardProps = {
   imgXOffset?: string;
   imgYOffset?: string;
   className?: string;
-  children?: ReactNode;
 };
 
 export function LinkCard({
@@ -32,7 +31,6 @@ export function LinkCard({
   imgXOffset,
   imgYOffset,
   className,
-  children,
 }: LinkCardProps) {
   const frameData = pictureFrames[frame];
   return (
@@ -42,7 +40,6 @@ export function LinkCard({
         className={`${styles.card} ${className || ""}`}
         viewBox={frameData[1].viewBox}
       >
-        {children}
         <Link href={href} className={styles.link}>
           {frameData[0]}
           <image

@@ -18,7 +18,7 @@ export function CVButton({ width }: CVButtonProps) {
         {buttonFrames.extraLarge[0]}
         <text
           x="49%"
-          y="52%"
+          y="53%"
           dominantBaseline="middle"
           textAnchor="middle"
           fill="var(--svg-stroke-color)"

@@ -47,6 +47,7 @@ export default function Index({ projects }: IndexProps) {
                 <div key={project.id} className={styles.project}>
                   {project.btn && (
                     <LinkButton
+                      variant="large"
                       text={project.btn.text}
                       href={project.btn.href}
                       className={styles.demoButton}
@@ -69,7 +70,7 @@ export default function Index({ projects }: IndexProps) {
         </div>
 
         <footer className={styles.footer}>
-          <CVButton width="20rem" />
+          <CVButton width="15rem" />
           <div className={styles.links}>
             <LinkIcon
               href="https://github.com/ronituohino"
