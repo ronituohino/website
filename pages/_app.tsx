@@ -7,8 +7,21 @@ import { ThemeSwitch } from "../components/ThemeSwitch";
 
 import styles from "./app.module.css";
 import { LinkButton } from "../components/LinkButton";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const linkDisabled = (comparisonPath: string) => {
+    return comparisonPath === router.pathname;
+  };
+
+  const linkStyles = (disabled: boolean) => {
+    if (disabled) {
+      return styles.disabledLink;
+    }
+    return styles.link;
+  };
+
   return (
     <>
       <Head>
@@ -19,8 +32,20 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <nav className={styles.navContainer}>
           <li className={styles.links}>
-            <LinkButton variant="large" text="Home" href="/" />
-            <LinkButton variant="large" text="Blog" href="/blogs" />
+            <LinkButton
+              variant="large"
+              text="Home"
+              href="/"
+              disabled={linkDisabled("/")}
+              className={linkStyles(linkDisabled("/"))}
+            />
+            <LinkButton
+              variant="large"
+              text="Blog"
+              href="/blogs"
+              disabled={linkDisabled("/blogs")}
+              className={linkStyles(linkDisabled("/blogs"))}
+            />
           </li>
           <ThemeSwitch className={styles.themeSwitch} />
         </nav>

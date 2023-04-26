@@ -12,13 +12,13 @@
   top: -1.2rem;
 }
 
-.links > svg {
-  width: 6rem;
-  transition: transform 0.1s ease-in-out;
+.disabledButton {
+  position: relative;
+  top: 0.5rem;
 }
 
-.links > svg:hover {
-  transform: translate(0, 0.25rem);
+.links > svg {
+  width: 6rem;
 }
 
 .themeSwitch {

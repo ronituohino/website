@@ -27,7 +27,7 @@ export default function Index({ projects }: IndexProps) {
       <main>
         <header className={styles.header}>
           <h1 className={styles.title}>
-            Hi, I&apos;m Roni.
+            Hi, I&apos;m <span className={styles.roni}>Roni</span>.
             <Happy
               className={styles.happy}
               width="1.5rem"
@@ -36,7 +36,7 @@ export default function Index({ projects }: IndexProps) {
           </h1>
 
           <h2 className={styles.description}>
-            I&apos;m a developer, and I like tinkering and design.
+            I&apos;m a developer, and I like tinkering and design.{" "}
           </h2>
         </header>
 

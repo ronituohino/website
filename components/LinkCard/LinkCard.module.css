@@ -9,22 +9,22 @@
 
 .card:hover .title,
 .link:focus-visible .title {
-  opacity: 1;
+  opacity: 0;
 }
 
 .card:hover .backdrop,
 .link:focus-visible .backdrop {
-  opacity: 0.6;
+  opacity: 0;
 }
 
 .title {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.1s ease-in-out;
   font-size: 10px;
   fill: var(--white);
 }
 
 .backdrop {
-  opacity: 0;
+  opacity: 0.6;
   transition: opacity 0.1s ease-in-out;
 }

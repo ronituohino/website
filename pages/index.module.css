@@ -3,10 +3,26 @@
   margin: 0 auto;
   max-width: 82rem;
   padding: 1rem;
+  text-align: center;
 }
 
 .title {
   margin-bottom: 1rem;
+}
+
+.roni {
+  background-color: var(--text-color);
+  background-image: linear-gradient(135deg, #facaff, #05b1ff);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .roni {
+  background-image: linear-gradient(135deg, #8c00ff, #0026ff);
 }
 
 .happy {
@@ -65,11 +81,12 @@
   margin: 0 auto;
   max-width: 82rem;
   padding: 2rem;
+  padding-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
   place-items: center;
   justify-content: center;
-  grid-gap: 2rem;
+  grid-gap: 3rem;
 }
 
 .project {
@@ -82,13 +99,6 @@
   width: 50%;
   bottom: -13%;
   left: 25%;
-  transition: transform 0.1s ease-in-out;
-  cursor: pointer;
-}
-
-.demoButton:focus-visible,
-.demoButton:hover {
-  transform: translate(0, 0.25rem);
 }
 
 .footer {
