@@ -19,38 +19,49 @@ export function LinkButton({
   disabled,
   className,
 }: LinkButtonProps) {
-  const textElement = (
-    <text
-      x="50%"
-      y="66%"
-      dominantBaseline="middle"
-      textAnchor="middle"
-      fill="var(--svg-stroke-color)"
-      fontSize="32px"
-    >
-      {text}
-    </text>
+  const innerElement = (
+    <>
+      {buttonFrames[variant][0]}
+      <text
+        x="50%"
+        y="66%"
+        dominantBaseline="middle"
+        textAnchor="middle"
+        fill="var(--svg-stroke-color)"
+        fontSize="32px"
+      >
+        {text}
+      </text>
+    </>
   );
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={buttonFrames[variant][1].viewBox}
-      className={`${disabled ? styles.disabledButton : styles.enabledButton} ${
-        className || ""
-      }`}
-    >
+    <>
       {disabled ? (
-        <>
-          {buttonFrames[variant][0]}
-          {textElement}
-        </>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox={buttonFrames[variant][1].viewBox}
+          className={`${
+            disabled ? styles.disabledButton : styles.enabledButton
+          } ${className || ""}`}
+        >
+          {innerElement}
+        </svg>
       ) : (
-        <Link href={href}>
-          {buttonFrames[variant][0]}
-          {textElement}
+        <Link
+          href={href}
+          className={`${
+            disabled ? styles.disabledButton : styles.enabledButton
+          } ${className || ""}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={buttonFrames[variant][1].viewBox}
+          >
+            {innerElement}
+          </svg>
         </Link>
       )}
-    </svg>
+    </>
   );
 }

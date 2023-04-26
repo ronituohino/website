@@ -4,15 +4,15 @@ import styles from "./CVButton.module.css";
 import { buttonFrames } from "../ButtonFrame";
 
 type CVButtonProps = {
-  width?: string;
+  className?: string;
 };
 
-export function CVButton({ width }: CVButtonProps) {
+export function CVButton({ className }: CVButtonProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
       viewBox={buttonFrames.extraLarge[1].viewBox}
+      className={className}
     >
       <Link href="/cv.pdf" className={styles.button}>
         {buttonFrames.extraLarge[0]}

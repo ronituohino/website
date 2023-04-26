@@ -3,7 +3,10 @@
   margin: 0 auto;
   max-width: 82rem;
   padding: 1rem;
+  padding-top: 8rem;
+  padding-bottom: 12rem;
   text-align: center;
+  max-width: 43rem;
 }
 
 .title {
@@ -33,14 +36,6 @@
   color: var(--text-side-color);
 }
 
-@media (min-width: 43rem) {
-  .header {
-    max-width: 43rem;
-    padding-top: 8rem;
-    padding-bottom: 12rem;
-  }
-}
-
 .projectsBackground {
   background-image: url("/pictures/pattern-dark.svg");
   background-position: 0 0;
@@ -64,10 +59,12 @@
 }
 
 .projectsBackground::before {
+  z-index: 1;
   top: -6px;
 }
 
 .projectsBackground::after {
+  z-index: 1;
   bottom: -6px;
 }
 
@@ -80,7 +77,8 @@
 .projects {
   margin: 0 auto;
   max-width: 82rem;
-  padding: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
   padding-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
@@ -94,11 +92,26 @@
   position: relative;
 }
 
+.projectCard {
+  z-index: 1;
+}
+
 .demoButton {
   position: absolute;
   width: 50%;
-  bottom: -13%;
+  bottom: -15%;
   left: 25%;
+}
+
+.footerBackground {
+  background-image: url("/pictures/stripes-dark.svg");
+  background-position: 0 0;
+  background-size: 200px 200px;
+  position: relative;
+}
+
+[data-theme="light"] .footerBackground {
+  background-image: url("/pictures/stripes-light.svg");
 }
 
 .footer {
@@ -109,6 +122,10 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.cv {
+  width: 16rem;
 }
 
 .links {

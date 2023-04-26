@@ -1,5 +1,6 @@
 .card {
   transition: transform 0.1s ease-in-out;
+  display: block;
   position: relative;
 }
 
@@ -8,12 +9,12 @@
 }
 
 .card:hover .title,
-.link:focus-visible .title {
+.card:focus-visible .title {
   opacity: 0;
 }
 
 .card:hover .backdrop,
-.link:focus-visible .backdrop {
+.card:focus-visible .backdrop {
   opacity: 0;
 }
 

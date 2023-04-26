@@ -1,7 +1,7 @@
 .navContainer {
   overflow: hidden;
   position: relative;
-  height: 3.5rem;
+  height: 4.5rem;
 }
 
 .links {
@@ -17,7 +17,7 @@
   top: 0.5rem;
 }
 
-.links > svg {
+.links > * {
   width: 6rem;
 }
 

@@ -25,34 +25,28 @@ export default function Index({ projects }: IndexProps) {
       </Head>
 
       <main>
-        <header className={styles.header}>
-          <h1 className={styles.title}>
-            Hi, I&apos;m <span className={styles.roni}>Roni</span>.
-            <Happy
-              className={styles.happy}
-              width="1.5rem"
-              title="Hand drawn happy face."
-            />
-          </h1>
+        <div className={styles.headerBackground}>
+          <header className={styles.header}>
+            <h1 className={styles.title}>
+              Hi, I&apos;m <span className={styles.roni}>Roni</span>
+              <Happy
+                className={styles.happy}
+                width="1.5rem"
+                title="Hand drawn happy face."
+              />
+            </h1>
 
-          <h2 className={styles.description}>
-            I&apos;m a developer, and I like tinkering and design.{" "}
-          </h2>
-        </header>
+            <h2 className={styles.description}>
+              I&apos;m a developer and passionate about new tech and design.
+            </h2>
+          </header>
+        </div>
 
         <div className={styles.projectsBackground}>
           <li className={styles.projects}>
             {projects.map(project => {
               return (
                 <div key={project.id} className={styles.project}>
-                  {project.btn && (
-                    <LinkButton
-                      variant="large"
-                      text={project.btn.text}
-                      href={project.btn.href}
-                      className={styles.demoButton}
-                    />
-                  )}
                   <LinkCard
                     title={project.name}
                     src={`/pictures/projects/${project.img.src}`}
@@ -62,34 +56,45 @@ export default function Index({ projects }: IndexProps) {
                     imgYOffset={project.img.yOffset}
                     frame={project.img.frame}
                     href={`/projects/${project.urlName}`}
+                    className={styles.projectCard}
                   />
+                  {project.btn && (
+                    <LinkButton
+                      variant="large"
+                      text={project.btn.text}
+                      href={project.btn.href}
+                      className={styles.demoButton}
+                    />
+                  )}
                 </div>
               );
             })}
           </li>
         </div>
 
-        <footer className={styles.footer}>
-          <CVButton width="15rem" />
-          <div className={styles.links}>
-            <LinkIcon
-              href="https://github.com/ronituohino"
-              openInNewTab
-              icon={<GitHub title="" width="3rem" />}
-            />
+        <div className={styles.footerBackground}>
+          <footer className={styles.footer}>
+            <CVButton className={styles.cv} />
+            <div className={styles.links}>
+              <LinkIcon
+                href="https://github.com/ronituohino"
+                openInNewTab
+                icon={<GitHub title="" width="3rem" />}
+              />
 
-            <LinkIcon
-              href="https://www.linkedin.com/in/ronituohino/"
-              openInNewTab
-              icon={<LinkedIn title="" width="3rem" />}
-            />
+              <LinkIcon
+                href="https://www.linkedin.com/in/ronituohino/"
+                openInNewTab
+                icon={<LinkedIn title="" width="3rem" />}
+              />
 
-            <LinkIcon
-              href="mailto:tuohinoroni@gmail.com"
-              icon={<Email title="" width="3rem" />}
-            />
-          </div>
-        </footer>
+              <LinkIcon
+                href="mailto:tuohinoroni@gmail.com"
+                icon={<Email title="" width="3rem" />}
+              />
+            </div>
+          </footer>
+        </div>
       </main>
     </>
   );
