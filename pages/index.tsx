@@ -10,7 +10,7 @@ import { Happy, GitHub, LinkedIn, Email } from "../components/SVG";
 import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
 import { CVButton } from "../components/CVButton";
-import { LinkButton } from "../components/LinkButton";
+import { PeekingLinkButton } from "../components/PeekingLinkButton";
 
 type IndexProps = {
   projects: [Project];
@@ -59,7 +59,7 @@ export default function Index({ projects }: IndexProps) {
                     className={styles.projectCard}
                   />
                   {project.btn && (
-                    <LinkButton
+                    <PeekingLinkButton
                       variant="large"
                       text={project.btn.text}
                       href={project.btn.href}
@@ -72,8 +72,8 @@ export default function Index({ projects }: IndexProps) {
           </li>
         </div>
 
-        <div className={styles.footerBackground}>
-          <footer className={styles.footer}>
+        <div className={styles.contactBackground}>
+          <div className={styles.contact}>
             <CVButton className={styles.cv} />
             <div className={styles.links}>
               <LinkIcon
@@ -93,7 +93,7 @@ export default function Index({ projects }: IndexProps) {
                 icon={<Email title="" width="3rem" />}
               />
             </div>
-          </footer>
+          </div>
         </div>
       </main>
     </>

@@ -6,8 +6,9 @@ import { ThemeProvider } from "next-themes";
 import { ThemeSwitch } from "../components/ThemeSwitch";
 
 import styles from "./app.module.css";
-import { LinkButton } from "../components/LinkButton";
+import { PeekingLinkButton } from "../components/PeekingLinkButton";
 import { useRouter } from "next/router";
+import { InlineLink } from "../components/InlineLink";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -32,14 +33,14 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <nav className={styles.navContainer}>
           <li className={styles.links}>
-            <LinkButton
+            <PeekingLinkButton
               variant="large"
               text="Home"
               href="/"
               disabled={linkDisabled("/")}
               className={linkStyles(linkDisabled("/"))}
             />
-            <LinkButton
+            <PeekingLinkButton
               variant="large"
               text="Blog"
               href="/blogs"
@@ -50,6 +51,13 @@ export default function App({ Component, pageProps }: AppProps) {
           <ThemeSwitch className={styles.themeSwitch} />
         </nav>
         <Component {...pageProps} />
+        <div className={styles.footerBackground}>
+          <footer className={styles.footer}>
+            Made by{" "}
+            <InlineLink href="https://github.com/ronituohino">me</InlineLink>,
+            using <InlineLink href="https://nextjs.org/">next.js</InlineLink>.
+          </footer>
+        </div>
       </ThemeProvider>
     </>
   );

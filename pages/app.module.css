@@ -22,3 +22,31 @@
   right: -2.5rem;
   width: 6rem;
 }
+
+.footerBackground::before {
+  content: "";
+  height: 12px;
+  width: 100vw;
+  position: absolute;
+  background: url("/pictures/line-dark.svg") repeat-x top;
+  background-size: auto 100%;
+}
+
+.footerBackground::before {
+  z-index: 1;
+  top: -6px;
+}
+
+[data-theme="light"] .footerBackground::before {
+  background: url("/pictures/line-light.svg") repeat-x top;
+  background-size: auto 100%;
+}
+
+.footerBackground {
+  position: relative;
+}
+
+.footer {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}

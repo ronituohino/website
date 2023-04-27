@@ -8,6 +8,7 @@ type LinkIconProps = {
   openInNewTab?: boolean;
   icon: ReactNode;
   rightText?: string;
+  className?: string;
 };
 
 export function LinkIcon({
@@ -15,12 +16,13 @@ export function LinkIcon({
   openInNewTab,
   icon,
   rightText,
+  className,
 }: LinkIconProps) {
   return (
     <Link
       target={openInNewTab ? "_blank" : "_self"}
       href={href}
-      className={styles.link}
+      className={`${styles.link} ${className || ""}`}
     >
       {icon}
       {rightText}

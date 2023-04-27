@@ -102,18 +102,18 @@
   margin-bottom: -2rem; /* Good enough estimate */
 }
 
-.footerBackground {
+.contactBackground {
   background-image: url("/pictures/stripes-dark.svg");
   background-position: 0 0;
   background-size: 200px 200px;
   position: relative;
 }
 
-[data-theme="light"] .footerBackground {
+[data-theme="light"] .contactBackground {
   background-image: url("/pictures/stripes-light.svg");
 }
 
-.footer {
+.contact {
   margin: 0 auto;
   max-width: 82rem;
   padding: 1rem;
@@ -137,10 +137,12 @@
   transition: transform 0.1s ease-in-out;
 }
 
+.links > a:focus-visible:nth-child(odd),
 .links > a:hover:nth-child(odd) {
   transform: scale(1.1) rotate(10deg);
 }
 
+.links > a:focus-visible:nth-child(even),
 .links > a:hover:nth-child(even) {
   transform: scale(1.1) rotate(-10deg);
 }
