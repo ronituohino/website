@@ -12,11 +12,6 @@
   top: -1.2rem;
 }
 
-.disabledButton {
-  position: relative;
-  top: 0.5rem;
-}
-
 .links > * {
   width: 6rem;
 }
