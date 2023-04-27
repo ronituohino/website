@@ -1,29 +1,9 @@
-.background {
-  background-image: radial-gradient(
-    var(--bg-dot-color) 20%,
-    var(--bg-color) 20%
-  );
-  background-position: 0 0;
-  background-size: 30px 30px;
-  min-height: 100vh;
-}
-
 .container {
+  margin: 0 auto;
+  max-width: 82rem;
   position: relative;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-}
-
-.right > h3 {
-  margin-bottom: 1rem;
-}
-
-.description {
-  color: var(--text-side-color);
-}
-
-.links {
-  display: flex;
-  gap: 0.5rem;
 }

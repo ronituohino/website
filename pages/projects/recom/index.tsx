@@ -27,7 +27,7 @@ export default function Recom() {
         </div>
 
         <div className={styles.right}>
-          <h3>Recom - Online shopping platform</h3>
+          <h1>Recom - Online shopping platform</h1>
 
           <div className={styles.description}>
             Final project for a{" "}
