@@ -47,6 +47,6 @@
 }
 
 .footer {
-  font-size: 0.75rem;
-  padding: 0.5rem;
+  padding: 1rem;
+  padding-top: calc(1rem + 3px);
 }

@@ -21,7 +21,10 @@ export default function Index({ projects }: IndexProps) {
     <>
       <Head>
         <title>Roni Tuohino</title>
-        <meta name="description" content="Welcome to my portfolio!" />
+        <meta
+          name="description"
+          content="Hey, need a web developer? Check me out, or not ¯\_(ツ)_/¯"
+        />
       </Head>
 
       <main>
@@ -37,7 +40,8 @@ export default function Index({ projects }: IndexProps) {
             </h1>
 
             <h2 className={styles.description}>
-              I&apos;m a developer and passionate about new tech and design.
+              I&apos;m a developer and passionate about web technologies and
+              design.
             </h2>
           </header>
         </div>

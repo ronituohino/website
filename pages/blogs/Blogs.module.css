@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  max-width: 43rem;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+}
+
+.temp {
+  color: var(--text-side-color);
+  padding-top: 30vh;
+  padding-bottom: 49vh;
+}
