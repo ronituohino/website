@@ -17,6 +17,8 @@
   --svg-bg-color: var(--gray);
   --svg-stroke-color: var(--white);
 
+  --outline-color: #0cf104;
+
   /* Breakpoints
   82rem < desktop
   62rem < smaller desktop
@@ -40,6 +42,8 @@
 
   --svg-bg-color: var(--white);
   --svg-stroke-color: var(--black);
+
+  --outline-color: #009919;
 }
 
 * {
@@ -47,6 +51,10 @@
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+*:focus-visible {
+  outline: 8px dashed var(--outline-color);
 }
 
 a {
