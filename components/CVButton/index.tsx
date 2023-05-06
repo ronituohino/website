@@ -14,7 +14,7 @@ export function CVButton({ className }: CVButtonProps) {
       viewBox={buttonFrames.extraLarge[1].viewBox}
       className={className}
     >
-      <Link href="/cv.pdf" className={styles.button}>
+      <Link href="/Roni_Tuohino_CV.pdf" className={styles.button}>
         {buttonFrames.extraLarge[0]}
         <text
           x="49%"

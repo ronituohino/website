@@ -7,7 +7,7 @@
 }
 
 .disabledButton {
-  top: 0.25rem;
+  top: 0.2rem;
   cursor: default;
 }
 
@@ -17,7 +17,7 @@
 
 .enabledButton:focus-visible,
 .enabledButton:hover {
-  transform: translate(0, 0.25rem);
+  transform: translate(0, 0.2rem);
 }
 
 .disabledButton > path {
