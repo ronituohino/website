@@ -60,11 +60,15 @@
 .projectsBackground::before {
   z-index: 1;
   top: -6px;
+  width: 200vw;
+  left: -100vw;
 }
 
 .projectsBackground::after {
   z-index: 1;
   bottom: -6px;
+  width: 150vw;
+  left: -50vw;
 }
 
 [data-theme="light"] .projectsBackground::before,
@@ -77,8 +81,13 @@
   margin: 0 auto;
   max-width: 82rem;
   padding: 0.5rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
+  text-align: center;
+}
+
+.projectsList {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
   place-items: center;
@@ -100,6 +109,10 @@
   left: 25%;
   translate: 0 -52.5%;
   margin-bottom: -2rem; /* Good enough estimate */
+}
+
+.coldStart {
+  color: var(--text-side-color);
 }
 
 .contactBackground {
@@ -124,7 +137,7 @@
 }
 
 .cv {
-  width: 16rem;
+  width: 14rem;
 }
 
 .links {
@@ -135,6 +148,7 @@
 
 .links > a {
   transition: transform 0.1s ease-in-out;
+  width: 3rem;
 }
 
 .links > a:focus-visible:nth-child(odd),

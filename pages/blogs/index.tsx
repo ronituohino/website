@@ -22,7 +22,7 @@ export default function Blogs({ blogs }: BlogsProps) {
       <article className={styles.container}>
         <h1 className={styles.title}>Blogs by Roni</h1>
         <h2 className={styles.temp}>
-          Yeah I haven&apos;t written much yet lol...
+          Yeah I haven&apos;t written much yet lol
         </h2>
         <li>
           {blogs.map(blog => {
