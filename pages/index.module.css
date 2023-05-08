@@ -13,7 +13,7 @@
   font-size: 1.5rem;
   margin: 0 auto;
   padding: 1rem;
-  padding-top: 6rem;
+  padding-top: 8rem;
   padding-bottom: 12rem;
   text-align: center;
   max-width: 43rem;
@@ -44,10 +44,12 @@
 
 .description {
   color: var(--text-side-color);
+  margin-bottom: 1rem;
 }
 
 .cv {
   width: 14rem;
+  margin-bottom: 0.5rem;
 }
 
 .links {

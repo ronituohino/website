@@ -31,11 +31,12 @@
   font-family: var(--main-font);
   color: var(--text-color);
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 /* Light theme settings */
 [data-theme="light"] {
-  --bg-color: #f5f5f5;
+  --bg-color: var(--white);
 
   --text-color: var(--black);
   --text-side-color: #464646;

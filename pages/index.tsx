@@ -11,6 +11,7 @@ import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
 import { CVButton } from "../components/CVButton";
 import { PeekingLinkButton } from "../components/PeekingLinkButton";
+import Link from "next/link";
 
 type IndexProps = {
   projects: [Project];
@@ -31,7 +32,13 @@ export default function Index({ projects }: IndexProps) {
         <div className={styles.headerBackground}>
           <header className={styles.header}>
             <h1 className={styles.title}>
-              Hi, I&apos;m <span className={styles.roni}>Roni</span>
+              Hi, I&apos;m{" "}
+              <Link
+                href="https://github.com/ronituohino"
+                className={styles.roni}
+              >
+                Roni
+              </Link>
               <Happy
                 className={styles.happy}
                 width="1.5rem"
@@ -40,8 +47,7 @@ export default function Index({ projects }: IndexProps) {
             </h1>
 
             <h2 className={styles.description}>
-              I&apos;m a developer and passionate about new technologies and
-              design.
+              I&apos;m passionate about technology and design!
             </h2>
 
             <CVButton className={styles.cv} />
@@ -68,10 +74,10 @@ export default function Index({ projects }: IndexProps) {
 
         <div className={styles.projectsBackground}>
           <section className={styles.projects}>
-            <h2>Here are some projects that I&apos;ve worked on</h2>
-            <h4 className={styles.coldStart}>
-              *Some of the demos take a while to load due to a cold start
-            </h4>
+            <h2>Some projects that I&apos;ve worked on</h2>
+            <h5 className={styles.coldStart}>
+              *Demos may have slow load times due to a cold start
+            </h5>
             <li className={styles.projectsList}>
               {projects.map(project => {
                 return (

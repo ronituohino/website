@@ -4,10 +4,11 @@
   position: relative;
   padding: 1rem;
   text-align: center;
+  padding-top: 6rem;
+  padding-bottom: calc(100vh - 10rem);
 }
 
 .temp {
   color: var(--text-side-color);
-  padding-top: 30vh;
-  padding-bottom: 49vh;
+  margin-top: 2rem;
 }
