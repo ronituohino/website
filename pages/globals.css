@@ -7,14 +7,14 @@
   --white: #f5f5f5;
   --black: #0a0a0a;
   --gray: #3a3a3a;
-  --bg-color: var(--gray);
+  --bg-color: var(--black);
 
   --text-color: var(--white);
-  --text-side-color: #b9b9b9;
+  --text-side-color: #cacaca;
   --link-color: #c15fca;
   --link-hover-color: #b448af;
 
-  --svg-bg-color: var(--gray);
+  --svg-bg-color: var(--black);
   --svg-stroke-color: var(--white);
 
   --outline-color: #0cf104;

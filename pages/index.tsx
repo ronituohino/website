@@ -43,6 +43,26 @@ export default function Index({ projects }: IndexProps) {
               I&apos;m a developer and passionate about new technologies and
               design.
             </h2>
+
+            <CVButton className={styles.cv} />
+            <div className={styles.links}>
+              <LinkIcon
+                href="https://github.com/ronituohino"
+                openInNewTab
+                icon={<GitHub title="" />}
+              />
+
+              <LinkIcon
+                href="https://www.linkedin.com/in/ronituohino/"
+                openInNewTab
+                icon={<LinkedIn title="" />}
+              />
+
+              <LinkIcon
+                href="mailto:tuohinoroni@gmail.com"
+                icon={<Email title="" />}
+              />
+            </div>
           </header>
         </div>
 
@@ -79,31 +99,6 @@ export default function Index({ projects }: IndexProps) {
                 );
               })}
             </li>
-          </section>
-        </div>
-
-        <div className={styles.contactBackground}>
-          <section className={styles.contact}>
-            <h2>Need something done on the web? Shoot me a message!</h2>
-            <CVButton className={styles.cv} />
-            <div className={styles.links}>
-              <LinkIcon
-                href="https://github.com/ronituohino"
-                openInNewTab
-                icon={<GitHub title="" />}
-              />
-
-              <LinkIcon
-                href="https://www.linkedin.com/in/ronituohino/"
-                openInNewTab
-                icon={<LinkedIn title="" />}
-              />
-
-              <LinkIcon
-                href="mailto:tuohinoroni@gmail.com"
-                icon={<Email title="" />}
-              />
-            </div>
           </section>
         </div>
       </main>
