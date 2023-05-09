@@ -40,6 +40,7 @@
 
 .happy {
   margin-inline-start: 1rem;
+  width: 1.5rem;
 }
 
 .description {
@@ -73,7 +74,7 @@
   transform: scale(1.1) rotate(-10deg);
 }
 
-.projectsArrowContainer {
+.projectsArrow {
   font-size: 1rem;
   display: block;
   position: relative;
@@ -82,9 +83,6 @@
   transform: translate(-100%, 0%);
   width: 5rem;
   rotate: -15deg;
-}
-
-.projectsArrow {
   opacity: 0;
   animation: appear 1s forwards 3s;
 }

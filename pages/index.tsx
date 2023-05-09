@@ -39,11 +39,7 @@ export default function Index({ projects }: IndexProps) {
               >
                 Roni
               </Link>
-              <Happy
-                className={styles.happy}
-                width="1.5rem"
-                title="Hand drawn happy face."
-              />
+              <Happy className={styles.happy} title="Hand drawn happy face." />
             </h1>
 
             <h2 className={styles.description}>
@@ -54,13 +50,11 @@ export default function Index({ projects }: IndexProps) {
             <div className={styles.links}>
               <LinkIcon
                 href="https://github.com/ronituohino"
-                openInNewTab
                 icon={<GitHub title="" />}
               />
 
               <LinkIcon
                 href="https://www.linkedin.com/in/ronituohino/"
-                openInNewTab
                 icon={<LinkedIn title="" />}
               />
 
@@ -69,23 +63,19 @@ export default function Index({ projects }: IndexProps) {
                 icon={<Email title="" />}
               />
             </div>
-            <Link href="/#projects" className={styles.projectsArrowContainer}>
-              <div className={styles.projectsArrow}>
-                Check out my projects!
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 57.9 138.5"
-                >
-                  <path
-                    fill="none"
-                    stroke="var(--svg-stroke-color)"
-                    stroke-linecap="round"
-                    stroke-width="5"
-                    d="M46.5 4c5.2 45.5-2.6 74-19.8 108.4v0M3.9 98.7c15.5 17 6.1 34.5 11.3 35.7 3.8.9 16-15 38.7-19.1v0"
-                  />
-                </svg>
-              </div>
-            </Link>
+
+            <div className={styles.projectsArrow}>
+              Check out my projects!
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.9 138.5">
+                <path
+                  fill="none"
+                  stroke="var(--svg-stroke-color)"
+                  strokeLinecap="round"
+                  strokeWidth="5"
+                  d="M46.5 4c5.2 45.5-2.6 74-19.8 108.4v0M3.9 98.7c15.5 17 6.1 34.5 11.3 35.7 3.8.9 16-15 38.7-19.1v0"
+                />
+              </svg>
+            </div>
           </header>
         </div>
 
@@ -116,6 +106,7 @@ export default function Index({ projects }: IndexProps) {
                         text={project.btn.text}
                         href={project.btn.href}
                         className={styles.demoButton}
+                        openInNewTab
                       />
                     )}
                   </div>

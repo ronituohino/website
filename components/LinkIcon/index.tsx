@@ -5,22 +5,15 @@ import styles from "./LinkIcon.module.css";
 
 type LinkIconProps = {
   href: string;
-  openInNewTab?: boolean;
   icon: ReactNode;
   rightText?: string;
   className?: string;
 };
 
-export function LinkIcon({
-  href,
-  openInNewTab,
-  icon,
-  rightText,
-  className,
-}: LinkIconProps) {
+export function LinkIcon({ href, icon, rightText, className }: LinkIconProps) {
   return (
     <Link
-      target={openInNewTab ? "_blank" : "_self"}
+      target="_blank"
       href={href}
       className={`${styles.link} ${className || ""}`}
     >

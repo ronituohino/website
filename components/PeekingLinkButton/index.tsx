@@ -10,6 +10,7 @@ type PeekingLinkButtonProps = {
   variant: ButtonFrameKeys;
   disabled?: boolean;
   className?: string;
+  openInNewTab?: boolean;
 };
 
 export function PeekingLinkButton({
@@ -18,6 +19,7 @@ export function PeekingLinkButton({
   variant,
   disabled,
   className,
+  openInNewTab,
 }: PeekingLinkButtonProps) {
   const innerElement = (
     <>
@@ -50,6 +52,7 @@ export function PeekingLinkButton({
       ) : (
         <Link
           href={href}
+          target={openInNewTab ? "_blank" : "_self"}
           className={`${
             disabled ? styles.disabledButton : styles.enabledButton
           } ${className || ""}`}

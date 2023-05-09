@@ -35,19 +35,20 @@ export default function Recom() {
                 className={styles.demoLink}
               />
             </li>
-          </header>
 
-          <p className={styles.description}>
-            This is my final project for a{" "}
-            <InlineLink href="https://fullstackopen.com/en/">
-              Fullstack web development course
-            </InlineLink>
-            , and my first major web project. It consists of a store app, a
-            backend server, a database, and an admin app. The user can add items
-            from the store into their cart, and go through a full checkout
-            process. The store can be managed through the admin application. The
-            entire app (and dev environment) is containerized.
-          </p>
+            <p>
+              This is my final project for a{" "}
+              <InlineLink href="https://fullstackopen.com/en/">
+                Fullstack web development course
+              </InlineLink>
+              , and my first major web project. It consists of a store app, a
+              backend server, a database, and an admin app. The user can add
+              items from the store into their cart, and go through a full
+              checkout process. The store can be managed through the admin
+              application. The entire app (and dev environment) is
+              containerized.
+            </p>
+          </header>
 
           <div className={styles.pics}>
             <Picture
@@ -96,12 +97,14 @@ export default function Recom() {
             <div className={styles.adminPics}>
               <Picture
                 title="Admin tools with product modification modal."
+                width="350"
                 imgWidth="190"
                 frame="roundBox1"
                 src="/pictures/projects/recom/adminProducts.png"
               />
               <Picture
                 title="Admin tools with cateogry modification modal."
+                width="400"
                 imgWidth="130"
                 imgXOffset="-20"
                 imgYOffset="-20"

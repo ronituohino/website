@@ -18,7 +18,11 @@ export function LinkButton({
   className,
 }: LinkButtonProps) {
   return (
-    <Link href={href} className={`${styles.linkButton} ${className || ""}`}>
+    <Link
+      href={href}
+      className={`${styles.linkButton} ${className || ""}`}
+      target="_blank"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox={buttonFrames[variant][1].viewBox}

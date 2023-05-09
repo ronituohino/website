@@ -4,6 +4,7 @@
   transition: color 0.1s ease-in-out;
 }
 
-.inlineLink:hover {
+.inlineLink:hover,
+.inlineLink:focus-visible {
   color: var(--link-hover-color);
 }

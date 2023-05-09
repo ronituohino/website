@@ -33,7 +33,11 @@ export function Picture({
 }: PictureProps) {
   const frameData = pictureFrames[frame];
   return (
-    <Link className={`${styles.link} ${className || ""}`} href={src}>
+    <Link
+      className={`${styles.link} ${className || ""}`}
+      target="_blank"
+      href={src}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}

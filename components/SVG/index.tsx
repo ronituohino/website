@@ -11,6 +11,7 @@ export { Download } from "./Download";
 export { Email } from "./Email";
 export { Firebase } from "./Firebase";
 export { GitHub } from "./GitHub";
+export { GooglePlay } from "./GooglePlay";
 export { GraphQL } from "./GraphQL";
 export { Happy } from "./Happy";
 export { LinkedIn } from "./LinkedIn";
