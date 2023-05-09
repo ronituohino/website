@@ -1,4 +1,6 @@
 # Testing
 
-This application does not have any tests yet, but they can be made using Jest &
-Cypress / Playwright.
+This application contains automated tests with Playwright. Test config is
+[here](../playwright.config.ts).  
+Tests are executed in multiple browsers and devices, specified in the config
+file.

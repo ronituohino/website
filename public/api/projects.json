@@ -4,7 +4,7 @@
     "name": "Recom",
     "urlName": "recom",
     "img": {
-      "src": "recom-storepage.png",
+      "src": "recom/storepage.png",
       "width": "140",
       "frame": "roundBox1"
     },
@@ -18,7 +18,7 @@
     "name": "Viitevarasto",
     "urlName": "viitevarasto",
     "img": {
-      "src": "viitevarasto-menu.png",
+      "src": "viitevarasto/menu.png",
       "width": "140",
       "frame": "box2"
     },
@@ -32,7 +32,7 @@
     "name": "Battle Sheep",
     "urlName": "battle-sheep",
     "img": {
-      "src": "battlesheep-game.png",
+      "src": "battlesheep/game.png",
       "width": "120",
       "frame": "box1"
     },
@@ -46,7 +46,7 @@
     "name": "GParticles",
     "urlName": "gparticles",
     "img": {
-      "src": "gparticles-pinkishpurple.jpg",
+      "src": "gparticles/pinkishpurple-cropped.jpg",
       "width": "120",
       "frame": "roundBox2",
       "yOffset": "-20",

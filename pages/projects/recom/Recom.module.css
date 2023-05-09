@@ -1,11 +1,78 @@
+.background::before {
+  content: "";
+  position: absolute;
+  rotate: 180deg;
+  width: 100%;
+  height: 100%;
+  background-image: none;
+  background-repeat: repeat-y;
+  background-size: 400px;
+  background-position: -40px;
+}
+
+.background {
+  background-image: none;
+  background-repeat: repeat-y;
+  background-size: 400px;
+  background-position: -40px;
+}
+
+@media screen and (min-width: 62rem) {
+  .background::before,
+  .background {
+    background-image: url("/pictures/list-lines-dark.svg");
+  }
+
+  [data-theme="light"] .background::before,
+  [data-theme="light"] .background {
+    background-image: url("/pictures/list-lines-light.svg");
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 43rem;
   position: relative;
   padding: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.demoLink {
+  width: 5rem;
+}
+
+.pics {
+  display: flex;
+  gap: 1rem;
+}
+
+.storeSection > h3,
+.adminSection > h3,
+.backendSection > h3,
+.conclusionSection > h3 {
+  margin-bottom: 0.5rem;
+}
+
+.adminSection > p {
+  margin-bottom: 2rem;
+}
+
+.adminPics {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .links {
@@ -22,13 +89,4 @@
 .githubLink:hover,
 .githubLink:focus-visible {
   transform: scale(1.05);
-}
-
-.demoLink {
-  width: 5rem;
-}
-
-.firstPictures {
-  display: flex;
-  gap: 1rem;
 }

@@ -47,7 +47,7 @@ export default function Index({ projects }: IndexProps) {
             </h1>
 
             <h2 className={styles.description}>
-              I&apos;m passionate about technology and design!
+              I&apos;m passionate about technology and design.
             </h2>
 
             <CVButton className={styles.cv} />
@@ -71,7 +71,7 @@ export default function Index({ projects }: IndexProps) {
             </div>
             <Link href="/#projects" className={styles.projectsArrowContainer}>
               <div className={styles.projectsArrow}>
-                Check out my projects
+                Check out my projects!
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 57.9 138.5"
