@@ -81,13 +81,13 @@ export default function Index({ projects }: IndexProps) {
         <div className={styles.projectsBackground}>
           <section id="projects" className={styles.projects}>
             <h2>Cool stuff that I&apos;ve worked on</h2>
-            <h5 className={styles.coldStart}>
+            <h3 className={styles.coldStart}>
               *Demos may have slow load times due to cold starts
-            </h5>
-            <li className={styles.projectsList}>
+            </h3>
+            <ul className={styles.projectsList}>
               {projects.map(project => {
                 return (
-                  <div key={project.id} className={styles.project}>
+                  <li key={project.id} className={styles.project}>
                     <LinkCard
                       title={project.name}
                       src={`/pictures/projects/${project.img.src}`}
@@ -108,10 +108,10 @@ export default function Index({ projects }: IndexProps) {
                         openInNewTab
                       />
                     )}
-                  </div>
+                  </li>
                 );
               })}
-            </li>
+            </ul>
           </section>
         </div>
       </main>

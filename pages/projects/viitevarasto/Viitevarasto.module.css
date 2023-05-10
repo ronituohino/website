@@ -76,7 +76,7 @@
   gap: 1rem;
 }
 
-.techAndDesignSection > h3,
-.creditsSection > h3 {
+.techAndDesignSection > h2,
+.creditsSection > h2 {
   margin-bottom: 0.5rem;
 }

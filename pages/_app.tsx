@@ -32,22 +32,27 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <ThemeProvider>
         <nav className={styles.navContainer}>
-          <li className={styles.links}>
-            <PeekingLinkButton
-              variant="large"
-              text="Home"
-              href="/"
-              disabled={linkDisabled("/")}
-              className={linkStyles(linkDisabled("/"))}
-            />
-            <PeekingLinkButton
-              variant="large"
-              text="Blog"
-              href="/blogs"
-              disabled={linkDisabled("/blogs")}
-              className={linkStyles(linkDisabled("/blogs"))}
-            />
-          </li>
+          <ul className={styles.links}>
+            <li>
+              <PeekingLinkButton
+                variant="large"
+                text="Home"
+                href="/"
+                disabled={linkDisabled("/")}
+                className={linkStyles(linkDisabled("/"))}
+              />
+            </li>
+            <li>
+              <PeekingLinkButton
+                variant="large"
+                text="Blog"
+                href="/blogs"
+                disabled={linkDisabled("/blogs")}
+                className={linkStyles(linkDisabled("/blogs"))}
+              />
+            </li>
+          </ul>
+
           <ThemeSwitch className={styles.themeSwitch} />
         </nav>
         <Component {...pageProps} />

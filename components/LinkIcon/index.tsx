@@ -6,19 +6,19 @@ import styles from "./LinkIcon.module.css";
 type LinkIconProps = {
   href: string;
   icon: ReactNode;
-  rightText?: string;
+  label: string;
   className?: string;
 };
 
-export function LinkIcon({ href, icon, rightText, className }: LinkIconProps) {
+export function LinkIcon({ href, icon, label, className }: LinkIconProps) {
   return (
     <Link
       target="_blank"
       href={href}
+      aria-label={label}
       className={`${styles.link} ${className || ""}`}
     >
       {icon}
-      {rightText}
     </Link>
   );
 }

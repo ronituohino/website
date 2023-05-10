@@ -20,6 +20,7 @@ export function LinkButton({
   return (
     <Link
       href={href}
+      aria-label={text}
       className={`${styles.linkButton} ${className || ""}`}
       target="_blank"
     >

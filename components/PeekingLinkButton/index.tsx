@@ -53,6 +53,7 @@ export function PeekingLinkButton({
         <Link
           href={href}
           target={openInNewTab ? "_blank" : "_self"}
+          aria-label={text}
           className={`${
             disabled ? styles.disabledButton : styles.enabledButton
           } ${className || ""}`}

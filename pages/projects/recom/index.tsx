@@ -14,7 +14,7 @@ export default function Recom() {
         <title>Recom - Roni Tuohino</title>
         <meta
           name="description"
-          content="Project overview of Recom, an online shopping platform I built."
+          content="Project overview of Recom, an online shopping platform."
         />
       </Head>
       <div className={styles.background}>
@@ -22,19 +22,24 @@ export default function Recom() {
           <header className={styles.header}>
             <h1>Recom, &quot;React e-commerce&quot;</h1>
 
-            <li className={styles.links}>
-              <LinkIcon
-                href="https://github.com/ronituohino/recom"
-                icon={<GitHub title="" />}
-                className={styles.githubLink}
-              />
-              <LinkButton
-                href="https://recom-pnxd5duksa-lz.a.run.app"
-                text="Demo"
-                variant="large"
-                className={styles.demoLink}
-              />
-            </li>
+            <ul className={styles.links}>
+              <li>
+                <LinkIcon
+                  label="Project GitHub"
+                  href="https://github.com/ronituohino/recom"
+                  icon={<GitHub title="" />}
+                  className={styles.githubLink}
+                />
+              </li>
+              <li>
+                <LinkButton
+                  href="https://recom-pnxd5duksa-lz.a.run.app"
+                  text="Demo"
+                  variant="large"
+                  className={styles.demoLink}
+                />
+              </li>
+            </ul>
 
             <p>
               This is my final project for a{" "}
@@ -74,7 +79,7 @@ export default function Recom() {
           </div>
 
           <section className={styles.storeSection}>
-            <h3>The store</h3>
+            <h2>The store</h2>
             <p>
               The style is this cartoonish &quot;hand-drawn&quot; look with all
               of the content in rounded and shadowed boxes. I decided to go with{" "}
@@ -88,7 +93,7 @@ export default function Recom() {
           </section>
 
           <section className={styles.adminSection}>
-            <h3>The admin application</h3>
+            <h2>The admin application</h2>
             <p>
               The admin app uses the same tech as the store itself, but
               doesn&apos;t have as much focus on style. Admins can
@@ -115,7 +120,7 @@ export default function Recom() {
           </section>
 
           <section className={styles.backendSection}>
-            <h3>The backend</h3>
+            <h2>The backend</h2>
             <p>
               It&apos;s a{" "}
               <InlineLink href="https://nodejs.org/en">node</InlineLink> +{" "}
@@ -133,7 +138,7 @@ export default function Recom() {
           </section>
 
           <section className={styles.conclusionSection}>
-            <h3>Conclusions</h3>
+            <h2>Conclusions</h2>
             <p>
               This project required{" "}
               <InlineLink href="https://github.com/ronituohino/recom/blob/main/project-hourbook.xlsx">

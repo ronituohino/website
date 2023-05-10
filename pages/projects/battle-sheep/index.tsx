@@ -13,7 +13,7 @@ export default function BattleSheep() {
         <title>Recom - Roni Tuohino</title>
         <meta
           name="description"
-          content="Project overview of Recom, an online shopping platform I built."
+          content="Project overview of Battle Sheep, a university algorithms project."
         />
       </Head>
 
@@ -22,19 +22,24 @@ export default function BattleSheep() {
           <header className={styles.header}>
             <h1>Battle Sheep</h1>
 
-            <li className={styles.links}>
-              <LinkIcon
-                href="https://github.com/ronituohino/tiralabra"
-                icon={<GitHub title="" />}
-                className={styles.githubLink}
-              />
-              <LinkButton
-                href="https://battle-sheep-game.web.app/"
-                text="Demo"
-                variant="large"
-                className={styles.demoLink}
-              />
-            </li>
+            <ul>
+              <li className={styles.links}>
+                <LinkIcon
+                  label="Project GitHub"
+                  href="https://github.com/ronituohino/tiralabra"
+                  icon={<GitHub title="" />}
+                  className={styles.githubLink}
+                />
+              </li>
+              <li>
+                <LinkButton
+                  href="https://battle-sheep-game.web.app/"
+                  text="Demo"
+                  variant="large"
+                  className={styles.demoLink}
+                />
+              </li>
+            </ul>
 
             <p>
               <InlineLink href="https://www.blueorangegames.com/index.php/games/battle-sheep">
@@ -67,7 +72,7 @@ export default function BattleSheep() {
           </div>
 
           <section className={styles.aiSection}>
-            <h3>The AI algorithm</h3>
+            <h2>The AI algorithm</h2>
             <p>
               I implemented the AI using a minimax algorithm with alpha-beta
               pruning, and optimization tricks such as &apos;move

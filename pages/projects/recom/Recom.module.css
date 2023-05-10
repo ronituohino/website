@@ -67,10 +67,10 @@
   gap: 1rem;
 }
 
-.storeSection > h3,
-.adminSection > h3,
-.backendSection > h3,
-.conclusionSection > h3 {
+.storeSection > h2,
+.adminSection > h2,
+.backendSection > h2,
+.conclusionSection > h2 {
   margin-bottom: 0.5rem;
 }
 

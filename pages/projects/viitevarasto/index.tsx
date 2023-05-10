@@ -25,19 +25,24 @@ export default function Viitevarasto() {
               <h5>*The app is only in Finnish</h5>
             </div>
 
-            <li className={styles.links}>
-              <LinkIcon
-                href="https://github.com/Perttu-Kangas/ohtu-mini"
-                icon={<GitHub title="" />}
-                className={styles.githubLink}
-              />
-              <LinkButton
-                href="https://viitevarasto.fly.dev/"
-                text="Demo"
-                variant="large"
-                className={styles.demoLink}
-              />
-            </li>
+            <ul>
+              <li className={styles.links}>
+                <LinkIcon
+                  label="Project GitHub"
+                  href="https://github.com/Perttu-Kangas/ohtu-mini"
+                  icon={<GitHub title="" />}
+                  className={styles.githubLink}
+                />
+              </li>
+              <li>
+                <LinkButton
+                  href="https://viitevarasto.fly.dev/"
+                  text="Demo"
+                  variant="large"
+                  className={styles.demoLink}
+                />
+              </li>
+            </ul>
 
             <p>
               This is a university group project for a software production
@@ -68,7 +73,7 @@ export default function Viitevarasto() {
           </div>
 
           <section className={styles.techAndDesignSection}>
-            <h3>Tech and design</h3>
+            <h2>Tech and design</h2>
             <p>
               The app is built using{" "}
               <InlineLink href="https://flask.palletsprojects.com/en/2.3.x/">
@@ -94,27 +99,29 @@ export default function Viitevarasto() {
           </section>
 
           <section className={styles.creditsSection}>
-            <h3>Credits</h3>
+            <h2>Credits</h2>
             <p>
               Huge credits for the rest of the team for amazing work on the
               project:
-              <li>
-                <InlineLink href="https://github.com/DeeCaaD">
-                  @DeeCaaD
-                </InlineLink>
-                {", "}
-                <InlineLink href="https://github.com/joonas-a">
-                  @joonas-a
-                </InlineLink>
-                {", "}
-                <InlineLink href="https://github.com/Sidorow">
-                  @Sidorow
-                </InlineLink>
-                {", "}
-                <InlineLink href="https://github.com/tikuisma">
-                  @tikuisma
-                </InlineLink>
-              </li>
+              <ul>
+                <li>
+                  <InlineLink href="https://github.com/DeeCaaD">
+                    @DeeCaaD
+                  </InlineLink>
+                  {", "}
+                  <InlineLink href="https://github.com/joonas-a">
+                    @joonas-a
+                  </InlineLink>
+                  {", "}
+                  <InlineLink href="https://github.com/Sidorow">
+                    @Sidorow
+                  </InlineLink>
+                  {", "}
+                  <InlineLink href="https://github.com/tikuisma">
+                    @tikuisma
+                  </InlineLink>
+                </li>
+              </ul>
             </p>
           </section>
         </article>

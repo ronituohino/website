@@ -14,7 +14,7 @@ export default function GParticles() {
         <title>Recom - Roni Tuohino</title>
         <meta
           name="description"
-          content="Project overview of Recom, an online shopping platform I built."
+          content="Project overview of GParticles, a mobile art project."
         />
       </Head>
       <div className={styles.background}>
@@ -22,18 +22,25 @@ export default function GParticles() {
           <header className={styles.header}>
             <h1>GParticles</h1>
 
-            <li className={styles.links}>
-              <LinkIcon
-                href="https://github.com/ronituohino/GParticles"
-                icon={<GitHub title="" />}
-                className={styles.githubLink}
-              />
-              <LinkIcon
-                href="https://play.google.com/store/apps/details?id=com.Tuohino.GParticles"
-                icon={<GooglePlay title="" />}
-                className={styles.googleLink}
-              />
-            </li>
+            <ul className={styles.links}>
+              <li>
+                <LinkIcon
+                  label="Project GitHub"
+                  href="https://github.com/ronituohino/GParticles"
+                  icon={<GitHub title="" />}
+                  className={styles.githubLink}
+                />
+              </li>
+              <li>
+                <LinkIcon
+                  label="Project on Google Play"
+                  href="https://play.google.com/store/apps/details?id=com.Tuohino.GParticles"
+                  icon={<GooglePlay title="" />}
+                  className={styles.googleLink}
+                />
+              </li>
+            </ul>
+
             <p>
               A really quick Unity project. The main idea was to achieve some
               cool effects with particles and physics. For some reason this kind
