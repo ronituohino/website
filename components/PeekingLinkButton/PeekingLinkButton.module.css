@@ -1,6 +1,7 @@
 .enabledButton,
 .disabledButton {
-  display: flex;
+  display: block;
+  font-size: 0;
   position: relative;
 }
 

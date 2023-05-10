@@ -1,6 +1,6 @@
 .link {
-  display: flex;
-  align-items: center;
+  display: block;
+  font-size: 0;
   gap: 8px;
   transition: transform 0.1s ease-in-out;
 }
