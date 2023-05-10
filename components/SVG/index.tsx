@@ -5,6 +5,7 @@ export type IconProps = {
   className?: string;
 };
 
+export { Arrow } from "./Arrow";
 export { CSharp } from "./CSharp";
 export { Docker } from "./Docker";
 export { Download } from "./Download";

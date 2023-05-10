@@ -1,17 +1,17 @@
 import type { Project } from "../utils/getProjects";
 
 import Head from "next/head";
+import Link from "next/link";
 
 import { LinkCard } from "../components/LinkCard";
-
 import { LinkIcon } from "../components/LinkIcon";
-import { Happy, GitHub, LinkedIn, Email } from "../components/SVG";
+import { Arrow, Happy, GitHub, LinkedIn, Email } from "../components/SVG";
 
-import styles from "./index.module.css";
 import { getProjects } from "../utils/getProjects";
 import { CVButton } from "../components/CVButton";
 import { PeekingLinkButton } from "../components/PeekingLinkButton";
-import Link from "next/link";
+
+import styles from "./index.module.css";
 
 type IndexProps = {
   projects: [Project];
@@ -49,8 +49,8 @@ export default function Index({ projects }: IndexProps) {
             <CVButton className={styles.cv} />
             <div className={styles.links}>
               <LinkIcon
-                href="https://github.com/ronituohino"
-                icon={<GitHub title="" />}
+                href="mailto:tuohinoroni@gmail.com"
+                icon={<Email title="" />}
               />
 
               <LinkIcon
@@ -59,22 +59,21 @@ export default function Index({ projects }: IndexProps) {
               />
 
               <LinkIcon
-                href="mailto:tuohinoroni@gmail.com"
-                icon={<Email title="" />}
+                href="https://github.com/ronituohino"
+                icon={<GitHub title="" />}
               />
             </div>
 
-            <div className={styles.projectsArrow}>
-              Check out my projects!
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.9 138.5">
-                <path
-                  fill="none"
-                  stroke="var(--svg-stroke-color)"
-                  strokeLinecap="round"
-                  strokeWidth="5"
-                  d="M46.5 4c5.2 45.5-2.6 74-19.8 108.4v0M3.9 98.7c15.5 17 6.1 34.5 11.3 35.7 3.8.9 16-15 38.7-19.1v0"
-                />
-              </svg>
+            <div className={styles.arrows}>
+              <div className={styles.projectsArrow}>
+                <p>See my projects!</p>
+                <Arrow title="" />
+              </div>
+
+              <div className={styles.contactsArrow}>
+                <Arrow title="" />
+                <p>Then hire me!</p>
+              </div>
             </div>
           </header>
         </div>
