@@ -82,7 +82,7 @@ export default function Index({ projects }: IndexProps) {
           <section id="projects" className={styles.projects}>
             <h2>Cool stuff that I&apos;ve worked on</h2>
             <h5 className={styles.coldStart}>
-              *Demos may have slow load times due to a cold start
+              *Demos may have slow load times due to cold starts
             </h5>
             <li className={styles.projectsList}>
               {projects.map(project => {

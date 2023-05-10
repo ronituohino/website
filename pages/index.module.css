@@ -91,11 +91,11 @@
 }
 
 .projectsArrow {
-  animation: appear 2s ease-in-out 2s forwards;
+  animation: appear 1s ease-in-out 2s forwards;
 }
 
 .contactsArrow {
-  animation: appear 2s ease-in-out 4s forwards;
+  animation: appear 1s ease-in-out 3s forwards;
 }
 
 .projectsArrow > svg {

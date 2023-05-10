@@ -19,29 +19,31 @@ export default function Blogs({ blogs }: BlogsProps) {
           content="Blogs by Roni Tuohino about tech and design stuff."
         />
       </Head>
-      <article className={styles.container}>
-        <h1 className={styles.title}>Blogs by Roni</h1>
-        <h2 className={styles.temp}>
-          Yeah I haven&apos;t written much yet lol
-        </h2>
-        <li>
-          {blogs.map(blog => {
-            return (
-              <LinkCard
-                key={blog.id}
-                title={blog.name}
-                src={`/pictures/blogs/${blog.img.src}`}
-                imgWidth={blog.img.width}
-                imgHeight={blog.img.height}
-                imgXOffset={blog.img.xOffset}
-                imgYOffset={blog.img.yOffset}
-                frame={blog.img.frame}
-                href={`/blogs/${blog.urlName}`}
-              />
-            );
-          })}
-        </li>
-      </article>
+      <div className={styles.background}>
+        <article className={styles.container}>
+          <h1 className={styles.title}>Blogs by Roni</h1>
+          <h2 className={styles.temp}>
+            Yeah I haven&apos;t written much yet lol
+          </h2>
+          <li>
+            {blogs.map(blog => {
+              return (
+                <LinkCard
+                  key={blog.id}
+                  title={blog.name}
+                  src={`/pictures/blogs/${blog.img.src}`}
+                  imgWidth={blog.img.width}
+                  imgHeight={blog.img.height}
+                  imgXOffset={blog.img.xOffset}
+                  imgYOffset={blog.img.yOffset}
+                  frame={blog.img.frame}
+                  href={`/blogs/${blog.urlName}`}
+                />
+              );
+            })}
+          </li>
+        </article>
+      </div>
     </>
   );
 }
