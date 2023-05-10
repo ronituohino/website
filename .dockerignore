@@ -1,5 +1,7 @@
 node_modules
 .next
+.env.development
+.env.test
 tests
 playwright.config.ts
 docs
