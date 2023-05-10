@@ -56,11 +56,9 @@ jobs:
           path: playwright-report/
           retention-days: 30
   deploy:
+    if: ${{ github.event_name == 'push' }}
     needs: [test]
     runs-on: ubuntu-22.04
-    if:
-      ${{ github.event_name == 'push' &&
-      !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
     permissions:
       contents: "read"
       id-token: "write"
@@ -76,7 +74,7 @@ jobs:
       - name: Authorize Docker push
         run: gcloud auth configure-docker
 
-      - name: Create .env file
+      - name: Create .env.production file
         run: |
           echo "${{ secrets.ENV_FILE }}" > .env.production
 

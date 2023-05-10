@@ -1,0 +1,15 @@
+# https://ronituohino.fi/robots.txt
+
+# https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+# https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
+User-agent: *
+
+# Tell crawlers not to visit any URLs in the api, pictures or fonts,
+# folders because they won't be useful in search results.
+
+Disallow: /api/
+Disallow: /pictures/
+Disallow: /fonts/
+
+Sitemap: https://ronituohino.fi/sitemap.xml

@@ -1,0 +1,15 @@
+.switch {
+  transition: transform 0.2s ease-in-out, scale 0.1s ease-in-out;
+  transform: rotate(0deg);
+  cursor: pointer;
+  background: none;
+}
+
+[data-theme="light"] .switch {
+  transform: rotate(-105deg);
+}
+
+.switch:focus-visible,
+.switch:hover {
+  scale: 1.05;
+}

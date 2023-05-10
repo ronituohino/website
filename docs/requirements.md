@@ -2,51 +2,64 @@
 
 ## Purpose
 
-The purpose of this application is to serve as a portfolio and blogging website.
-It consists of these main sections:
+The purpose of this application is to serve as a portfolio and blog website.
+Here are some items I want to include in the website:
 
-- About
-- Projects
-- Contact (Freelancing & Consulting)
-- Blog
+index page
 
-## Users
+- [ ] Hero
+  - Name
+  - Title
+  - Short description
+  - Call to action? (Resume?)
+- [ ] Projects
+  - Name
+  - Short description
+  - Image
+  - Tech used
+  - GitHub link
+  - Live link
+- [ ] Contact (Freelancing & Consulting)
+  - GitHub
+  - LinkedIn
+  - Email (mailto)
+- [ ] Link to blog area
 
-The application does not require a user system.
+blog page
+
+- [ ] Browser
+  - Blog card
+  - Blog views
+  - Blog likes
+- [ ] Blog page
+- [ ] Link to index page
 
 ## UI
 
-The UI consists of 3 web pages:
-
-- Home / Portfolio (About, Projects, Contact)
-- Blog browser
-- Blog page
-
 The portfolio page is static and displays information about me.
 
-The first section the user is greeted with is the About section. Here I can have
-some cool animations and effects with my name and title
+The first section the user is greeted with is the Hero/About section. Here I can
+have some cool animations and effects with my name and title. I will either have
+two separate things about me, or combine them into one.
 
 The projects section displays a list of my previous projects and some
-information about them. Here I can also include some references and companies
-I've worked in.
-
-The contacts section has some channels which the user can contact me. It also
-displays info that I do freelancing & consulting.
+information about them.
 
 Blog browser displays a grid of blogs with thumbnails and titles. Blogs are
 coded into the app itself, so I have full freedom to put any kind of content I
 wish on there. Blogs can be liked by anonymous users. There is a views counter
-on each blog post.
+on each blog.
+
+More on [design](design.md).
 
 ## Functionality
 
 - [ ] Home
-  - [ ] About/Landing section
-  - [ ] Contacts/Consulting section
-  - [ ] Projects section
+  - [ ] about/landing section
+  - [ ] projects section
+  - [ ] contacts/consulting section
 - [ ] Blogs
-  - [ ] Blog browser
-  - [ ] Blog page
-  - [ ] Blog liking
-  - [ ] Blog views count
+  - [ ] browser
+  - [ ] page
+  - [ ] liking
+  - [ ] views count

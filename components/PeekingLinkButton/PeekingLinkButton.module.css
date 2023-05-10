@@ -1,0 +1,27 @@
+.enabledButton,
+.disabledButton {
+  display: flex;
+  position: relative;
+}
+
+.disabledButton {
+  top: 0.2rem;
+  cursor: default;
+}
+
+.enabledButton {
+  transition: transform 0.1s ease-in-out;
+}
+
+.enabledButton:focus-visible,
+.enabledButton:hover {
+  transform: translate(0, 0.2rem);
+}
+
+.disabledButton > path {
+  fill: var(--svg-stroke-color);
+}
+
+.disabledButton > text {
+  fill: var(--svg-bg-color);
+}

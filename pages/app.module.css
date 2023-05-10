@@ -1,0 +1,54 @@
+.navContainer {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.links {
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  left: 0.5rem;
+  top: -1.2rem;
+}
+
+.links > * {
+  width: 6rem;
+}
+
+.themeSwitch {
+  position: absolute;
+  top: -3rem;
+  right: -2.5rem;
+  width: 6rem;
+}
+
+.footerBackground::before {
+  content: "";
+  height: 12px;
+  width: 100vw;
+  position: absolute;
+  background: url("/pictures/line-dark.svg") repeat-x top;
+  background-size: auto 100%;
+}
+
+.footerBackground::before {
+  z-index: 1;
+  top: -6px;
+}
+
+[data-theme="light"] .footerBackground::before {
+  background: url("/pictures/line-light.svg") repeat-x top;
+  background-size: auto 100%;
+}
+
+.footerBackground {
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+.footer {
+  padding: 1rem;
+  padding-top: calc(1rem + 3px);
+}

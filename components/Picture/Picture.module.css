@@ -1,0 +1,14 @@
+.link {
+  display: flex;
+  align-items: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+.link:hover,
+.link:focus-visible {
+  transform: scale(1.05);
+}
+
+.svg {
+  width: 100%;
+}

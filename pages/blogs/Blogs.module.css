@@ -1,0 +1,23 @@
+.background {
+  background-image: url("/pictures/scribbles-dark.svg");
+  background-size: 200px 140px;
+}
+
+[data-theme="light"] .background {
+  background-image: url("/pictures/scribbles-light.svg");
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 43rem;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: calc(100vh - 10rem);
+}
+
+.temp {
+  color: var(--text-side-color);
+  margin-top: 2rem;
+}
