@@ -10,7 +10,7 @@ export default function Viitevarasto() {
   return (
     <>
       <Head>
-        <title>Recom - Roni Tuohino</title>
+        <title>Viitevarasto - Roni Tuohino</title>
         <meta
           name="description"
           content="Project overview of Viitevarasto, a references management system."
@@ -25,8 +25,8 @@ export default function Viitevarasto() {
               <h5>*The app is only in Finnish</h5>
             </div>
 
-            <ul>
-              <li className={styles.links}>
+            <ul className={styles.links}>
+              <li>
                 <LinkIcon
                   label="Project GitHub"
                   href="https://github.com/Perttu-Kangas/ohtu-mini"

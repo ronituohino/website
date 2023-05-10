@@ -10,7 +10,7 @@ export default function BattleSheep() {
   return (
     <>
       <Head>
-        <title>Recom - Roni Tuohino</title>
+        <title>Battle Sheep - Roni Tuohino</title>
         <meta
           name="description"
           content="Project overview of Battle Sheep, a university algorithms project."
@@ -22,8 +22,8 @@ export default function BattleSheep() {
           <header className={styles.header}>
             <h1>Battle Sheep</h1>
 
-            <ul>
-              <li className={styles.links}>
+            <ul className={styles.links}>
+              <li>
                 <LinkIcon
                   label="Project GitHub"
                   href="https://github.com/ronituohino/tiralabra"

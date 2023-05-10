@@ -11,7 +11,7 @@ export default function GParticles() {
   return (
     <>
       <Head>
-        <title>Recom - Roni Tuohino</title>
+        <title>GParticles - Roni Tuohino</title>
         <meta
           name="description"
           content="Project overview of GParticles, a mobile art project."

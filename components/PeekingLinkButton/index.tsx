@@ -11,6 +11,9 @@ type PeekingLinkButtonProps = {
   disabled?: boolean;
   className?: string;
   openInNewTab?: boolean;
+  fontSize?: string;
+  textX?: string;
+  textY?: string;
 };
 
 export function PeekingLinkButton({
@@ -20,17 +23,20 @@ export function PeekingLinkButton({
   disabled,
   className,
   openInNewTab,
+  fontSize,
+  textX,
+  textY,
 }: PeekingLinkButtonProps) {
   const innerElement = (
     <>
       {buttonFrames[variant][0]}
       <text
-        x="50%"
-        y="66%"
+        x={textX ? textX : "50%"}
+        y={textY ? textY : "66%"}
         dominantBaseline="middle"
         textAnchor="middle"
         fill="var(--svg-stroke-color)"
-        fontSize="32px"
+        fontSize={fontSize ? fontSize : "32px"}
       >
         {text}
       </text>

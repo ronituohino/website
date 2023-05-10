@@ -34,7 +34,11 @@ export function LinkCard({
 }: LinkCardProps) {
   const frameData = pictureFrames[frame];
   return (
-    <Link href={href} className={`${styles.card} ${className || ""}`}>
+    <Link
+      href={href}
+      aria-label={title}
+      className={`${styles.card} ${className || ""}`}
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox={frameData[1].viewBox}>
         {frameData[0]}
         <image

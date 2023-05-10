@@ -49,18 +49,21 @@ export default function Index({ projects }: IndexProps) {
             <CVButton className={styles.cv} />
             <div className={styles.links}>
               <LinkIcon
-                href="mailto:tuohinoroni@gmail.com"
-                icon={<Email title="" />}
+                label="My github profile"
+                href="https://github.com/ronituohino"
+                icon={<GitHub title="" />}
               />
 
               <LinkIcon
+                label="My linkedin profile"
                 href="https://www.linkedin.com/in/ronituohino/"
                 icon={<LinkedIn title="" />}
               />
 
               <LinkIcon
-                href="https://github.com/ronituohino"
-                icon={<GitHub title="" />}
+                label="Send me an email"
+                href="mailto:tuohinoroni@gmail.com"
+                icon={<Email title="" />}
               />
             </div>
 
@@ -101,11 +104,13 @@ export default function Index({ projects }: IndexProps) {
                     />
                     {project.btn && (
                       <PeekingLinkButton
-                        variant="large"
+                        variant="box"
                         text={project.btn.text}
                         href={project.btn.href}
                         className={styles.demoButton}
                         openInNewTab
+                        fontSize="22px"
+                        textY="72%"
                       />
                     )}
                   </li>
