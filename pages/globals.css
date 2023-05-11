@@ -11,8 +11,8 @@
 
   --text-color: var(--white);
   --text-side-color: #cacaca;
-  --link-color: #c15fca;
-  --link-hover-color: #b448af;
+  --link-color: #db8fe2;
+  --link-hover-color: #b324ab;
 
   --svg-bg-color: var(--black);
   --svg-stroke-color: var(--white);
@@ -27,7 +27,7 @@
   */
 
   /* Root setup */
-  font-size: clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 0.3rem + 1vw, 3rem);
   font-family: var(--main-font);
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -40,6 +40,8 @@
 
   --text-color: var(--black);
   --text-side-color: #464646;
+  --link-color: #b324ab;
+  --link-hover-color: #db8fe2;
 
   --svg-bg-color: var(--white);
   --svg-stroke-color: var(--black);
@@ -61,7 +63,6 @@
 /* Disable horizontal scroll on mobile along with overflow-x: hidden in root */
 body {
   overflow-x: hidden;
-  position: relative;
 }
 
 a {
