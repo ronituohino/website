@@ -52,7 +52,8 @@
   text-align: center;
 }
 
-.title > h5 {
+.title > h2 {
+  font-size: 0.75rem;
   color: var(--text-side-color);
 }
 

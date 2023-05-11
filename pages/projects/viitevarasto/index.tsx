@@ -2,9 +2,10 @@ import { Picture } from "../../../components/Picture";
 import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
 import { GitHub } from "../../../components/SVG";
-import styles from "./Viitevarasto.module.css";
 import Head from "next/head";
 import { InlineLink } from "../../../components/InlineLink";
+
+import styles from "./Viitevarasto.module.css";
 
 export default function Viitevarasto() {
   return (
@@ -22,7 +23,7 @@ export default function Viitevarasto() {
           <header className={styles.header}>
             <div className={styles.title}>
               <h1>Viitevarasto</h1>
-              <h5>*The app is only in Finnish</h5>
+              <h2>*The app is only in Finnish</h2>
             </div>
 
             <ul className={styles.links}>
@@ -103,26 +104,29 @@ export default function Viitevarasto() {
             <p>
               Huge credits for the rest of the team for amazing work on the
               project:
-              <ul>
-                <li>
-                  <InlineLink href="https://github.com/DeeCaaD">
-                    @DeeCaaD
-                  </InlineLink>
-                  {", "}
-                  <InlineLink href="https://github.com/joonas-a">
-                    @joonas-a
-                  </InlineLink>
-                  {", "}
-                  <InlineLink href="https://github.com/Sidorow">
-                    @Sidorow
-                  </InlineLink>
-                  {", "}
-                  <InlineLink href="https://github.com/tikuisma">
-                    @tikuisma
-                  </InlineLink>
-                </li>
-              </ul>
             </p>
+            <ul>
+              <li>
+                <InlineLink href="https://github.com/DeeCaaD">
+                  @DeeCaaD
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href="https://github.com/joonas-a">
+                  @joonas-a
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href="https://github.com/Sidorow">
+                  @Sidorow
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href="https://github.com/tikuisma">
+                  @tikuisma
+                </InlineLink>
+              </li>
+            </ul>
           </section>
         </article>
       </div>

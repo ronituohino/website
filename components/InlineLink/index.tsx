@@ -9,7 +9,7 @@ type InlineLinkProps = {
 
 export function InlineLink({ children, href }: InlineLinkProps) {
   return (
-    <Link href={href} className={styles.inlineLink}>
+    <Link href={href} target="_blank" className={styles.inlineLink}>
       {children}
     </Link>
   );

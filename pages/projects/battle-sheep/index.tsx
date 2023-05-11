@@ -20,7 +20,7 @@ export default function BattleSheep() {
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>
-            <h1>Battle Sheep</h1>
+            <h1 className={styles.title}>Battle Sheep</h1>
 
             <ul className={styles.links}>
               <li>

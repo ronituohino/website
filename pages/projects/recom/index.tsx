@@ -1,11 +1,12 @@
 import { Picture } from "../../../components/Picture";
 import { InlineLink } from "../../../components/InlineLink";
 
-import styles from "./Recom.module.css";
 import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
 import { GitHub } from "../../../components/SVG";
 import Head from "next/head";
+
+import styles from "./Recom.module.css";
 
 export default function Recom() {
   return (
@@ -20,7 +21,9 @@ export default function Recom() {
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>
-            <h1>Recom, &quot;React e-commerce&quot;</h1>
+            <h1 className={styles.title}>
+              Recom, &quot;React e-commerce&quot;
+            </h1>
 
             <ul className={styles.links}>
               <li>

@@ -48,6 +48,10 @@
   gap: 2rem;
 }
 
+.title {
+  text-align: center;
+}
+
 .links {
   display: flex;
   align-items: center;
