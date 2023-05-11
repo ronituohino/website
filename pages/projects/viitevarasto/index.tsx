@@ -103,30 +103,23 @@ export default function Viitevarasto() {
             <h2>Credits</h2>
             <p>
               Huge credits for the rest of the team for amazing work on the
-              project:
+              project:{" "}
+              <InlineLink href="https://github.com/DeeCaaD">
+                @DeeCaaD
+              </InlineLink>
+              {", "}
+              <InlineLink href="https://github.com/joonas-a">
+                @joonas-a
+              </InlineLink>
+              {", "}
+              <InlineLink href="https://github.com/Sidorow">
+                @Sidorow
+              </InlineLink>
+              {", "}
+              <InlineLink href="https://github.com/tikuisma">
+                @tikuisma
+              </InlineLink>
             </p>
-            <ul>
-              <li>
-                <InlineLink href="https://github.com/DeeCaaD">
-                  @DeeCaaD
-                </InlineLink>
-              </li>
-              <li>
-                <InlineLink href="https://github.com/joonas-a">
-                  @joonas-a
-                </InlineLink>
-              </li>
-              <li>
-                <InlineLink href="https://github.com/Sidorow">
-                  @Sidorow
-                </InlineLink>
-              </li>
-              <li>
-                <InlineLink href="https://github.com/tikuisma">
-                  @tikuisma
-                </InlineLink>
-              </li>
-            </ul>
           </section>
         </article>
       </div>
