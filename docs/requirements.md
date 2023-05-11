@@ -7,23 +7,22 @@ Here are some items I want to include in the website:
 
 index page
 
-- [ ] Hero
+- [x] Hero
   - Name
   - Title
   - Short description
   - Call to action? (Resume?)
-- [ ] Projects
+- [x] Projects
   - Name
-  - Short description
   - Image
-  - Tech used
-  - GitHub link
+  - Tech used?
+  - GitHub link?
   - Live link
-- [ ] Contact (Freelancing & Consulting)
+- [x] Contact (Freelancing & Consulting)
   - GitHub
   - LinkedIn
   - Email (mailto)
-- [ ] Link to blog area
+- [x] Link to blog area
 
 blog page
 
@@ -32,7 +31,7 @@ blog page
   - Blog views
   - Blog likes
 - [ ] Blog page
-- [ ] Link to index page
+- [x] Link to index page
 
 ## UI
 
@@ -51,15 +50,3 @@ wish on there. Blogs can be liked by anonymous users. There is a views counter
 on each blog.
 
 More on [design](design.md).
-
-## Functionality
-
-- [ ] Home
-  - [ ] about/landing section
-  - [ ] projects section
-  - [ ] contacts/consulting section
-- [ ] Blogs
-  - [ ] browser
-  - [ ] page
-  - [ ] liking
-  - [ ] views count

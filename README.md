@@ -13,6 +13,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 This project uses [Prisma](https://www.prisma.io/) to communicate with it's
 database.
 
+### Note about development
+
+During development, adjust `schema.prisma` to your needs and
+[sync with development database](https://www.prisma.io/docs/guides/migrate/developing-with-prisma-migrate)
+(done automatically on dev server start). This will create migrations, which are
+then applied automatically to production in deployment pipeline.
+
 ## Google Cloud Run
 
 This project is hosted on [Google Cloud Run](https://cloud.google.com/run).

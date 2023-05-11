@@ -1,9 +1,5 @@
 # General design goals
 
-I feel like I want to tell my story with my portfolio, but I don't want to force
-the user to see it: "ugh, just take me to your projects, I don't care about the
-stuff you did 5 years ago lol"
-
 I want the portfolio to have a cartoonish, hand-drawn, notebook feel with lots
 of custom assets.
 
@@ -25,8 +21,6 @@ optionally view smaller projects in between)?
 - Viitevarasto
 - Battle Sheep
 - GParticles
-
-CTA to check out my Github for more stuff!
 
 ## Contact
 

@@ -36,6 +36,7 @@ export default function Index({ projects }: IndexProps) {
               <Link
                 href="https://github.com/ronituohino"
                 className={styles.roni}
+                target="_blank"
               >
                 Roni
               </Link>

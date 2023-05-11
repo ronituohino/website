@@ -1,11 +1,10 @@
 import { Picture } from "../../../components/Picture";
 
-import styles from "./GParticles.module.css";
-import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
-import { GitHub } from "../../../components/SVG";
+import { GitHub, GooglePlay } from "../../../components/SVG";
 import Head from "next/head";
-import { GooglePlay } from "../../../components/SVG";
+
+import styles from "./GParticles.module.css";
 
 export default function GParticles() {
   return (
@@ -20,7 +19,7 @@ export default function GParticles() {
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>
-            <h1>GParticles</h1>
+            <h1 className={styles.title}>GParticles</h1>
 
             <ul className={styles.links}>
               <li>
