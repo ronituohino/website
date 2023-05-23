@@ -3,16 +3,14 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 COPY . .
 
-ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine 
 # to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat && \
-  yarn global add pnpm && pnpm i --frozen-lockfile --prod && \
-  pnpm build
-
-# Remove .env.production, but don't throw error if not found
-RUN rm ./.next/standalone/.env.production || true
+RUN apk add --no-cache libc6-compat && \ 
+  npm i -g pnpm && \
+  pnpm i --frozen-lockfile --prod && \
+  pnpm run build
 
 
 
@@ -29,9 +27,9 @@ COPY --from=builder /app/.next/static ./.next/static
 RUN addgroup -S myappgroup && adduser -S myappuser -G myappgroup
 USER myappuser
 
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
-ENV PORT=3000
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV production
+ENV PORT 3000
 
 EXPOSE 3000
 
