@@ -3,20 +3,18 @@ import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
 import { GitHub } from "../../../components/SVG";
 import styles from "./BattleSheep.module.css";
-import Head from "next/head";
 import { InlineLink } from "../../../components/InlineLink";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Battle Sheep - Roni Tuohino",
+  description:
+    "Project overview of Battle Sheep, a university algorithms project.",
+};
 
 export default function BattleSheep() {
   return (
     <>
-      <Head>
-        <title>Battle Sheep - Roni Tuohino</title>
-        <meta
-          name="description"
-          content="Project overview of Battle Sheep, a university algorithms project."
-        />
-      </Head>
-
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>

@@ -4,20 +4,18 @@ import { InlineLink } from "../../../components/InlineLink";
 import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
 import { GitHub } from "../../../components/SVG";
-import Head from "next/head";
 
 import styles from "./Recom.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Recom - Roni Tuohino",
+  description: "Project overview of Recom, an online shopping platform.",
+};
 
 export default function Recom() {
   return (
     <>
-      <Head>
-        <title>Recom - Roni Tuohino</title>
-        <meta
-          name="description"
-          content="Project overview of Recom, an online shopping platform."
-        />
-      </Head>
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>

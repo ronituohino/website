@@ -2,22 +2,20 @@ import { Picture } from "../../../components/Picture";
 import { LinkButton } from "../../../components/LinkButton";
 import { LinkIcon } from "../../../components/LinkIcon";
 import { GitHub } from "../../../components/SVG";
-import Head from "next/head";
 import { InlineLink } from "../../../components/InlineLink";
 
 import styles from "./Viitevarasto.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Viitevarasto - Roni Tuohino",
+  description:
+    "Project overview of Viitevarasto, a references management system.",
+};
 
 export default function Viitevarasto() {
   return (
     <>
-      <Head>
-        <title>Viitevarasto - Roni Tuohino</title>
-        <meta
-          name="description"
-          content="Project overview of Viitevarasto, a references management system."
-        />
-      </Head>
-
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>

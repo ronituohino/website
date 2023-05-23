@@ -5,17 +5,16 @@ import { GitHub, GooglePlay } from "../../../components/SVG";
 import Head from "next/head";
 
 import styles from "./GParticles.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GParticles - Roni Tuohino",
+  description: "Project overview of GParticles, a mobile art project.",
+};
 
 export default function GParticles() {
   return (
     <>
-      <Head>
-        <title>GParticles - Roni Tuohino</title>
-        <meta
-          name="description"
-          content="Project overview of GParticles, a mobile art project."
-        />
-      </Head>
       <div className={styles.background}>
         <article className={styles.container}>
           <header className={styles.header}>

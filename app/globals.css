@@ -74,15 +74,3 @@ ul,
 li {
   list-style-type: none;
 }
-
-@font-face {
-  font-family: "Short Stack";
-  src: url("/fonts/ShortStack.eot");
-  src: url("/fonts/ShortStack.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/ShortStack.woff2") format("woff2"),
-    url("/fonts/ShortStack.woff") format("woff"),
-    url("/fonts/ShortStack.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}

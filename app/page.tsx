@@ -1,6 +1,7 @@
+import { Metadata } from "next";
+
 import type { Project } from "../utils/getProjects";
 
-import Head from "next/head";
 import Link from "next/link";
 
 import { LinkCard } from "../components/LinkCard";
@@ -13,22 +14,16 @@ import { PeekingLinkButton } from "../components/PeekingLinkButton";
 
 import styles from "./index.module.css";
 
-type IndexProps = {
-  projects: [Project];
+export const metadata: Metadata = {
+  title: "Roni Tuohino",
+  description: "Hey, need a web developer? Check me out, or not ¯_(ツ)_/¯",
 };
 
-export default function Index({ projects }: IndexProps) {
+export default async function Index() {
+  const projects = await getProjects();
   return (
     <>
-      <Head>
-        <title>Roni Tuohino</title>
-        <meta
-          name="description"
-          content="Hey, need a web developer? Check me out, or not ¯\_(ツ)_/¯"
-        />
-      </Head>
-
-      <main>
+      <article>
         <div className={styles.headerBackground}>
           <header className={styles.header}>
             <h1 className={styles.title}>
@@ -89,7 +84,7 @@ export default function Index({ projects }: IndexProps) {
               *Demos may have slow load times due to cold starts
             </h3>
             <ul className={styles.projectsList}>
-              {projects.map(project => {
+              {projects.map((project) => {
                 return (
                   <li key={project.id} className={styles.project}>
                     <LinkCard
@@ -120,16 +115,7 @@ export default function Index({ projects }: IndexProps) {
             </ul>
           </section>
         </div>
-      </main>
+      </article>
     </>
   );
-}
-
-// Run on build
-export async function getStaticProps() {
-  return {
-    props: {
-      projects: await getProjects(),
-    },
-  };
 }
