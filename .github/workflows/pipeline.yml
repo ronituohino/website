@@ -80,7 +80,7 @@ jobs:
           echo "${{ secrets.ENV_FILE }}" > .env.production
 
       - name: Sync Prisma model to database
-        run: dotenv -e .env.production -- pnpm dlx prisma migrate deploy
+        run: dotenv -- pnpm dlx prisma migrate deploy
 
       - name: Deploy container to Cloud Run
         id: deploy
