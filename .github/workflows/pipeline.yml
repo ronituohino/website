@@ -32,19 +32,17 @@ jobs:
 
       - name: Create .env.test file
         run: |
-          echo "${{ secrets.TEST_ENV_FILE }}" > .env.test
+          echo "${{ secrets.TEST_ENV_FILE }}" > .env
 
       - name: Install pnpm
         run: npm i -g pnpm
-
-      - name: Install dependencies
-        run: pnpm i --prod
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           build: pnpm run build
-          start: pnpm run start
+          start:
+            dotenv -- pnpm dlx prisma db push --force-reset && pnpm run start
           browser: chrome
   deploy:
     if: ${{ github.event_name == 'push' }}
@@ -75,9 +73,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Create .env.production file
+      - name: Create .env file
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env.production
+          echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Sync Prisma model to database
         run: dotenv -- pnpm dlx prisma migrate deploy
