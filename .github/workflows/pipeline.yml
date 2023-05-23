@@ -37,12 +37,14 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
 
+      - name: Push Prisma model to database
+        run: dotenv -- pnpm dlx prisma db push --force-reset
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           build: pnpm run build
-          start:
-            dotenv -- pnpm dlx prisma db push --force-reset && pnpm run start
+          start: pnpm run start
           browser: chrome
   deploy:
     if: ${{ github.event_name == 'push' }}
@@ -89,7 +91,7 @@ jobs:
             gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE
             }}:${{ github.sha }}
           region: ${{ env.REGION }}
-          env_vars_file: .env.production
+          env_vars_file: .env
 
       - name: "Service output"
         run: 'curl "${{ steps.deploy.outputs.url }}"'
