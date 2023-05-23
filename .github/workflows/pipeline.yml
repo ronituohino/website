@@ -34,8 +34,8 @@ jobs:
         run: |
           echo "${{ secrets.TEST_ENV_FILE }}" > .env.test
 
-      - name: Install pnpm & dotenv-cli
-        run: npm i -g pnpm dotenv-cli
+      - name: Install pnpm
+        run: npm i -g pnpm
 
       - name: Install dependencies
         run: pnpm i --prod
@@ -72,8 +72,8 @@ jobs:
           DOCKER_BUILDKIT=1 docker build -t gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} .
           docker push gcr.io/${{ secrets.GCP_CREDENTIALS_PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
 
-      - name: Install pnpm & dotenv-cli
-        run: npm install -g pnpm dotenv-cli
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Create .env.production file
         run: |
