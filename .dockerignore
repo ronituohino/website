@@ -4,6 +4,7 @@ cypress
 docs
 node_modules
 .dockerignore
+.env.production
 .env.development
 .env.test
 .eslintrc.json
