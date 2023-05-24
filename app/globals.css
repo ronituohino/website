@@ -1,8 +1,4 @@
 :root {
-  /* General */
-  --main-font: "Short Stack";
-  --border-radius: 24px;
-
   /* Colors */
   --white: #f0f0f0;
   --black: #1a1a1a;
@@ -28,7 +24,6 @@
 
   /* Root setup */
   font-size: clamp(1rem, 0.3rem + 1vw, 3rem);
-  font-family: var(--main-font);
   color: var(--text-color);
   background-color: var(--bg-color);
   overflow-x: hidden;

@@ -1,6 +1,4 @@
-import { Metadata } from "next";
-
-import type { Project } from "../utils/getProjects";
+import type { Metadata } from "next";
 
 import Link from "next/link";
 
@@ -16,7 +14,7 @@ import styles from "./index.module.css";
 
 export const metadata: Metadata = {
   title: "Roni Tuohino",
-  description: "Hey, need a web developer? Check me out, or not ¯_(ツ)_/¯",
+  description: "Hey, need a web developer? Check me out, or not ¯\\_(ツ)_/¯",
 };
 
 export default async function Index() {

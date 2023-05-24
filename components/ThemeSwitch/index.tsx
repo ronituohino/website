@@ -12,11 +12,22 @@ export type ThemeButtonProps = {
 // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
 export function ThemeSwitch({ className }: ThemeButtonProps) {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (!mounted) {
+      // Restrict theme to only "dark" or "light"
+      if (theme === "system") {
+        if (systemTheme === "dark") {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      }
+
+      setMounted(true);
+    }
+  }, [mounted, setTheme, systemTheme, theme]);
 
   if (!mounted) {
     return null;

@@ -1,8 +1,18 @@
+@keyframes show {
+  from {
+    translate: 0 -100%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
 .enabledButton,
 .disabledButton {
   display: block;
   font-size: 0;
   position: relative;
+  animation: show 1s ease-in-out forwards;
 }
 
 .disabledButton {

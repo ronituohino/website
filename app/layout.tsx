@@ -8,9 +8,10 @@ import { Footer } from "../components/Footer";
 import type { ReactNode } from "react";
 
 import localFont from "next/font/local";
-const myFont = localFont({
-  src: "../public/fonts/ShortStack.woff2",
-  display: "swap",
+const ShortStack = localFont({
+  src: [{ path: "./fonts/ShortStack.woff2" }],
+  display: "auto",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={myFont.className}>
+    <html lang="en" className={ShortStack.className}>
       <body>
         <Providers>
           <Nav />

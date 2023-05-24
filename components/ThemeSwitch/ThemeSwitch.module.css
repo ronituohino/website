@@ -1,8 +1,22 @@
+@keyframes show {
+  from {
+    translate: 100% -100%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
 .switch {
   transition: transform 0.2s ease-in-out, scale 0.1s ease-in-out;
   transform: rotate(0deg);
   cursor: pointer;
   background: none;
+  animation: show 1s ease-in-out forwards;
+}
+
+.switch > svg {
+  display: block;
 }
 
 [data-theme="light"] .switch {
