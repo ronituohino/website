@@ -1,4 +1,4 @@
-import { Blog, getBlogs } from "../../utils/getBlogs";
+import { getBlogs } from "../../utils/getBlogs";
 
 import { LinkCard } from "../../components/LinkCard";
 
@@ -10,15 +10,9 @@ export const metadata: Metadata = {
   description: "Blogs by Roni Tuohino about tech and design stuff.",
 };
 
-export async function getStaticProps() {
-  return { props: { blogs: await getBlogs() } };
-}
+export default async function Blogs() {
+  const blogs = await getBlogs();
 
-type BlogsProps = {
-  blogs: [Blog];
-};
-
-export default function Blogs({ blogs }: BlogsProps) {
   return (
     <>
       <div className={styles.background}>
