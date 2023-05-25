@@ -1,9 +1,7 @@
-import type { NextPageContext } from "next";
-
 const BASE_URL = "https://ronituohino.fi";
 
-import { getProjects } from "../utils/getProjects";
-import { getBlogs } from "../utils/getBlogs";
+import { getProjects } from "../../utils/getProjects";
+import { getBlogs } from "../../utils/getBlogs";
 
 // https://nextjs.org/learn/seo/crawling-and-indexing/xml-sitemaps
 async function generateSiteMap() {
@@ -19,7 +17,7 @@ async function generateSiteMap() {
 
      <!--Projects pages-->
      ${projects
-       .map(project => {
+       .map((project) => {
          return `
        <url>
            <loc>${BASE_URL}/projects/${project.urlName}</loc>
@@ -30,7 +28,7 @@ async function generateSiteMap() {
 
        <!--Blogs pages-->
        ${blogs
-         .map(blog => {
+         .map((blog) => {
            return `
         <url>
             <loc>${BASE_URL}/blogs/${blog.urlName}</loc>
@@ -42,19 +40,15 @@ async function generateSiteMap() {
  `;
 }
 
-export default function SiteMap() {}
+// https://claritydev.net/blog/nextjs-dynamic-sitemap-pages-app-directory
+export async function GET() {
+  const body = await generateSiteMap();
 
-export async function getServerSideProps({ res }: NextPageContext) {
-  if (res) {
-    const sitemap = await generateSiteMap();
-
-    res.setHeader("Content-Type", "text/xml");
-    // we send the XML to the browser
-    res.write(sitemap);
-    res.end();
-  }
-
-  return {
-    props: {},
-  };
+  return new Response(body, {
+    status: 200,
+    headers: {
+      "Cache-control": "public, s-maxage=86400, stale-while-revalidate",
+      "content-type": "application/xml",
+    },
+  });
 }
