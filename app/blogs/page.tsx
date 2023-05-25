@@ -1,24 +1,20 @@
-import { Blog, getBlogs } from "../../utils/getBlogs";
+import { getBlogs } from "../../utils/getBlogs";
 
-import Head from "next/head";
 import { LinkCard } from "../../components/LinkCard";
 
 import styles from "./Blogs.module.css";
+import { Metadata } from "next";
 
-type BlogsProps = {
-  blogs: [Blog];
+export const metadata: Metadata = {
+  title: "Blogs by Roni",
+  description: "Blogs by Roni Tuohino about tech and design stuff.",
 };
 
-export default function Blogs({ blogs }: BlogsProps) {
+export default async function Blogs() {
+  const blogs = await getBlogs();
+
   return (
     <>
-      <Head>
-        <title>Blogs by Roni</title>
-        <meta
-          name="description"
-          content="Blogs by Roni Tuohino about tech and design stuff."
-        />
-      </Head>
       <div className={styles.background}>
         <article className={styles.container}>
           <h1 className={styles.title}>Blogs by Roni</h1>
@@ -27,7 +23,7 @@ export default function Blogs({ blogs }: BlogsProps) {
           </h2>
           <ul>
             <li>
-              {blogs.map(blog => {
+              {blogs.map((blog) => {
                 return (
                   <LinkCard
                     key={blog.id}
@@ -48,13 +44,4 @@ export default function Blogs({ blogs }: BlogsProps) {
       </div>
     </>
   );
-}
-
-// Run on build
-export async function getStaticProps() {
-  return {
-    props: {
-      blogs: await getBlogs(),
-    },
-  };
 }

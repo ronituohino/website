@@ -20,6 +20,7 @@
 }
 
 .title {
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
@@ -191,6 +192,5 @@
   position: relative;
   width: 50%;
   left: 25%;
-  translate: 0 -50%;
-  margin-bottom: -22.5%;
+  margin-top: -22.5%;
 }

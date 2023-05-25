@@ -1,5 +1,5 @@
 import { ButtonFrameKeys, buttonFrames } from "../ButtonFrame";
-
+import cn from "classnames";
 import Link from "next/link";
 
 import styles from "./LinkButton.module.css";
@@ -21,7 +21,7 @@ export function LinkButton({
     <Link
       href={href}
       aria-label={text}
-      className={`${styles.linkButton} ${className || ""}`}
+      className={cn(styles.linkButton, className)}
       target="_blank"
     >
       <svg

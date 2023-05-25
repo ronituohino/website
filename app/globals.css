@@ -1,8 +1,4 @@
 :root {
-  /* General */
-  --main-font: "Short Stack";
-  --border-radius: 24px;
-
   /* Colors */
   --white: #f0f0f0;
   --black: #1a1a1a;
@@ -28,7 +24,6 @@
 
   /* Root setup */
   font-size: clamp(1rem, 0.3rem + 1vw, 3rem);
-  font-family: var(--main-font);
   color: var(--text-color);
   background-color: var(--bg-color);
   overflow-x: hidden;
@@ -73,16 +68,4 @@ a {
 ul,
 li {
   list-style-type: none;
-}
-
-@font-face {
-  font-family: "Short Stack";
-  src: url("/fonts/ShortStack.eot");
-  src: url("/fonts/ShortStack.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/ShortStack.woff2") format("woff2"),
-    url("/fonts/ShortStack.woff") format("woff"),
-    url("/fonts/ShortStack.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
