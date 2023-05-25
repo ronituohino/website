@@ -1,16 +1,22 @@
-.background::before {
-  content: "";
+.background {
+  position: relative;
+}
+
+.backgroundLeft {
   position: absolute;
-  rotate: 180deg;
   width: 100%;
   height: 100%;
   background-image: none;
   background-repeat: repeat-y;
   background-size: 400px;
-  background-position: -200%;
+  background-position: -40px;
 }
 
-.background {
+.backgroundRight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
   background-image: none;
   background-repeat: repeat-y;
   background-size: 400px;
@@ -18,13 +24,13 @@
 }
 
 @media screen and (min-width: 62rem) {
-  .background::before,
-  .background {
+  .backgroundLeft,
+  .backgroundRight {
     background-image: url("/pictures/list-lines-dark.svg");
   }
 
-  [data-theme="light"] .background::before,
-  [data-theme="light"] .background {
+  [data-theme="light"] .backgroundLeft,
+  [data-theme="light"] .backgroundRight {
     background-image: url("/pictures/list-lines-light.svg");
   }
 }
