@@ -8,11 +8,7 @@ type ProvidersProps = {
 };
 
 export function Providers({ children }: ProvidersProps) {
-  return (
-    <ThemeProvider enableSystem attribute="class">
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider>{children}</ThemeProvider>;
 }
 
 export default Providers;

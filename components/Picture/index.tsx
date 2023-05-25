@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import type { PictureFrameKeys } from "../PictureFrame";
 import { pictureFrames } from "../PictureFrame";
-
+import cn from "classnames";
 import Link from "next/link";
 
 import styles from "./Picture.module.css";
@@ -33,11 +33,7 @@ export function Picture({
 }: PictureProps) {
   const frameData = pictureFrames[frame];
   return (
-    <Link
-      className={`${styles.link} ${className || ""}`}
-      target="_blank"
-      href={src}
-    >
+    <Link className={cn(styles.link, className)} target="_blank" href={src}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}

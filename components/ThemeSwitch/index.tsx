@@ -1,8 +1,6 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
+import cn from "classnames";
 import styles from "./ThemeSwitch.module.css";
 
 export type ThemeButtonProps = {
@@ -12,13 +10,13 @@ export type ThemeButtonProps = {
 // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
 export function ThemeSwitch({ className }: ThemeButtonProps) {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, systemTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
-    if (!mounted) {
+    if (!mounted && (theme !== "system" || resolvedTheme !== undefined)) {
       // Restrict theme to only "dark" or "light"
       if (theme === "system") {
-        if (systemTheme === "dark") {
+        if (resolvedTheme === "dark") {
           setTheme("dark");
         } else {
           setTheme("light");
@@ -27,7 +25,7 @@ export function ThemeSwitch({ className }: ThemeButtonProps) {
 
       setMounted(true);
     }
-  }, [mounted, setTheme, systemTheme, theme]);
+  }, [mounted, theme, setTheme, resolvedTheme]);
 
   if (!mounted) {
     return null;
@@ -42,7 +40,7 @@ export function ThemeSwitch({ className }: ThemeButtonProps) {
           setTheme("dark");
         }
       }}
-      className={`${styles.switch} ${className || ""}`}
+      className={cn(styles.switch, className)}
       aria-label={`Change website theme, current theme is ${theme}`}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.6 167.9">

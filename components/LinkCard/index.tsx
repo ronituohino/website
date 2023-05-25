@@ -1,8 +1,6 @@
 import type { PictureFrameKeys } from "../PictureFrame";
-import type { ReactNode } from "react";
-
 import Link from "next/link";
-
+import cn from "classnames";
 import { pictureFrames } from "../PictureFrame";
 
 import styles from "./LinkCard.module.css";
@@ -34,11 +32,7 @@ export function LinkCard({
 }: LinkCardProps) {
   const frameData = pictureFrames[frame];
   return (
-    <Link
-      href={href}
-      aria-label={title}
-      className={`${styles.card} ${className || ""}`}
-    >
+    <Link href={href} aria-label={title} className={cn(styles.card, className)}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox={frameData[1].viewBox}>
         {frameData[0]}
         <image

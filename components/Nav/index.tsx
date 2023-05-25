@@ -13,12 +13,6 @@ export function Nav() {
     return comparisonPath === pathname;
   };
 
-  const linkStyles = (disabled: boolean) => {
-    if (disabled) {
-      return styles.disabledLink;
-    }
-    return styles.link;
-  };
   return (
     <nav className={styles.navContainer}>
       <ul className={styles.links}>
@@ -28,7 +22,6 @@ export function Nav() {
             text="Home"
             href="/"
             disabled={linkDisabled("/")}
-            className={linkStyles(linkDisabled("/"))}
           />
         </li>
         <li>
@@ -37,7 +30,6 @@ export function Nav() {
             text="Blog"
             href="/blogs"
             disabled={linkDisabled("/blogs")}
-            className={linkStyles(linkDisabled("/blogs"))}
           />
         </li>
       </ul>

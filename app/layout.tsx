@@ -27,7 +27,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={ShortStack.className}>
+    <html lang="en" suppressHydrationWarning className={ShortStack.className}>
       <body>
         <Providers>
           <Nav />

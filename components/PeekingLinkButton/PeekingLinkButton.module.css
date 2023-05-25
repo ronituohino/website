@@ -17,7 +17,7 @@
 
 .disabledButton {
   top: 0.2rem;
-  cursor: default;
+  pointer-events: none;
 }
 
 .enabledButton {
@@ -29,10 +29,10 @@
   transform: translate(0, 0.2rem);
 }
 
-.disabledButton > path {
+.disabledButton path {
   fill: var(--svg-stroke-color);
 }
 
-.disabledButton > text {
+.disabledButton text {
   fill: var(--svg-bg-color);
 }
