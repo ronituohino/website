@@ -1,0 +1,134 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+
+import GitHub from "@components/Icons/GitHub.astro";
+
+import adminCategories from "./adminCategories.png";
+import adminProducts from "./adminProducts.png";
+import browsing from "./browsing.png";
+import checkout from "./checkout.png";
+import storepage from "./storepage.png";
+---
+
+<Layout
+  title="Recom - Roni Tuohino"
+  description="Project overview of Recom, an online shopping platform."
+>
+  <header>
+    <h1>Recom, "React e-commerce"</h1>
+
+    <ul>
+      <li>
+        <Link
+          variant="icon"
+          ariaLabel="Project GitHub"
+          href="https://github.com/ronituohino/recom"
+        >
+          <GitHub title="" />
+        </Link>
+      </li>
+      <li>
+        <Link variant="button" href="https://recom-pnxd5duksa-lz.a.run.app">
+          Demo
+        </Link>
+      </li>
+    </ul>
+
+    <p>
+      This is my final project for a
+      <Link href="https://fullstackopen.com/en/">
+        Fullstack web development course
+      </Link>, and my first major web project. It consists of a store app, a
+      backend server, a database, and an admin app. The user can add items from
+      the store into their cart, and go through a full checkout process. The
+      store can be managed through the admin application. The entire app (and
+      dev environment) is containerized.
+    </p>
+  </header>
+
+  <div>
+    <Image
+      src={browsing}
+      alt="Category page for shoes. Sneakers and sandals are listed."
+    />
+    <Image
+      alt="Storepage for a pair of sneakers with multiple images of the sneakers."
+      src={storepage}
+    />
+    <Image
+      alt="Ordering page where the user is selecting a postal delivery point."
+      src={checkout}
+    />
+  </div>
+
+  <section>
+    <h2>The store</h2>
+    <p>
+      The style is this cartoonish "hand-drawn" look with all of the content in
+      rounded and shadowed boxes. I decided to go with
+      <Link href="https://mui.com/">MUI</Link> as the frontend framework,
+      because at the time I wasn't comfortable with pure CSS. MUI also looked
+      really clean and proved to be easy to use. The store supports multiple
+      languages (Finnish & English). The store browser supports pagination, but
+      I don't have enough items on sale for it to be apparent.
+    </p>
+  </section>
+
+  <section>
+    <h2>The admin application</h2>
+    <p>
+      The admin app uses the same tech as the store itself, but doesn't have as
+      much focus on style. Admins can add/modify/delete items, categories and
+      accounts.
+    </p>
+    <div>
+      <Image
+        alt="Admin tools with product modification modal."
+        src={adminProducts}
+      />
+      <Image
+        alt="Admin tools with cateogry modification modal."
+        src={adminCategories}
+      />
+    </div>
+  </section>
+
+  <section>
+    <h2>The backend</h2>
+    <p>
+      It's a
+      <Link href="https://nodejs.org/en">node</Link> +
+      <Link href="https://expressjs.com/">express</Link>
+       setup. The backend uses
+      <Link href="https://graphql.org/">GraphQL</Link> for communication and
+      stores all data in
+      <Link href="https://www.mongodb.com/">MongoDB</Link>. Authentication is
+      implemented with
+      <Link href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWTs</Link>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Conclusions</h2>
+    <p>
+      This project required
+      <Link
+        href="https://github.com/ronituohino/recom/blob/main/project-hourbook.xlsx"
+      >
+        way more time
+      </Link>
+       than I initially expected. I would say the biggest time-sinks were trying
+      to containerize the app the first time (when I didn't have much experience
+      with Docker), and figuring out file uploads to the server and syncing them
+      when starting a new instance.
+    </p>
+    <br />
+    <p>
+      Overall I'm very happy with how the backend works, but the frontend could
+      use a little touch-up. The whole project isn't really "production ready",
+      but as a hobby project I think it's great!
+    </p>
+  </section>
+</Layout>

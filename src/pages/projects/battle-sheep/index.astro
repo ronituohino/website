@@ -1,0 +1,61 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+
+import game from "./game.png";
+import movement from "./movement.png";
+---
+
+<Layout
+  title="Battle Sheep - Roni Tuohino"
+  description="Project overview of Battle Sheep, a university algorithms project."
+>
+  <header>
+    <h1>Battle Sheep</h1>
+    <p>
+      <Link href="https://www.blueorangegames.com/index.php/games/battle-sheep">
+        Battle Sheep
+      </Link>
+       is a board game about capturing as much area on the board as possible,
+      but you can only move your sheep linearly by splitting up existing stacks
+      of sheep. This project is about transfering the game onto the web, and
+      implementing an AI adversary. This project was for a university algorithms
+      course. If you want to try it out, I recommend playing on the 'open'
+      level.
+    </p>
+  </header>
+
+  <div>
+    <Image
+      alt="Main game screen with the game board and movement controls."
+      src={game}
+    />
+    <Image
+      alt="The player selecting a new square onto which move their pieces."
+      src={movement}
+    />
+  </div>
+
+  <section>
+    <h2>The AI algorithm</h2>
+    <p>
+      I implemented the AI using a minimax algorithm with alpha-beta pruning,
+      and optimization tricks such as 'move ordering'. The online version makes
+      the AI traverse the game tree until a depth of 6, i.e. find the best move
+      for the next 6 turns into the future.
+      <Link
+        href="https://github.com/ronituohino/tiralabra/blob/main/docs/implementation.md#ai-performance"
+      >
+        Here are some performance benchmarks for the AI
+      </Link>
+       .
+    </p>
+    <br />
+    <p>
+      I'm sure there is still plenty of room for optimization, but I didn't have
+      time to explore further. One way to improve the performance of the AI is
+      by using web workers to take advantage of parallel processing.
+    </p>
+  </section>
+</Layout>

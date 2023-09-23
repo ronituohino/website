@@ -1,34 +1,15 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "website",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "dev": "dotenv -e .env.development -- pnpm dlx prisma migrate dev && NODE_ENV=development next dev",
-    "build": "NODE_ENV=production next build",
-    "start": "NODE_ENV=production next start",
-    "lint": "next lint",
-    "e2e": "dotenv -e .env.test -- pnpm dlx prisma db push --force-reset && start-server-and-test test http://localhost:3000 \"cypress open --e2e\"",
-    "e2e:headless": "dotenv -e .env.test -- pnpm dlx prisma db push --force-reset && start-server-and-test test http://localhost:3000 \"cypress run --e2e\"",
-    "test": "NODE_ENV=test next dev",
-    "docker-build": "DOCKER_BUILDKIT=1 docker build -t nextjs-docker .",
-    "docker-run": "docker run -p 3000:3000 nextjs-docker"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@prisma/client": "^4.14.0",
-    "@types/node": "^20.2.3",
-    "@types/react": "^18.2.6",
-    "classnames": "^2.3.2",
-    "cypress": "^12.12.0",
-    "eslint": "^8.41.0",
-    "next": "13.4.3",
-    "next-themes": "^0.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "^5.0.4"
-  },
-  "devDependencies": {
-    "@types/react-dom": "^18.2.4",
-    "eslint-config-next": "^13.4.3",
-    "prisma": "^4.14.0",
-    "start-server-and-test": "^2.0.0"
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^3.1.2"
   }
 }

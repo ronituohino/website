@@ -1,0 +1,14 @@
+---
+import Link from "./Link.astro";
+
+type Props = {
+  title: string;
+  href: string;
+};
+
+const { title, href } = Astro.props;
+---
+
+<li>
+  <Link href={href} target="_self">{title}</Link>
+</li>

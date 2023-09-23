@@ -1,0 +1,113 @@
+---
+import Link from "@components/Link.astro";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+  <footer class="footer">
+    Made by
+    <Link href="https://github.com/ronituohino">me</Link>, using
+    <Link href="https://astro.build/">astro</Link>.
+  </footer>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "ShortStack";
+    src:
+      url("/fonts/ShortStack.woff2") format("woff2"),
+      url("/fonts/ShortStack.woff") format("woff"),
+      url("/fonts/ShortStack.ttf") format("ttf"),
+      url("/fonts/ShortStack.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* Colors */
+    --white: #f0f0f0;
+    --black: #1a1a1a;
+    --gray: #3a3a3a;
+    --bg-color: var(--black);
+
+    --text-color: var(--white);
+    --text-side-color: #cacaca;
+    --link-color: #db8fe2;
+    --link-hover-color: #b324ab;
+
+    --svg-bg-color: var(--black);
+    --svg-stroke-color: var(--white);
+
+    --outline-color: #0cf104;
+
+    /* Breakpoints
+  82rem < desktop
+  62rem < smaller desktop
+  43rem < tablets
+  20rem < mobile
+  */
+
+    /* Root setup */
+    font-size: clamp(1rem, 0.3rem + 1vw, 3rem);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    --outline: outline: 8px dashed var(--outline-color);
+    overflow-x: hidden;
+  }
+  /* Light theme settings */
+  [data-theme="light"] {
+    --bg-color: var(--white);
+
+    --text-color: var(--black);
+    --text-side-color: #464646;
+    --link-color: #b324ab;
+    --link-hover-color: #db8fe2;
+
+    --svg-bg-color: var(--white);
+    --svg-stroke-color: var(--black);
+
+    --outline-color: #009919;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  html {
+    font-family: "ShortStack", sans-serif;
+  }
+  /* Disable horizontal scroll on mobile along with overflow-x: hidden in root */
+  body {
+    overflow-x: hidden;
+  }
+  ul,
+  li {
+    list-style-type: none;
+  }
+</style>
+
+<style>
+  .footer {
+    padding: 1rem;
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Link from "@components/Link.astro";
+import Layout from "@layouts/Layout.astro";
+
+import GitHub from "@components/Icons/GitHub.astro";
+import GooglePlay from "@components/Icons/GooglePlay.astro";
+
+import pinkishpurple from "./pinkishpurple.jpg";
+import yellowishgreen from "./yellowishgreen.jpg";
+---
+
+<Layout
+  title="GParticles - Roni Tuohino"
+  description="Project overview of GParticles, a mobile art project."
+>
+  <header>
+    <h1>GParticles</h1>
+    <ul>
+      <li>
+        <Link
+          variant="icon"
+          ariaLabel="Project GitHub"
+          href="https://github.com/ronituohino/GParticles"
+        >
+          <GitHub title="" />
+        </Link>
+      </li>
+      <li>
+        <Link
+          variant="icon"
+          ariaLabel="Project on Google Play"
+          href="https://play.google.com/store/apps/details?id=com.Tuohino.GParticles"
+        >
+          <GooglePlay title="" />
+        </Link>
+      </li>
+    </ul>
+
+    <p>
+      A really quick Unity project. The main idea was to achieve some cool
+      effects with particles and physics. For some reason this kind of took off
+      in the Play Store. I tried to optimize it by moving all the calculations
+      to the GPU but I had some other stuff come up while trying to learn
+      compute shaders. I guess now I could just ask ChatGPT to write the shader
+      lol.
+    </p>
+
+    <div>
+      <Image
+        alt="Purple particles circulating around multiple points the user is pressing on."
+        src={pinkishpurple}
+      />
+      <Image
+        alt="Yellow and green particles shooting off into different directions."
+        src={yellowishgreen}
+      />
+    </div>
+  </header>
+</Layout>

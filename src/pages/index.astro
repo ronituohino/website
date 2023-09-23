@@ -1,0 +1,78 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import Link from "@components/Link.astro";
+import GitHub from "@components/Icons/GitHub.astro";
+import LinkedIn from "@components/Icons/LinkedIn.astro";
+import Email from "@components/Icons/Email.astro";
+
+import CVButton from "@components/CVButton.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+---
+
+<Layout
+  title="Roni Tuohino"
+  description="Hey, need a web developer? Check me out, or not ¯\_(ツ)_/¯"
+>
+  <section>
+    <header>
+      <h1>
+        Hi, I'm
+        <Link href="https://github.com/ronituohino" class="roni">Roni</Link>
+      </h1>
+
+      <h2>I'm passionate about technology and design.</h2>
+    </header>
+
+    <CVButton class="cv" />
+    <div class="links">
+      <Link
+        variant="icon"
+        ariaLabel="My github profile"
+        href="https://github.com/ronituohino"
+      >
+        <GitHub title="" />
+      </Link>
+
+      <Link
+        variant="icon"
+        ariaLabel="My linkedin profile"
+        href="https://www.linkedin.com/in/ronituohino/"
+      >
+        <LinkedIn title="" />
+      </Link>
+
+      <Link
+        variant="icon"
+        ariaLabel="Send me an email"
+        href="mailto:tuohinoroni@gmail.com"
+      >
+        <Email title="" />
+      </Link>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cool stuff that I've worked on</h2>
+    <h3>*Demos may have slow load times due to cold starts</h3>
+    <ul>
+      <ProjectCard title="Recom" href="/projects/recom" />
+      <ProjectCard title="Viitevarasto" href="/projects/viitevarasto" />
+      <ProjectCard title="Battle Sheep" href="/projects/battle-sheep" />
+      <ProjectCard title="GParticles" href="/projects/gparticles" />
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .roni {
+    background-color: var(--text-color);
+    background-image: linear-gradient(135deg, #facaff, #05b1ff);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

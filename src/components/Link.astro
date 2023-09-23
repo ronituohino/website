@@ -1,0 +1,56 @@
+---
+type Props = {
+  href: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  class?: string;
+  ariaLabel?: string;
+  variant?: "inline" | "icon" | "button";
+};
+const {
+  href,
+  target,
+  class: className,
+  ariaLabel,
+  variant = "inline",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  target={target ? target : "_blank"}
+  aria-label={ariaLabel}
+  class:list={[variant, className]}
+>
+  <slot />
+</a>
+
+<style>
+  /* default inline style */
+  .inline {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.1s ease-in-out;
+  }
+
+  .inline:hover,
+  .inline:focus-visible {
+    color: var(--link-hover-color);
+  }
+
+  /* icon style */
+  .icon {
+    display: block;
+    font-size: 0;
+    gap: 8px;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .icon:hover,
+  .icon:focus-visible {
+    transform: scale(1.1);
+  }
+
+  .button {
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+
+import GitHub from "@components/Icons/GitHub.astro";
+
+import adding from "./adding.png";
+import menu from "./menu.png";
+---
+
+<Layout
+  title="Viitevarasto - Roni Tuohino"
+  description="Project overview of Viitevarasto, a references management system."
+>
+  <header>
+    <div>
+      <h1>Viitevarasto</h1>
+      <h2>*The app is only in Finnish</h2>
+    </div>
+
+    <ul>
+      <li>
+        <Link
+          variant="icon"
+          ariaLabel="Project GitHub"
+          href="https://github.com/perttukangas/ohtu-mini"
+        >
+          <GitHub title="" />
+        </Link>
+      </li>
+      <li>
+        <Link href="https://viitevarasto.fly.dev/" variant="button">Demo</Link>
+      </li>
+    </ul>
+
+    <p>
+      This is a university group project for a software production course. The
+      idea is that the user can upload their BibTeX references onto the
+      application and select which ones to compile into a references file for
+      whatever document they are working on. This avoids having to manually
+      manage the BibTeX file and updating the references throughout the
+      document, and it also makes adding new references easier.
+    </p>
+  </header>
+
+  <div>
+    <Image
+      alt="Viitevarasto main menu, with a list of added references and controls for manipulating references."
+      src={menu}
+    />
+    <Image
+      alt="Viitevarasto reference adding menu, with a form for adding a reference into the application."
+      src={adding}
+    />
+  </div>
+
+  <section>
+    <h2>Tech and design</h2>
+    <p>
+      The app is built using
+      <Link href="https://flask.palletsprojects.com/en/2.3.x/">Flask</Link>
+       and Python. Deployment is automated via GitHub Actions, and the app is
+      pushed in a Docker container to
+      <Link href="https://fly.io/">fly.io</Link>. The app contains automation
+      tests and they are run as part of the deployment pipeline.
+    </p>
+    <br />
+    <p>
+      I was responsible for initial project setup and design. All of the CSS is
+      <Link
+        href="https://github.com/Perttu-Kangas/ohtu-mini/tree/main/static/css"
+      >
+        in 2 files
+      </Link>
+       lol, but that's mostly because the time requirements for this project
+      were quite tight. The overall look is quite clean and very usable.
+    </p>
+  </section>
+
+  <section>
+    <h2>Credits</h2>
+    <p>
+      Huge credits for the rest of the team for amazing work on the project:
+      <Link href="https://github.com/DeeCaaD">@DeeCaaD</Link>,
+      <Link href="https://github.com/joonas-a">@joonas-a</Link>,
+      <Link href="https://github.com/Sidorow">@Sidorow</Link>,
+      <Link href="https://github.com/tikuisma">@tikuisma</Link>
+    </p>
+  </section>
+</Layout>

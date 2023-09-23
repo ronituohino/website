@@ -5,10 +5,9 @@
 
 User-agent: *
 
-# Tell crawlers not to visit any URLs in the api, pictures or fonts,
+# Tell crawlers not to visit any URLs in pictures or fonts
 # folders because they won't be useful in search results.
 
-Disallow: /api/
 Disallow: /pictures/
 Disallow: /fonts/
 
