@@ -56,7 +56,7 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 
   <section>
     <h2>Cool stuff that I've worked on</h2>
-    <h3>*Demos may have slow load times due to cold starts</h3>
+    <span>*Demos may have slow load times due to cold starts</span>
     <ul class="projects">
       <ProjectCard title="Recom" href="/projects/recom" img={recom} />
       <ProjectCard
@@ -100,8 +100,12 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
   }
 
   .projects {
+    --project-card-width: 15rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, var(--project-card-width));
+    padding: 2rem;
     grid-gap: 1rem;
+    flex-wrap: wrap;
   }
 </style>

@@ -4,7 +4,7 @@ type Props = {
   target?: "_blank" | "_self" | "_parent" | "_top";
   class?: string;
   ariaLabel?: string;
-  variant?: "inline" | "icon" | "button";
+  variant?: "inline" | "icon" | "button" | "unstyled";
 };
 const {
   href,
@@ -28,7 +28,6 @@ const {
   /* default inline style */
   .inline {
     color: var(--link-color);
-    text-decoration: none;
     transition: color 0.1s ease-in-out;
   }
 
@@ -43,9 +42,5 @@ const {
     font-size: 0;
     gap: 8px;
     transition: transform 0.1s ease-in-out;
-  }
-
-  .button {
-    text-decoration: none;
   }
 </style>

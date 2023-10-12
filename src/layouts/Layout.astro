@@ -1,5 +1,6 @@
 ---
 import Link from "@components/Link.astro";
+import "@fontsource/roboto";
 
 type Props = {
   title: string;
@@ -64,7 +65,9 @@ const { title, description } = Astro.props;
     --md: 43rem; /* tablet*/
     --sm: 20rem; /* mobile */
 
-    font-size: clamp(1rem, 0.3rem + 1vw, 3rem);
+    --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+
+    font-size: 18px;
     color: var(--text-color);
     background-color: var(--bg-color);
   }
@@ -77,7 +80,7 @@ const { title, description } = Astro.props;
   }
 
   html {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: "Roboto", Roboto, system-ui, Ubuntu, "Open Sans", sans-serif;
   }
 
   /* Disable horizontal scroll on mobile */
@@ -95,11 +98,16 @@ const { title, description } = Astro.props;
   li {
     list-style-type: none;
   }
+
+  a {
+    text-decoration: none;
+  }
 </style>
 
 <style>
   .body {
     margin: 0 auto;
+    max-width: var(--xl);
   }
   .footer {
     padding: 1rem;
