@@ -13,10 +13,7 @@ import recom from "@pages/projects/recom/recom.png";
 import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 ---
 
-<Layout
-  title="Roni Tuohino"
-  description="Hey, need a web developer? Check me out, or not ¯\_(ツ)_/¯"
->
+<Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
   <section>
     <header>
       <h1>
@@ -24,7 +21,7 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
         <Link href="https://github.com/ronituohino" class="roni">Roni</Link>
       </h1>
 
-      <h2>I'm passionate about technology and design.</h2>
+      <h2>I'm a fullstack developer fron Finland.</h2>
     </header>
 
     <div class="links">
@@ -55,9 +52,10 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
   </section>
 
   <section>
-    <h2>Cool stuff that I've worked on</h2>
-    <span>*Demos may have slow load times due to cold starts</span>
+    <h2>Projects</h2>
     <ul class="projects">
+      <ProjectCard title="Sanoma" href="/projects/sanoma" />
+      <ProjectCard title="SCAS" href="/projects/scas" />
       <ProjectCard title="Recom" href="/projects/recom" img={recom} />
       <ProjectCard
         title="Viitevarasto"
@@ -79,6 +77,22 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 </Layout>
 
 <style>
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 75%;
+    right: 0;
+    height: 2px;
+    background-color: white;
+  }
+
   .roni {
     background-color: var(--text-color);
     background-image: linear-gradient(135deg, #facaff, #05b1ff);
@@ -104,7 +118,6 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, var(--project-card-width));
-    padding: 2rem;
     grid-gap: 1rem;
     flex-wrap: wrap;
   }
