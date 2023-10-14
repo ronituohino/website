@@ -1,6 +1,7 @@
 ---
-import Link from "@components/Link.astro";
 import "@fontsource/roboto";
+import { ViewTransitions } from "astro:transitions";
+import Link from "@components/Link.astro";
 
 type Props = {
   title: string;
@@ -19,98 +20,100 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="body">
     <slot />
+    <footer class="footer">
+      Made by
+      <Link href="https://github.com/ronituohino">me</Link>, using
+      <Link href="https://astro.build/">astro</Link>, in 🇫🇮
+    </footer>
+    <style is:global>
+      @font-face {
+        font-family: "ShortStack";
+        src:
+          url("/fonts/ShortStack.woff2") format("woff2"),
+          url("/fonts/ShortStack.woff") format("woff"),
+          url("/fonts/ShortStack.ttf") format("ttf"),
+          url("/fonts/ShortStack.eot") format("eot");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        /* Colors */
+        --white: #f0f0f0;
+        --black: #0f0f0f;
+        --bg-color: var(--black);
+
+        --text-color: var(--white);
+        --link-color: #db8fe2;
+        --link-hover-color: #b324ab;
+
+        --svg-bg-color: var(--black);
+        --svg-stroke-color: var(--white);
+
+        --outline-color: #0cf104;
+        --outline: outline: 8px dashed var(--outline-color);
+
+        /* Breakpoints */
+        --xl: 82rem; /* desktop */
+        --lg: 62rem; /* small desktop */
+        --md: 43rem; /* tablet*/
+        --sm: 20rem; /* mobile */
+
+        --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+
+        font-size: 18px;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      html {
+        font-family: "Roboto", Roboto, system-ui, Ubuntu, "Open Sans",
+          sans-serif;
+      }
+
+      /* Disable horizontal scroll on mobile */
+      :root,
+      body {
+        overflow-x: hidden;
+        padding: 1rem;
+      }
+      /* Disable Safari overscroll */
+      html,
+      body {
+        overscroll-behavior-y: none;
+      }
+
+      ul,
+      li {
+        list-style-type: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+
+    <style>
+      .body {
+        margin: 0 auto;
+        max-width: var(--xl);
+      }
+      .footer {
+        padding: 1rem;
+        text-align: center;
+      }
+    </style>
   </body>
-  <footer class="footer">
-    Made by
-    <Link href="https://github.com/ronituohino">me</Link>, using
-    <Link href="https://astro.build/">astro</Link>.
-  </footer>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: "ShortStack";
-    src:
-      url("/fonts/ShortStack.woff2") format("woff2"),
-      url("/fonts/ShortStack.woff") format("woff"),
-      url("/fonts/ShortStack.ttf") format("ttf"),
-      url("/fonts/ShortStack.eot") format("eot");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  :root {
-    /* Colors */
-    --white: #f0f0f0;
-    --black: #0f0f0f;
-    --bg-color: var(--black);
-
-    --text-color: var(--white);
-    --link-color: #db8fe2;
-    --link-hover-color: #b324ab;
-
-    --svg-bg-color: var(--black);
-    --svg-stroke-color: var(--white);
-
-    --outline-color: #0cf104;
-    --outline: outline: 8px dashed var(--outline-color);
-
-    /* Breakpoints */
-    --xl: 82rem; /* desktop */
-    --lg: 62rem; /* small desktop */
-    --md: 43rem; /* tablet*/
-    --sm: 20rem; /* mobile */
-
-    --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
-
-    font-size: 18px;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-
-  html {
-    font-family: "Roboto", Roboto, system-ui, Ubuntu, "Open Sans", sans-serif;
-  }
-
-  /* Disable horizontal scroll on mobile */
-  :root,
-  body {
-    overflow-x: hidden;
-    padding: 1rem;
-  }
-  /* Disable Safari overscroll */
-  html,
-  body {
-    overscroll-behavior-y: none;
-  }
-
-  ul,
-  li {
-    list-style-type: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-</style>
-
-<style>
-  .body {
-    margin: 0 auto;
-    max-width: var(--xl);
-  }
-  .footer {
-    padding: 1rem;
-  }
-</style>

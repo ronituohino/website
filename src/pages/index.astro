@@ -7,6 +7,7 @@ import LinkedIn from "@components/Icons/LinkedIn.astro";
 import Email from "@components/Icons/Email.astro";
 
 import ProjectCard from "@components/ProjectCard.astro";
+import { Description } from "@components/Description";
 import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
 import gparticles from "@pages/projects/gparticles/gparticles.png";
 import recom from "@pages/projects/recom/recom.png";
@@ -18,10 +19,13 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     <header>
       <h1>
         Hi, I'm
-        <Link href="https://github.com/ronituohino" class="roni">Roni</Link>
+        <div class="roni">.</div>
       </h1>
-
-      <h2>I'm a fullstack developer fron Finland.</h2>
+      <Description client:load>
+        <h2 slot="first">I'm a fullstack engineer</h2>
+        <h2 slot="second">I'm a web developer</h2>
+        <h2 slot="third">I make stuff</h2>
+      </Description>
     </header>
 
     <div class="links">
@@ -78,30 +82,11 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 
 <style>
   h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-  h1::after {
-    content: "";
-    position: absolute;
-    left: 75%;
-    right: 0;
-    height: 2px;
-    background-color: white;
   }
 
   .roni {
-    background-color: var(--text-color);
-    background-image: linear-gradient(135deg, #facaff, #05b1ff);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 4rem;
+    font-weight: 600;
   }
 
   .links {

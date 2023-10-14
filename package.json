@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/solid-js": "^3.0.2",
     "@fontsource/roboto": "^5.0.8",
-    "astro": "^3.2.3"
+    "astro": "^3.3.0",
+    "solid-js": "^1.8.1"
   }
 }
