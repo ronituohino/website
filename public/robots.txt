@@ -5,10 +5,4 @@
 
 User-agent: *
 
-# Tell crawlers not to visit any URLs in pictures or fonts
-# folders because they won't be useful in search results.
-
-Disallow: /pictures/
-Disallow: /fonts/
-
 Sitemap: https://ronituohino.fi/sitemap.xml

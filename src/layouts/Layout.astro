@@ -24,24 +24,7 @@ const { title, description } = Astro.props;
   </head>
   <body class="body">
     <slot />
-    <footer class="footer">
-      Made by
-      <Link href="https://github.com/ronituohino">me</Link>, using
-      <Link href="https://astro.build/">astro</Link>, in 🇫🇮
-    </footer>
     <style is:global>
-      @font-face {
-        font-family: "ShortStack";
-        src:
-          url("/fonts/ShortStack.woff2") format("woff2"),
-          url("/fonts/ShortStack.woff") format("woff"),
-          url("/fonts/ShortStack.ttf") format("ttf"),
-          url("/fonts/ShortStack.eot") format("eot");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
       :root {
         /* Colors */
         --white: #f0f0f0;
@@ -59,14 +42,14 @@ const { title, description } = Astro.props;
         --outline: outline: 8px dashed var(--outline-color);
 
         /* Breakpoints */
-        --xl: 82rem; /* desktop */
-        --lg: 62rem; /* small desktop */
-        --md: 43rem; /* tablet*/
-        --sm: 20rem; /* mobile */
+        --xl: 1280px;
+        --lg: 1024px;
+        --md: 768px;
+        --sm: 640px;
 
         --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
 
-        font-size: 18px;
+        font-size: 16px;
         color: var(--text-color);
         background-color: var(--bg-color);
       }
@@ -95,6 +78,11 @@ const { title, description } = Astro.props;
         overscroll-behavior-y: none;
       }
 
+      body {
+        margin: 0 auto;
+        max-width: var(--lg);
+      }
+
       ul,
       li {
         list-style-type: none;
@@ -102,17 +90,6 @@ const { title, description } = Astro.props;
 
       a {
         text-decoration: none;
-      }
-    </style>
-
-    <style>
-      .body {
-        margin: 0 auto;
-        max-width: var(--xl);
-      }
-      .footer {
-        padding: 1rem;
-        text-align: center;
       }
     </style>
   </body>
