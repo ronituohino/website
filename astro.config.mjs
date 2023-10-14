@@ -5,8 +5,9 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ronituohino.fi",
+  site: "https://ronituohino.github.io", // Update this once custom domain set
+  base: "/website", // Remove this once custom domain set
   integrations: [solidJs(), sitemap()],
-  // enable passing class names from parent to child components
+  // Enable passing class names from parent to child components
   scopedStyleStrategy: "class",
 });
