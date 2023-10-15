@@ -1,7 +1,6 @@
 ---
 import "@fontsource/roboto";
 import { ViewTransitions } from "astro:transitions";
-import Link from "@components/Link.astro";
 
 type Props = {
   title: string;
@@ -22,7 +21,7 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="body">
+  <body>
     <slot />
     <style is:global>
       :root {
