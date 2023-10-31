@@ -6,8 +6,10 @@ import GitHub from "@components/Icons/GitHub.astro";
 import LinkedIn from "@components/Icons/LinkedIn.astro";
 import Email from "@components/Icons/Email.astro";
 
-import ProjectCard from "@components/ProjectCard.astro";
 import { Description } from "@components/Description";
+import Project from "@components/Project.astro";
+import FeaturedProject from "@components/FeaturedProject.astro";
+
 import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
 import gparticles from "@pages/projects/gparticles/gparticles.png";
 import recom from "@pages/projects/recom/recom.png";
@@ -16,15 +18,15 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 
 <Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
   <section>
-    <header>
+    <header class="header">
       <h1>
         Hi, my name is
-        <div class="roni">Roni Tuohino.</div>
+        <div class="roni">Roni Tuohino</div>
       </h1>
       <Description client:load>
-        <h2 slot="first">I'm a fullstack engineer.</h2>
-        <h2 slot="second">I'm a web developer.</h2>
-        <h2 slot="third">I create sites on the interwebs.</h2>
+        <h2 slot="first">I'm a fullstack developer</h2>
+        <h2 slot="second">I'm a web developer</h2>
+        <h2 slot="third">I create sites on the interwebs</h2>
       </Description>
     </header>
 
@@ -55,23 +57,40 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     </div>
   </section>
 
+  <section class="about">
+    I fell into the programming rabbit hole in 2016 when I fiddled around making
+    indie games alongside school. In 2021, I started university, and my interest
+    shifted to web development.
+    <br /><br />
+     I’ve enjoyed working on projects in school and as a freelancer. I’ve also
+    gotten the privilege of working in Sanoma, where I’m currently developing
+    ruutu.fi and supla.fi web applications.
+    <br /><br />
+     Alongside programming, I’ve also fallen in love with climbing. Now I’m
+    trying to get comfortable with Lead, albeit terrifying!
+  </section>
+
   <section>
-    <h2>Projects</h2>
-    <ul class="projects">
-      <ProjectCard title="Sanoma" href="/projects/sanoma" />
-      <ProjectCard title="SCAS" href="/projects/scas" />
-      <ProjectCard title="Recom" href="/projects/recom" img={recom} />
-      <ProjectCard
+    <ul class="featured-projects">
+      <FeaturedProject title="Recom" href="/projects/recom" img={recom} />
+      <FeaturedProject
         title="Viitevarasto"
         href="/projects/viitevarasto"
         img={viitevarasto}
       />
-      <ProjectCard
+    </ul>
+  </section>
+
+  <section>
+    <ul class="projects">
+      <Project title="Sanoma" href="/projects/sanoma" />
+      <Project title="SCAS" href="/projects/scas" />
+      <Project
         title="Battle Sheep"
         href="/projects/battle-sheep"
         img={battleSheep}
       />
-      <ProjectCard
+      <Project
         title="GParticles"
         href="/projects/gparticles"
         img={gparticles}
@@ -81,12 +100,16 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 </Layout>
 
 <style>
-  h1 {
+  .header {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    max-width: 30rem;
   }
-
   .roni {
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .links {
@@ -98,6 +121,10 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     width: 2rem;
   }
 
+  .about {
+    color: var(--gray);
+  }
+
   .projects {
     --project-card-width: 15rem;
     display: grid;
@@ -107,3 +134,4 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     flex-wrap: wrap;
   }
 </style>
+ @components/index

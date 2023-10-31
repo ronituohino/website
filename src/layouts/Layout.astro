@@ -1,5 +1,5 @@
 ---
-import "@fontsource/roboto";
+import "@fontsource-variable/baloo-2";
 import { ViewTransitions } from "astro:transitions";
 
 type Props = {
@@ -27,10 +27,12 @@ const { title, description } = Astro.props;
       :root {
         /* Colors */
         --white: #f0f0f0;
-        --black: #0f0f0f;
-        --bg-color: var(--black);
+        --gray: #6e6e6e;
+        --black: #181818;
 
+        --bg-color: var(--black);
         --text-color: var(--white);
+
         --link-color: #db8fe2;
         --link-hover-color: #b324ab;
 
@@ -48,7 +50,7 @@ const { title, description } = Astro.props;
 
         --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
 
-        font-size: 16px;
+        font-size: 20px;
         color: var(--text-color);
         background-color: var(--bg-color);
       }
@@ -61,8 +63,9 @@ const { title, description } = Astro.props;
       }
 
       html {
-        font-family: "Roboto", Roboto, system-ui, Ubuntu, "Open Sans",
-          sans-serif;
+        font-family: "Baloo 2 Variable", Ubuntu, sans-serif;
+        font-weight: 600;
+        line-height: 1;
       }
 
       /* Disable horizontal scroll on mobile */
@@ -89,6 +92,10 @@ const { title, description } = Astro.props;
 
       a {
         text-decoration: none;
+      }
+
+      .glass {
+        backdrop-filter: blur(8px);
       }
     </style>
   </body>

@@ -11,8 +11,9 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/solid-js": "^3.0.2",
-    "@fontsource/roboto": "^5.0.8",
-    "astro": "^3.3.0",
+    "@fontsource-variable/baloo-2": "^5.0.17",
+    "astro": "^3.4.0",
+    "solid-icons": "^1.1.0",
     "solid-js": "^1.8.1"
   }
 }
