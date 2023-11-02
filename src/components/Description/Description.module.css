@@ -1,7 +1,13 @@
 .description {
-  align-self: flex-end;
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 672px) {
+  .description {
+    align-self: flex-end;
+  }
 }
 
 .button {

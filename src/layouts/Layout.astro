@@ -1,5 +1,5 @@
 ---
-import "@fontsource-variable/baloo-2";
+import "@fontsource-variable/nunito";
 import { ViewTransitions } from "astro:transitions";
 
 type Props = {
@@ -30,7 +30,6 @@ const { title, description } = Astro.props;
         --gray: #6e6e6e;
         --black: #181818;
 
-        --bg-color: var(--black);
         --text-color: var(--white);
 
         --link-color: #db8fe2;
@@ -48,11 +47,17 @@ const { title, description } = Astro.props;
         --md: 768px;
         --sm: 640px;
 
+        --border-radius: 16px;
         --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
 
         font-size: 20px;
         color: var(--text-color);
-        background-color: var(--bg-color);
+        background: linear-gradient(
+          180deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
       }
 
       * {
@@ -63,16 +68,14 @@ const { title, description } = Astro.props;
       }
 
       html {
-        font-family: "Baloo 2 Variable", Ubuntu, sans-serif;
+        font-family: "Nunito Variable", Ubuntu, sans-serif;
         font-weight: 600;
-        line-height: 1;
       }
 
       /* Disable horizontal scroll on mobile */
       :root,
       body {
         overflow-x: hidden;
-        padding: 1rem;
       }
       /* Disable Safari overscroll */
       html,
@@ -82,7 +85,10 @@ const { title, description } = Astro.props;
 
       body {
         margin: 0 auto;
-        max-width: var(--lg);
+        max-width: var(--md);
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
       }
 
       ul,
@@ -95,7 +101,11 @@ const { title, description } = Astro.props;
       }
 
       .glass {
-        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.7px);
+        -webkit-backdrop-filter: blur(8.7px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
       }
     </style>
   </body>

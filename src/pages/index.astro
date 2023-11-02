@@ -14,21 +14,18 @@ import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
 import gparticles from "@pages/projects/gparticles/gparticles.png";
 import recom from "@pages/projects/recom/recom.png";
 import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
+import Tag from "@components/Tag.astro";
 ---
 
 <Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
-  <section>
-    <header class="header">
-      <h1>
-        Hi, my name is
-        <div class="roni">Roni Tuohino</div>
-      </h1>
-      <Description client:load>
-        <h2 slot="first">I'm a fullstack developer</h2>
-        <h2 slot="second">I'm a web developer</h2>
-        <h2 slot="third">I create sites on the interwebs</h2>
-      </Description>
-    </header>
+  <header class="header">
+    <div class="intro">Hi, my name is</div>
+    <h1 class="name">Roni Tuohino</h1>
+    <Description client:load>
+      <h2 slot="first" class="description">I'm a fullstack developer</h2>
+      <h2 slot="second" class="description">I'm a web developer</h2>
+      <h2 slot="third" class="description">I create sites on the interwebs</h2>
+    </Description>
 
     <div class="links">
       <Link
@@ -55,7 +52,7 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
         <Email title="" />
       </Link>
     </div>
-  </section>
+  </header>
 
   <section class="about">
     I fell into the programming rabbit hole in 2016 when I fiddled around making
@@ -72,7 +69,9 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 
   <section>
     <ul class="featured-projects">
-      <FeaturedProject title="Recom" href="/projects/recom" img={recom} />
+      <FeaturedProject title="Recom" href="/projects/recom" img={recom}>
+        <ul slot="tags"><Tag>Test</Tag></ul>
+      </FeaturedProject>
       <FeaturedProject
         title="Viitevarasto"
         href="/projects/viitevarasto"
@@ -97,22 +96,38 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
       />
     </ul>
   </section>
+
+  <section class="contact">
+    For the time being, I’m not actively looking for work. However, my inbox is
+    always open if you want to chat about cool projects or just say hi
+
+    <button>Send me a message</button>
+  </section>
 </Layout>
 
 <style>
   .header {
     display: flex;
     flex-direction: column;
-    line-height: 0.9;
-    max-width: 30rem;
+    align-self: center;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
-  .roni {
+  .name {
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
+    line-height: 0.9;
+    margin-left: -4px;
+    margin-right: -4px;
   }
-
+  .intro,
+  .description {
+    font-size: 1.25rem;
+  }
   .links {
+    align-self: center;
+    margin-top: 3rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -123,6 +138,15 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 
   .about {
     color: var(--gray);
+    margin-bottom: 8rem;
+  }
+
+  .featured-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
   .projects {
@@ -132,6 +156,13 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
     grid-template-columns: repeat(auto-fit, var(--project-card-width));
     grid-gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
   }
 </style>
- @components/index

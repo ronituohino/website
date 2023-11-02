@@ -17,14 +17,16 @@ export function Description({ first, second, third }: DescriptionProps) {
   return (
     <div class={styles.description}>
       {elements[selected()]}
-      <button
-        onClick={() => {
-          setSelected(selected() + 1);
-        }}
-        class={styles.button}
-      >
-        <BsQuestion class={styles.icon} />
-      </button>
+      {selected() < 2 && (
+        <button
+          onClick={() => {
+            setSelected(selected() + 1);
+          }}
+          class={styles.button}
+        >
+          <BsQuestion class={styles.icon} />
+        </button>
+      )}
     </div>
   );
 }

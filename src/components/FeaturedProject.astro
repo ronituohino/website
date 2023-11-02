@@ -11,17 +11,42 @@ type Props = {
 const { title, href, img } = Astro.props;
 ---
 
-<li class="project">
-  <Link href={href} target="_self" class="link">
-    <figure>
-      {img && <Image alt="" src={img} class="image" />}
-      <figcaption class="title">{title}</figcaption>
-    </figure>
+<li class="project glass">
+  <Link href={href} target="_self" class="link" variant="unstyled">
+    <h3 class="title">{title}</h3>
+    {img && <Image alt="" src={img} class="image" />}
   </Link>
-  <ul>
-    <slot name="tags" />
-  </ul>
-  <ul>
-    <slot name="links" />
-  </ul>
+  <slot class="test" name="tags" />
+  <slot name="links" />
 </li>
+
+<style>
+  .project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+  }
+
+  .title {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+
+  .image {
+    border-radius: var(--border-radius);
+    --image-margin: 1rem;
+    margin: var(--image-margin);
+    margin-top: 0;
+    height: auto;
+    max-width: calc(100% - 2 * var(--image-margin));
+  }
+
+  .test {
+    position: absolute;
+  }
+</style>
