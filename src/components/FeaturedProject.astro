@@ -16,8 +16,12 @@ const { title, href, img } = Astro.props;
     <h3 class="title">{title}</h3>
     {img && <Image alt="" src={img} class="image" />}
   </Link>
-  <slot class="test" name="tags" />
-  <slot name="links" />
+  <div class="tags">
+    <slot name="tags" />
+  </div>
+  <div class="links">
+    <slot name="links" />
+  </div>
 </li>
 
 <style>
@@ -28,6 +32,7 @@ const { title, href, img } = Astro.props;
     justify-content: center;
     align-items: center;
     border-radius: var(--border-radius);
+    margin: 1rem;
   }
 
   .title {
@@ -42,11 +47,13 @@ const { title, href, img } = Astro.props;
     --image-margin: 1rem;
     margin: var(--image-margin);
     margin-top: 0;
-    height: auto;
     max-width: calc(100% - 2 * var(--image-margin));
   }
 
-  .test {
+  .tags {
     position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
   }
 </style>

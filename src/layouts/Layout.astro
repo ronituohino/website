@@ -100,12 +100,23 @@ const { title, description } = Astro.props;
         text-decoration: none;
       }
 
+      img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        font-style: italic;
+      }
+
       .glass {
-        background: rgba(255, 255, 255, 0.1);
+        background: linear-gradient(
+          315deg,
+          rgba(255, 255, 255, 0.12),
+          rgba(255, 255, 255, 0.3)
+        );
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(8.7px);
         -webkit-backdrop-filter: blur(8.7px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.4);
       }
     </style>
   </body>
