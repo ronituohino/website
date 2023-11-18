@@ -1,0 +1,143 @@
+---
+import {
+  FaBrandsGithub,
+  FaBrandsLinkedin,
+  FaSolidEnvelope,
+  FaSolidArrowDown,
+} from "solid-icons/fa";
+
+import Link from "@components/Link.astro";
+import { Description } from "@components/Description";
+---
+
+<header class="header">
+  <div class="title">
+    <div class="intro">Hi, my name is</div>
+    <h1 class="name">
+      <Link target="_self" href="/">Roni Tuohino</Link>
+    </h1>
+    <Description class="description" client:load>
+      <h2 slot="first" class="description-text">I'm a fullstack developer</h2>
+      <h2 slot="second" class="description-text">I'm a web developer</h2>
+      <h2 slot="third" class="description-text">
+        I create sites on the interwebs
+      </h2>
+    </Description>
+  </div>
+
+  <ul class="links">
+    <li class="resume">
+      <Link variant="button" href="/ronituohino-cv.pdf">
+        <FaSolidArrowDown class="resume-icon" />
+         Résumé
+      </Link>
+    </li>
+
+    <li class="github">
+      <Link
+        variant="icon"
+        ariaLabel="My github profile"
+        href="https://github.com/ronituohino"
+      >
+        <FaBrandsGithub class="github-icon" />
+      </Link>
+    </li>
+
+    <li class="linkedin">
+      <Link
+        variant="icon"
+        ariaLabel="My linkedin profile"
+        href="https://www.linkedin.com/in/ronituohino/"
+      >
+        <FaBrandsLinkedin class="linkedin-icon" />
+      </Link>
+    </li>
+
+    <li class="email">
+      <Link
+        variant="icon"
+        ariaLabel="Send me an email"
+        href="mailto:tuohinoroni@gmail.com"
+      >
+        <FaSolidEnvelope class="email-icon" />
+      </Link>
+    </li>
+  </ul>
+</header>
+
+<style>
+  .header {
+    padding: 0 var(--content-padding);
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .name {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-left: -4px;
+    margin-right: -4px;
+    word-break: break-word;
+  }
+  .description {
+    align-self: center;
+  }
+  .intro,
+  .description-text {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .links {
+    display: flex;
+  }
+  .resume {
+    grid-area: resume;
+  }
+  .github {
+    grid-area: github;
+  }
+  .linkedin {
+    grid-area: linkedin;
+  }
+  .email {
+    grid-area: email;
+  }
+  .resume-icon {
+    font-size: 1rem;
+  }
+  .github-icon,
+  .linkedin-icon {
+    font-size: 2.25rem;
+  }
+  .email-icon {
+    font-size: 2.5rem;
+  }
+  @media only screen and (min-width: calc(400px + 2rem)) {
+    .name {
+      font-size: 4rem;
+    }
+    .intro,
+    .description-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  @media only screen and (min-width: calc(600px + 2rem)) {
+    .title {
+      text-align: left;
+    }
+    .description {
+      align-self: flex-end;
+    }
+  }
+</style>

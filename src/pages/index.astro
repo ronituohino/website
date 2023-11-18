@@ -2,14 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 
 import Link from "@components/Link.astro";
-import {
-  FaBrandsGithub,
-  FaBrandsLinkedin,
-  FaSolidEnvelope,
-  FaSolidArrowDown,
-} from "solid-icons/fa";
 
-import { Description } from "@components/Description";
+import Header from "@components/Header.astro";
 import Project from "@components/Project.astro";
 
 import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
@@ -19,60 +13,7 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 ---
 
 <Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
-  <header class="header">
-    <div class="title">
-      <div class="intro">Hi, my name is</div>
-      <h1 class="name">
-        <Link target="_self" href="/">Roni Tuohino</Link>
-      </h1>
-      <Description class="description" client:load>
-        <h2 slot="first" class="description">I'm a fullstack developer</h2>
-        <h2 slot="second" class="description">I'm a web developer</h2>
-        <h2 slot="third" class="description">
-          I create sites on the interwebs
-        </h2>
-      </Description>
-    </div>
-
-    <ul class="links">
-      <li>
-        <Link variant="button" href="/ronituohino-cv.pdf">
-          <FaSolidArrowDown class:list={["icon", "resume-arrow-icon"]} />
-           Résumé
-        </Link>
-      </li>
-
-      <li>
-        <Link
-          variant="icon"
-          ariaLabel="My github profile"
-          href="https://github.com/ronituohino"
-        >
-          <FaBrandsGithub class="icon" />
-        </Link>
-      </li>
-
-      <li>
-        <Link
-          variant="icon"
-          ariaLabel="My linkedin profile"
-          href="https://www.linkedin.com/in/ronituohino/"
-        >
-          <FaBrandsLinkedin class="icon" />
-        </Link>
-      </li>
-
-      <li>
-        <Link
-          variant="icon"
-          ariaLabel="Send me an email"
-          href="mailto:tuohinoroni@gmail.com"
-        >
-          <FaSolidEnvelope class:list={["icon", "email-icon"]} />
-        </Link>
-      </li>
-    </ul>
-  </header>
+  <Header />
   <main id="content">
     <section class="about">
       I fell into the programming rabbit hole in 2016 when I fiddled around
@@ -134,61 +75,6 @@ import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
 </Layout>
 
 <style>
-  .header {
-    margin-top: 12rem;
-    margin-bottom: 12rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-  }
-  .title {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 var(--content-padding);
-  }
-  .name {
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 0.9;
-    margin-left: -4px;
-    margin-right: -4px;
-  }
-  .intro,
-  .description {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-  .description {
-    align-self: center;
-  }
-  @media only screen and (min-width: calc(600px + 2rem)) {
-    .title {
-      text-align: left;
-    }
-    .description {
-      align-self: flex-end;
-    }
-  }
-  .links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .icon {
-    font-size: 2.25rem;
-    color: var(--white);
-  }
-  .resume-arrow-icon {
-    font-size: 1rem;
-  }
-  .email-icon {
-    font-size: 2.5rem;
-  }
-
   .about {
     color: var(--gray);
   }
