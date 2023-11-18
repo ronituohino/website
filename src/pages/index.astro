@@ -2,19 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 
 import Link from "@components/Link.astro";
-import GitHub from "@components/Icons/GitHub.astro";
-import LinkedIn from "@components/Icons/LinkedIn.astro";
-import Email from "@components/Icons/Email.astro";
+import {
+  FaBrandsGithub,
+  FaBrandsLinkedin,
+  FaSolidEnvelope,
+} from "solid-icons/fa";
 
 import { Description } from "@components/Description";
 import Project from "@components/Project.astro";
-import FeaturedProject from "@components/FeaturedProject.astro";
 
 import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
 import gparticles from "@pages/projects/gparticles/gparticles.png";
 import recom from "@pages/projects/recom/recom.png";
 import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
-import Tag from "@components/Tag.astro";
 ---
 
 <Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
@@ -33,7 +33,7 @@ import Tag from "@components/Tag.astro";
         ariaLabel="My github profile"
         href="https://github.com/ronituohino"
       >
-        <GitHub title="" />
+        <FaBrandsGithub />
       </Link>
 
       <Link
@@ -41,7 +41,7 @@ import Tag from "@components/Tag.astro";
         ariaLabel="My linkedin profile"
         href="https://www.linkedin.com/in/ronituohino/"
       >
-        <LinkedIn title="" />
+        <FaBrandsLinkedin />
       </Link>
 
       <Link
@@ -49,7 +49,7 @@ import Tag from "@components/Tag.astro";
         ariaLabel="Send me an email"
         href="mailto:tuohinoroni@gmail.com"
       >
-        <Email title="" />
+        <FaSolidEnvelope />
       </Link>
     </div>
   </header>
@@ -67,22 +67,24 @@ import Tag from "@components/Tag.astro";
     trying to get comfortable with Lead, albeit terrifying!
   </section>
 
-  <section>
-    <ul class="featured-projects">
-      <FeaturedProject title="Recom" href="/projects/recom" img={recom}>
-        <ul slot="tags"><Tag>Test</Tag></ul>
-      </FeaturedProject>
-      <FeaturedProject
+  <section class="projects">
+    <ul class="featured projects-list">
+      <Project
+        title="Doodle Design"
+        href="/projects/doodle-design"
+        img={recom}
+      />
+
+      <Project
         title="Viitevarasto"
         href="/projects/viitevarasto"
         img={viitevarasto}
       />
     </ul>
-  </section>
 
-  <section>
-    <ul class="projects">
+    <ul class="projects-list">
       <Project title="Sanoma" href="/projects/sanoma" />
+      <Project title="Chroniconnect" href="/projects/sanoma" />
       <Project title="SCAS" href="/projects/scas" />
       <Project
         title="Battle Sheep"
@@ -132,8 +134,9 @@ import Tag from "@components/Tag.astro";
     align-items: center;
     gap: 0.5rem;
   }
-  .links > a {
-    width: 2rem;
+  .links > a > svg {
+    font-size: 2rem;
+    color: white;
   }
 
   .about {
@@ -141,22 +144,23 @@ import Tag from "@components/Tag.astro";
     margin-bottom: 8rem;
   }
 
-  .featured-projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-
   .projects {
-    --project-card-width: 15rem;
+  }
+  .projects-list {
+    --project-card-max-width: 12rem;
+    --project-card-min-width: 4rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, var(--project-card-width));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(var(--project-card-min-width), var(--project-card-max-width))
+    );
     grid-gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 4rem;
+  }
+
+  .featured {
+    --project-card-max-width: 25rem;
+    margin-bottom: 1rem;
   }
 
   .contact {

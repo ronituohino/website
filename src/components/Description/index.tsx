@@ -1,6 +1,6 @@
 import { createSignal } from "solid-js";
 import type { JSX } from "solid-js";
-import { BsQuestion } from "solid-icons/bs";
+import { FaSolidQuestion } from "solid-icons/fa";
 
 import styles from "./Description.module.css";
 
@@ -24,7 +24,7 @@ export function Description({ first, second, third }: DescriptionProps) {
           }}
           class={styles.button}
         >
-          <BsQuestion class={styles.icon} />
+          <FaSolidQuestion class={styles.icon} />
         </button>
       )}
     </div>
