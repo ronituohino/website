@@ -25,22 +25,29 @@ const {
 </a>
 
 <style>
-  /* default inline style */
   .inline {
     color: var(--link-color);
     transition: color 0.1s ease-in-out;
   }
-
   .inline:hover,
   .inline:focus-visible {
     color: var(--link-hover-color);
   }
 
-  /* icon style */
   .icon {
     display: block;
     font-size: 0;
     gap: 8px;
     transition: transform 0.1s ease-in-out;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 2rem;
+    padding: 0.5rem 0.75rem;
   }
 </style>
