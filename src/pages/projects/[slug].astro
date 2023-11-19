@@ -1,0 +1,37 @@
+---
+export function getStaticPaths() {
+  const projects = [
+    {
+      title: "Doodle Design",
+      organization: "University of Helsinki",
+      year: "2022",
+      description: `Ecommerce store demo for selling a clothing brand. 
+      Create an account and place orders with a full checkout process. 
+      Admins can manage products and accounts on a separate application.`,
+      techonologies: [
+        "React",
+        "MUI",
+        "TypeScript",
+        "Node",
+        "Express",
+        "GraphQL",
+        "MongoDB",
+      ],
+      demoUrl: "",
+      githubUrl: "",
+      slug: "doodle-design",
+      images: ["/adminCategories.png"],
+    },
+  ];
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { slug } = Astro.params;
+const { project } = Astro.props;
+---
+
+<div>{slug}: {project.description}</div>
