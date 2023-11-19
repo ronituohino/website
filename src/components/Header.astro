@@ -81,10 +81,10 @@ import { Description } from "@components/Description";
     text-align: center;
   }
   .name {
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 900;
     line-height: 0.9;
+    text-transform: uppercase;
     margin-left: -4px;
     margin-right: -4px;
     word-break: break-word;
@@ -98,7 +98,13 @@ import { Description } from "@components/Description";
     font-weight: 600;
   }
   .links {
-    display: flex;
+    display: grid;
+    place-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    grid-template-areas:
+      "resume resume resume"
+      "github linkedin email";
   }
   .resume {
     grid-area: resume;
@@ -115,14 +121,16 @@ import { Description } from "@components/Description";
   .resume-icon {
     font-size: 1rem;
   }
-  .github-icon,
+  .github-icon {
+    font-size: 2.25rem;
+  }
   .linkedin-icon {
     font-size: 2.25rem;
   }
   .email-icon {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
-  @media only screen and (min-width: calc(400px + 2rem)) {
+  @media only screen and (min-width: 418px) {
     .name {
       font-size: 4rem;
     }
@@ -131,8 +139,11 @@ import { Description } from "@components/Description";
       font-size: 1.25rem;
       font-weight: 700;
     }
+    .links {
+      grid-template-areas: "resume resume github linkedin email";
+    }
   }
-  @media only screen and (min-width: calc(600px + 2rem)) {
+  @media only screen and (min-width: 650px) {
     .title {
       text-align: left;
     }
