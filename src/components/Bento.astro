@@ -1,0 +1,17 @@
+---
+const { class: className } = Astro.props;
+---
+
+<li class:list={["bento", className]}>
+  <slot />
+</li>
+
+<style>
+  .bento {
+    min-width: var(--min-size);
+    min-height: var(--min-size);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+</style>

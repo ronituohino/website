@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Link from "./Link.astro";
+import Bento from "./Bento.astro";
 import type { ImageMetadata } from "astro";
 
 type Props = {
@@ -11,37 +12,29 @@ type Props = {
 const { title, href, img } = Astro.props;
 ---
 
-<li class="project glass">
+<Bento>
   <Link href={href} target="_self" class="link" variant="unstyled">
     <h3 class="title">{title}</h3>
     {img && <Image alt="" src={img} class="image" />}
   </Link>
-</li>
+</Bento>
 
 <style>
-  .project {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-  }
-
   .link {
     display: block;
   }
 
   .title {
+    position: absolute;
     text-align: center;
     padding: 0.5rem;
     font-size: 1.5rem;
     color: var(--white);
-    word-wrap: break-word;
+    white-space: nowrap;
+    bottom: 0;
   }
 
   .image {
-    border-radius: var(--border-radius);
-    --image-margin: 1rem;
-    margin: var(--image-margin);
-    margin-top: 0;
-    max-width: calc(100% - 2 * var(--image-margin));
     object-fit: cover;
   }
 </style>

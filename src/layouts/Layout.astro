@@ -92,10 +92,10 @@ const { title, description } = Astro.props;
         overflow-x: hidden;
       }
       /* Disable Safari overscroll */
-      html,
+      /*html,
       body {
         overscroll-behavior-y: none;
-      }
+      }*/
 
       body {
         margin: 0 auto;
@@ -122,18 +122,6 @@ const { title, description } = Astro.props;
         max-width: 100%;
         vertical-align: middle;
         font-style: italic;
-      }
-
-      .glass {
-        background: linear-gradient(
-          315deg,
-          rgba(255, 255, 255, 0.12),
-          rgba(255, 255, 255, 0.3)
-        );
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(8.7px);
-        -webkit-backdrop-filter: blur(8.7px);
-        border: 2px solid rgba(255, 255, 255, 0.4);
       }
     </style>
   </body>
