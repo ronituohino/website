@@ -8,12 +8,13 @@ type Props = {
   title: string;
   href: string;
   img?: ImageMetadata;
+  class?: string;
 };
-const { title, href, img } = Astro.props;
+const { title, href, img, class: className } = Astro.props;
 ---
 
-<Bento>
-  <Link href={href} target="_self" class="link" variant="unstyled">
+<Bento class={className}>
+  <Link href={href} target="_self" class="link">
     <h3 class="title">{title}</h3>
     {img && <Image alt="" src={img} class="image" />}
   </Link>

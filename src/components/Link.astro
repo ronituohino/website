@@ -4,50 +4,15 @@ type Props = {
   target?: "_blank" | "_self" | "_parent" | "_top";
   class?: string;
   ariaLabel?: string;
-  variant?: "inline" | "icon" | "button" | "unstyled";
 };
-const {
-  href,
-  target,
-  class: className,
-  ariaLabel,
-  variant = "inline",
-} = Astro.props;
+const { href, target, class: className, ariaLabel } = Astro.props;
 ---
 
 <a
   href={href}
   target={target ? target : "_blank"}
   aria-label={ariaLabel}
-  class:list={[variant, className]}
+  class:list={[className]}
 >
   <slot />
 </a>
-
-<style>
-  .inline {
-    color: var(--link-color);
-    transition: color 0.1s ease-in-out;
-  }
-  .inline:hover,
-  .inline:focus-visible {
-    color: var(--link-hover-color);
-  }
-
-  .icon {
-    display: block;
-    font-size: 0;
-    color: var(--white);
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--white);
-    border: 2px solid var(--white);
-    border-radius: 2rem;
-    padding: 0.5rem 0.75rem;
-  }
-</style>
