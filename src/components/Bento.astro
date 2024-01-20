@@ -1,16 +1,17 @@
 ---
 type Props = {
   class?: string;
+  "transition:name"?: string;
 };
-const { class: className } = Astro.props;
+const { class: className, "transition:name": transitionName } = Astro.props;
 ---
 
-<li class:list={["bento", className]}>
+<li transition:name={transitionName} class={className}>
   <slot />
 </li>
 
 <style>
-  .bento {
+  li {
     position: relative;
     overflow: hidden;
     border-radius: var(--border-radius);

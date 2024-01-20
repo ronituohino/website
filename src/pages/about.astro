@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Roni Tuohino" description="Hey, need a website? Hit me up!">
-  <main>
+  <div transition:name="about box" class="bg">
     <header class="header">
       <div class="title">
         <div class="intro">Hi, my name is</div>
@@ -22,5 +22,13 @@ import Layout from "@layouts/Layout.astro";
       Alongside programming, I’ve also fallen in love with climbing. Now I’m trying
       to get comfortable with Lead, albeit terrifying!
     </section>
-  </main>
+  </div>
 </Layout>
+
+<style>
+  .bg {
+    margin: 1rem;
+    background-color: yellow;
+    padding: 2rem;
+  }
+</style>
