@@ -23,11 +23,7 @@ import {
   <main id="content">
     <ul class="boxes">
       <Bento class="about">
-        <Link
-          href="/about"
-          target="_self"
-          class:list={["bento-content", "about-content"]}
-        >
+        <Link href="/about" target="_self" class="about-content">
           Roni Tuohino
         </Link>
       </Bento>
@@ -71,27 +67,24 @@ import {
       </Bento>
 
       <Bento>
-        <Link
-          href="/ronituohino-resume.pdf"
-          class:list={["bento-content", "resume-content"]}
-        >
+        <Link href="/ronituohino-resume.pdf" class="resume-content">
           <TbCertificate class="resume-icon" />
           Résumé
         </Link>
       </Bento>
 
-      <Bento>Archive</Bento>
-
       <Project
         title="Doodle Design"
         href="/projects/doodle-design"
         img={doodleDesign}
+        class="doodle-design"
       />
 
       <Project
         title="Viitevarasto"
         href="/projects/viitevarasto"
         img={viitevarasto}
+        class="viitevarasto"
       />
 
       {
@@ -113,53 +106,48 @@ import {
         href="/projects/gparticles"
         img={gparticles}
       />
-    </ul>
 
-    <Bento><Link target="_self" href="/projects">Archive</Link></Bento>
+      <Bento>
+        <Link target="_self" href="/projects">Archive</Link>
+      </Bento>
+    </ul>
   </main>
 </Layout>
 
 <style>
   main {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding: 0 var(--content-padding);
+    padding: 0.5rem;
   }
   .boxes {
-    --min-size: 11.467rem;
-    --max-size: 11.467rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(var(--min-size), var(--max-size))
-    );
-    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 0.5rem;
   }
-  .bento-content {
-    display: block;
-    min-height: 100%;
+  @media screen and (min-width: 374px) {
+    main {
+      padding: 1rem;
+    }
+    .boxes {
+      gap: 1rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .boxes {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
   }
 
   .about {
     grid-column: 1 / 3;
   }
   .about-content {
+    display: block;
+    min-height: 100%;
     text-align: center;
     background-color: yellow;
-  }
-
-  .resume-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: orangered;
-  }
-  .resume-icon {
-    font-size: 3rem;
-    stroke-width: 1.5;
   }
 
   .socials-content {
@@ -177,7 +165,6 @@ import {
     width: 100%;
     height: 100%;
   }
-
   .github-icon {
     font-size: 2rem;
   }
@@ -186,5 +173,26 @@ import {
   }
   .email-icon {
     font-size: 2rem;
+  }
+
+  /* Featured projects */
+  .doodle-design {
+    grid-row: 2 / span 2;
+  }
+  .viitevarasto {
+    grid-row: 3 / span 2;
+  }
+
+  .resume-content {
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: orangered;
+  }
+  .resume-icon {
+    font-size: 3rem;
+    stroke-width: 1.5;
   }
 </style>

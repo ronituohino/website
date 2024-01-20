@@ -59,12 +59,6 @@ const { title, description } = Astro.props;
         --outline-color: #0cf104;
         --outline: outline: 8px dashed var(--outline-color);
 
-        /* Breakpoints */
-        --xl: 1280px;
-        --lg: 1024px;
-        --md: 768px;
-        --sm: 640px;
-
         --border-radius: 16px;
         --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
         --content-padding: 1rem;
@@ -99,7 +93,7 @@ const { title, description } = Astro.props;
 
       body {
         margin: 0 auto;
-        max-width: var(--md);
+        max-width: 1024px;
         display: flex;
         flex-direction: column;
       }
