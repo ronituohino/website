@@ -6,17 +6,17 @@ import type { ImageMetadata } from "astro";
 
 type Props = {
   title: string;
-  href: string;
+  slug: string;
   img?: ImageMetadata;
   class?: string;
 };
-const { title, href, img, class: className } = Astro.props;
+const { title, slug, img, class: className } = Astro.props;
 ---
 
 <Bento class={className}>
-  <Link href={href} target="_self" class="link">
+  <Link href=`/projects/${slug}` target="_self" class="link">
     <h3 class="title">{title}</h3>
-    {img && <Image alt="" src={img} class="image" />}
+    {img && <Image transition:name={slug} alt="" src={img} class="image" />}
   </Link>
 </Bento>
 
