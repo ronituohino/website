@@ -27,7 +27,6 @@ Object.entries(allImages).forEach(([key, func]) => {
     images[image] = func;
   }
 });
-console.log(project.technologies);
 ---
 
 <Layout
@@ -36,18 +35,38 @@ console.log(project.technologies);
 >
   <main id="content">
     <h1>{project.title}</h1>
-    <h2>{project.organization} | {project.year}</h2>
-    {
-      project.technologies.map((tech) => {
-        <div>{tech}</div>;
-      })
-    }
+    <h2>
+      {
+        [project.organization, project.year]
+          .filter((detail) => !!detail)
+          .join(" | ")
+      }
+    </h2>
+    <ul class="technologies">
+      {project.technologies.map((tech) => <li class="technology">{tech}</li>)}
+    </ul>
+
     <p class="description">{project.description}</p>
   </main>
-
-  <style>
-    main {
-      padding: 1rem;
-    }
-  </style>
 </Layout>
+
+<style>
+  main {
+    padding: 1rem;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .technologies {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .technology {
+    background-color: gray;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+  }
+</style>
