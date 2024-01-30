@@ -1,20 +1,19 @@
 .root {
-  margin: 2px;
-  padding: 4px 4px 8px 8px;
-  border: 0 solid #005a9c;
-  border-radius: 5px;
-  width: 15em;
-  user-select: none;
+  --knob-color: var(--white);
+  --switch-color: var(--white);
+  --switch-border-width: 2px;
+  --switch-width: 40px;
+  --switch-height: 20px;
+  display: flex;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  top: 6px;
-  border: 2px solid black;
-  border-radius: 12px;
-  height: 20px;
-  width: 40px;
+  border: var(--switch-border-width) solid var(--switch-color);
+  border-radius: calc(var(--switch-width) / 2);
+  height: var(--switch-height);
+  width: var(--switch-width);
 }
 
 .knob {
@@ -22,24 +21,18 @@
   top: 2px;
   left: 2px;
   display: inline-block;
-  border: 2px solid black;
-  border-radius: 8px;
-  height: 12px;
-  width: 12px;
-  background: black;
+  border-radius: 50%;
+  height: calc(var(--switch-height) - var(--switch-border-width) * 2 - 4px);
+  width: calc(var(--switch-height) - var(--switch-border-width) * 2 - 4px);
+  background: var(--knob-color);
+  transition: left ease-in-out 200ms, background-color ease-in-out 200ms;
 }
 
 .root[aria-checked="true"] .knob {
-  left: 21px;
-  background: green;
-  border-color: green;
+  left: calc(var(--switch-width) - var(--switch-height) + 2px);
 }
 
 .root:focus,
 .root:hover {
-  padding: 2px 2px 6px 6px;
-  border-width: 2px;
-  outline: none;
-  background-color: #def;
   cursor: pointer;
 }

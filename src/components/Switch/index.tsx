@@ -10,7 +10,6 @@ type SwitchProps = {
 
 export function Switch({ class: className, label, ariaLabel }: SwitchProps) {
   const [checked, setChecked] = createSignal(false);
-
   return (
     <div
       role="switch"

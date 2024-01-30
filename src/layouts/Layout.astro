@@ -1,8 +1,8 @@
 ---
-import "@fontsource-variable/nunito";
-import { ViewTransitions } from "astro:transitions";
+import "@fontsource-variable/inter";
 
 import Link from "@components/Link.astro";
+import DarkMode from "@components/DarkMode.astro";
 
 type Props = {
   title: string;
@@ -21,50 +21,66 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
   <body>
     <div class="skip">
       <Link target="_self" href="#content">Skip to content</Link>
     </div>
 
+    <nav>
+      <Link target="_self" href="/" class="main">Roni Tuohino</Link>
+      <DarkMode />
+    </nav>
     <slot />
 
     <style>
+      nav {
+        position: sticky;
+        z-index: 1;
+        border-bottom: 2px solid var(--white);
+        margin-bottom: -2px;
+        background-color: var(--black);
+        top: 0;
+        padding: 0.25rem;
+        transition: padding ease-in-out 200ms;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+      }
+      @media screen and (min-width: 1042px) {
+        nav {
+          padding: 0.25rem 0;
+        }
+      }
+      .main {
+        white-space: nowrap;
+      }
       .skip {
         position: absolute;
         left: 50%;
+        top: 0;
+        z-index: 2;
+        padding: 1rem;
+        border: 2px solid var(--white);
+        background-color: var(--black);
         transform: translate(-50%, -100%);
-        transition: transform 0.1s ease-in-out;
+        transition: transform 200ms ease-in-out;
       }
       .skip:focus-within {
-        transform: translate(-50%, 0);
+        transform: translate(-50%, calc(0% - 2px));
       }
     </style>
     <style is:global>
       :root {
         /* Colors */
-        --white: #f0f0f0;
-        --gray: #6e6e6e;
-        --black: #181818;
-
-        --text-color: var(--white);
-
-        --link-color: #db8fe2;
-        --link-hover-color: #b324ab;
-
-        --svg-bg-color: var(--black);
-        --svg-stroke-color: var(--white);
-
-        --outline-color: #0cf104;
-        --outline: outline: 8px dashed var(--outline-color);
+        --white: hsl(0, 0%, 92%);
+        --black: hsl(0, 0%, 8%);
 
         --border-radius: 16px;
         --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
-        --content-padding: 1rem;
 
         font-size: 20px;
-        color: var(--text-color);
+        color: var(--white);
         background: var(--black);
       }
 
@@ -76,21 +92,9 @@ const { title, description } = Astro.props;
       }
 
       html {
-        font-family: "Nunito Variable", Ubuntu, sans-serif;
+        font-family: "Inter Variable", Ubuntu, sans-serif;
         font-weight: 600;
       }
-
-      /* Disable horizontal scroll on mobile */
-      :root,
-      body {
-        overflow-x: hidden;
-      }
-      /* Disable Safari overscroll */
-      /*html,
-      body {
-        overscroll-behavior-y: none;
-      }*/
-
       body {
         margin: 0 auto;
         max-width: 1024px;

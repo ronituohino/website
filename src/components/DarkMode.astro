@@ -1,0 +1,18 @@
+---
+import { TbMoonFilled, TbSunFilled } from "solid-icons/tb";
+import { Switch } from "./Switch";
+---
+
+<div>
+  <TbSunFilled />
+  <Switch client:load />
+  <TbMoonFilled />
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+</style>
