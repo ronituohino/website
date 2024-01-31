@@ -27,6 +27,9 @@ const { title, slug, img, class: className } = Astro.props;
     display: block;
     box-shadow: inset 3px 3px black;
   }
+  .link:hover .image {
+    scale: 1.1;
+  }
   .link::after {
     content: "";
     display: block;
@@ -40,6 +43,7 @@ const { title, slug, img, class: className } = Astro.props;
 
   .fade {
     position: absolute;
+    z-index: 1;
     bottom: 0;
     width: 100%;
     background: linear-gradient(
@@ -58,5 +62,6 @@ const { title, slug, img, class: className } = Astro.props;
 
   .image {
     object-fit: cover;
+    transition: scale 200ms ease-in-out;
   }
 </style>
