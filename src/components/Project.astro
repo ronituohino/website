@@ -27,7 +27,8 @@ const { title, slug, img, class: className } = Astro.props;
     display: block;
     box-shadow: inset 3px 3px black;
   }
-  .link:hover .image {
+  .link:hover .image,
+  .link:focus-visible .image {
     scale: 1.1;
   }
   .link::after {
@@ -54,14 +55,20 @@ const { title, slug, img, class: className } = Astro.props;
   }
   .title {
     font-weight: 400;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.1rem 0.3rem;
+    font-size: 1rem;
     color: var(--white);
     white-space: nowrap;
+  }
+  @media screen and (min-width: 576px) {
+    .title {
+      padding: 0.3rem 0.5rem;
+      font-size: 1.5rem;
+    }
   }
 
   .image {
     object-fit: cover;
-    transition: scale 200ms ease-in-out;
+    transition: scale 200ms ease-out;
   }
 </style>

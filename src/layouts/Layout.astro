@@ -4,6 +4,13 @@ import "@fontsource-variable/inter";
 import Link from "@components/Link.astro";
 import DarkMode from "@components/DarkMode.astro";
 
+import {
+  TbBrandGithub,
+  TbBrandLinkedin,
+  TbMail,
+  TbCertificate,
+} from "solid-icons/tb";
+
 type Props = {
   title: string;
   description: string;
@@ -23,51 +30,52 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="skip">
-      <Link target="_self" href="#content">Skip to content</Link>
-    </div>
-
     <nav>
-      <Link target="_self" href="/" class="main">Roni Tuohino</Link>
+      <Link target="_self" href="/" class="index-link">Roni Tuohino</Link>
+      <Link
+        ariaLabel="My Github profile"
+        href="https://github.com/ronituohino"
+        class="link"
+      >
+        <TbBrandGithub class="icon" />
+      </Link>
       <DarkMode />
     </nav>
     <slot />
+    <footer>Made with Astro.</footer>
 
     <style>
       nav {
         position: sticky;
         z-index: 2;
         border-bottom: 2px solid var(--white);
-        margin-bottom: -2px;
+        margin-bottom: -3px;
         background-color: var(--black);
         top: 0;
-        padding: 0.25rem;
-        transition: padding ease-in-out 200ms;
+        transform: translateY(
+          -1px
+        ); /* Fixes content bleeding from behind top */
+
         display: flex;
         gap: 0.5rem;
         justify-content: space-between;
       }
-      @media screen and (min-width: 1042px) {
-        nav {
-          padding: 0.25rem 0;
-        }
-      }
-      .main {
+      .index-link {
+        padding: 0.4rem 0.5rem;
+        transition: padding ease-in-out 200ms;
+        font-size: 1.1rem;
         white-space: nowrap;
       }
-      .skip {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        z-index: 2;
-        padding: 1rem;
-        border: 2px solid var(--white);
-        background-color: var(--black);
-        transform: translate(-50%, -100%);
-        transition: transform 200ms ease-in-out;
+      @media screen and (min-width: 1042px) {
+        .index-link {
+          padding: 0.4rem 0;
+        }
       }
-      .skip:focus-within {
-        transform: translate(-50%, calc(0% - 2px));
+
+      footer {
+        border: 2px solid var(--white);
+        margin-top: -2px;
+        padding: 0.2rem 0.3rem;
       }
     </style>
     <style is:global>
@@ -75,9 +83,9 @@ const { title, description } = Astro.props;
         /* Colors */
         --white: hsl(0, 0%, 92%);
         --black: hsl(0, 0%, 8%);
+        --inactive: hsl(0, 0%, 30%);
 
         --border-radius: 16px;
-        --shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
 
         font-size: 20px;
         color: var(--white);

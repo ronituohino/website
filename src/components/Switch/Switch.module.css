@@ -32,7 +32,7 @@
   left: calc(var(--switch-width) - var(--switch-height) + 2px);
 }
 
-.root:focus,
+.root:focus-visible,
 .root:hover {
   cursor: pointer;
 }

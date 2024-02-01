@@ -22,21 +22,13 @@ import {
   title="Roni Tuohino"
   description="Hey, need a website or service? Hit me up!"
 >
-  <main id="content">
+  <main>
     <ul class="boxes">
       <Bento class="about">Roni Tuohino</Bento>
 
       <Bento>
         <ul class="links-content">
-          <li>
-            <Link
-              ariaLabel="My Github profile"
-              href="https://github.com/ronituohino"
-              class="link"
-            >
-              <TbBrandGithub class="icon" />
-            </Link>
-          </li>
+          <li></li>
 
           <li>
             <Link
@@ -93,20 +85,14 @@ import {
           */
       }
 
-      <Project
-        title="Battle Sheep and a really long title with even more content"
-        slug="battle-sheep"
-        img={battleSheep}
-      />
+      <Project title="Battle Sheep" slug="battle-sheep" img={battleSheep} />
       <Project title="GParticles" slug="gparticles" img={gparticles} />
 
       <Bento>
         <Link target="_self" href="/projects">Archive</Link>
       </Bento>
 
-      <Bento>
-        <Link target="_self" href="/projects">Spotify</Link>
-      </Bento>
+      <Bento>Spotify?</Bento>
     </ul>
   </main>
 </Layout>
@@ -152,7 +138,12 @@ import {
   .icon {
     font-size: clamp(1rem, 15vw, 3rem);
     stroke-width: 1.2px;
-    color: var(--highlight);
+    color: var(--inactive);
+    transition: color 200ms ease-out;
+  }
+  .link:hover .icon,
+  .link:focus-visible .icon {
+    color: var(--white);
   }
 
   /* Featured projects */
