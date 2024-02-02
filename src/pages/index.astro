@@ -1,21 +1,10 @@
 ---
-import Layout from "@layouts/Layout.astro";
-
 import Link from "@components/Link.astro";
-import Bento from "@components/Bento.astro";
-import Project from "@components/Project.astro";
+import Layout from "@layouts/Layout.astro";
+import "swiper/css";
+import "swiper/css/pagination";
 
-import battleSheep from "@pages/projects/battle-sheep/battle-sheep.png";
-import gparticles from "@pages/projects/gparticles/gparticles.png";
-import doodleDesign from "@pages/projects/doodle-design/doodle-design.png";
-import viitevarasto from "@pages/projects/viitevarasto/viitevarasto.png";
-
-import {
-  TbBrandGithub,
-  TbBrandLinkedin,
-  TbMail,
-  TbCertificate,
-} from "solid-icons/tb";
+import { projects } from "./projects/projects";
 ---
 
 <Layout
@@ -23,134 +12,98 @@ import {
   description="Hey, need a website or service? Hit me up!"
 >
   <main>
-    <ul class="boxes">
-      <Bento class="about">Roni Tuohino</Bento>
+    <div class="swiper">
+      <ol class="swiper-wrapper">
+        {
+          projects.map((project) => {
+            return (
+              <li class="swiper-slide">
+                <Link target="_self" href={`/projects/${project.slug}`}>
+                  {project.title}
+                </Link>
+              </li>
+            );
+          })
+        }
+      </ol>
+      <div class="bg"></div>
 
-      <Bento>
-        <ul class="links-content">
-          <li></li>
-
-          <li>
-            <Link
-              ariaLabel="My LinkedIn profile"
-              href="https://www.linkedin.com/in/ronituohino/"
-              class="link"
-            >
-              <TbBrandLinkedin class="icon" />
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              ariaLabel="Send me an email"
-              href="mailto:tuohinoroni@gmail.com"
-              class="link"
-            >
-              <TbMail class="icon" />
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              ariaLabel="Look at my résumé"
-              href="/ronituohino-resume.pdf"
-              class="link"
-            >
-              <TbCertificate class="icon" />
-            </Link>
-          </li>
-        </ul>
-      </Bento>
-
-      <Project
-        title="Doodle Design"
-        slug="doodle-design"
-        img={doodleDesign}
-        class="doodle-design"
-      />
-
-      <Project
-        title="Viitevarasto"
-        slug="viitevarasto"
-        img={viitevarasto}
-        class="viitevarasto"
-      />
-
-      {
-        /*
-          <Project title="Ruutu" href="/projects/ruutu" />
-        <Project title="Supla" href="/projects/supla" />
-        <Project title="Chroniconnect" href="/projects/sanoma" />
-        <Project title="SCAS" href="/projects/scas" />
-          */
-      }
-
-      <Project title="Battle Sheep" slug="battle-sheep" img={battleSheep} />
-      <Project title="GParticles" slug="gparticles" img={gparticles} />
-
-      <Bento>
-        <Link target="_self" href="/projects">Archive</Link>
-      </Bento>
-
-      <Bento>Spotify?</Bento>
-    </ul>
+      <img class="project-image" />
+    </div>
   </main>
 </Layout>
 
+<script>
+  import Swiper from "swiper";
+  import { Mousewheel, Keyboard } from "swiper/modules";
+  import { projects } from "./projects/projects";
+
+  const shownProjects = projects.filter((p) => !p.hidden);
+
+  const swiper = new Swiper(".swiper", {
+    modules: [Mousewheel, Keyboard],
+    direction: "vertical",
+    slidesPerView: 3,
+    centeredSlides: true,
+    initialSlide: parseInt(localStorage.getItem("activeSlide") || "0"),
+
+    grabCursor: true,
+    mousewheel: true,
+    keyboard: true,
+    slideToClickedSlide: true,
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+
+  swiper.on("sliderMove", (s) => {});
+  swiper.on("slideChange", (s) => {
+    const index = s.activeIndex;
+    localStorage.setItem("activeSlide", index.toString());
+
+    const project = shownProjects[index];
+  });
+</script>
+
 <style>
   main {
-    padding: 2px;
+    height: 100%;
+    position: relative;
   }
-  .boxes {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 2px;
-  }
-  @media screen and (min-width: 768px) {
-    .boxes {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-    }
-  }
-
-  .about {
-    grid-column: 1 / 3;
-    text-align: center;
-  }
-
-  .links-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    min-height: 100%;
-    background-color: var(--white);
-  }
-  .link {
-    background-color: var(--black);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .swiper {
     width: 100%;
     height: 100%;
   }
-  .icon {
-    font-size: clamp(1rem, 15vw, 3rem);
-    stroke-width: 1.2px;
-    color: var(--inactive);
-    transition: color 200ms ease-out;
+  .swiper-wrapper {
+    height: auto;
   }
-  .link:hover .icon,
-  .link:focus-visible .icon {
-    color: var(--white);
+  .swiper-wrapper::before,
+  .swiper-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-wrapper::before {
+    transform: translateY(-100%);
+  }
+  .swiper-wrapper::after {
+    transform: translateY(100%);
   }
 
-  /* Featured projects */
-  .doodle-design {
-    grid-row: 2 / span 2;
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    text-align: end;
+    background-color: blue;
+    font-size: 2rem;
+    text-transform: uppercase;
   }
-  .viitevarasto {
-    grid-row: 3 / span 2;
+  .bg {
+    width: 100%;
+    height: 100%;
   }
 </style>

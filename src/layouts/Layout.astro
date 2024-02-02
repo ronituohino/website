@@ -32,30 +32,54 @@ const { title, description } = Astro.props;
   <body>
     <nav>
       <Link target="_self" href="/" class="index-link">Roni Tuohino</Link>
-      <Link
-        ariaLabel="My Github profile"
-        href="https://github.com/ronituohino"
-        class="link"
-      >
-        <TbBrandGithub class="icon" />
-      </Link>
       <DarkMode />
     </nav>
-    <slot />
-    <footer>Made with Astro.</footer>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <ul class="links">
+        <li>
+          <Link
+            ariaLabel="My Github profile"
+            href="https://github.com/ronituohino"
+            class="link"
+          >
+            <TbBrandGithub class="icon" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            ariaLabel="My LinkedIn profile"
+            href="https://www.linkedin.com/in/ronituohino/"
+            class="link"
+          >
+            <TbBrandLinkedin class="icon" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            ariaLabel="Send me an email"
+            href="mailto:tuohinoroni@gmail.com"
+            class="link"
+          >
+            <TbMail class="icon" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            ariaLabel="Look at my résumé"
+            href="/ronituohino-resume.pdf"
+            class="button-link"
+          >
+            Resume
+          </Link>
+        </li>
+      </ul>
+    </footer>
 
     <style>
       nav {
-        position: sticky;
-        z-index: 2;
-        border-bottom: 2px solid var(--white);
-        margin-bottom: -3px;
-        background-color: var(--black);
-        top: 0;
-        transform: translateY(
-          -1px
-        ); /* Fixes content bleeding from behind top */
-
         display: flex;
         gap: 0.5rem;
         justify-content: space-between;
@@ -71,11 +95,28 @@ const { title, description } = Astro.props;
           padding: 0.4rem 0;
         }
       }
-
-      footer {
+      main {
         border: 2px solid var(--white);
-        margin-top: -2px;
-        padding: 0.2rem 0.3rem;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .links {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .link {
+        display: flex;
+      }
+      .icon {
+        font-size: 2rem;
+      }
+      .button-link {
+        border: 2px solid var(--white);
+        border-radius: var(--border-radius);
+        padding: 0.3rem 0.5rem;
       }
     </style>
     <style is:global>
@@ -106,6 +147,7 @@ const { title, description } = Astro.props;
       body {
         margin: 0 auto;
         max-width: 1024px;
+        height: 100vh;
         display: flex;
         flex-direction: column;
       }

@@ -15,6 +15,7 @@
     "astro": "^3.6.4",
     "astro-seo": "^0.8.0",
     "solid-icons": "^1.1.0",
-    "solid-js": "^1.8.11"
+    "solid-js": "^1.8.11",
+    "swiper": "^11.0.5"
   }
 }
