@@ -1,6 +1,7 @@
-type Project = {
+export type Project = {
   title: string;
-  organization?: string;
+  organization: string;
+  type: string;
   year: string;
   description: string;
   technologies: Technology[];
@@ -27,6 +28,7 @@ export const projects = [
   {
     title: "Ruutu",
     organization: "Sanoma",
+    type: "Contract",
     year: "2023",
     description:
       "Finnish over-the-top video streaming service, with live event capabilities. Very similar to Netflix in many ways.",
@@ -47,6 +49,7 @@ export const projects = [
   {
     title: "Doodle Design",
     organization: "University of Helsinki",
+    type: "Project",
     year: "2022",
     description:
       "This is an e-commerce store for an imaginary clothing brand. You can create an account and place orders with a full checkout process. Admins can manage categories, products and accounts on a separate application. The entire app, and development environment, is containerized.",
@@ -72,6 +75,7 @@ export const projects = [
   {
     title: "Chroniconnect",
     organization: "Junction",
+    type: "Hackathon",
     year: "2023",
     description:
       "48-hour-long hackathon project for Tietoevry, a Finnish med-tech company.",
@@ -86,6 +90,8 @@ export const projects = [
   {
     title: "SCAS",
     year: "2023",
+    organization: "",
+    type: "Freelance",
     description: "A cryptocurrency security auditing tool.",
     technologies: [
       "Tauri",
@@ -103,6 +109,7 @@ export const projects = [
   {
     title: "Battle Sheep",
     organization: "University of Helsinki",
+    type: "Project",
     year: "2022",
     description: "Web version of the popular board game with the same name.",
     technologies: ["React", "Vite", "TypeScript"] satisfies Technology[],
@@ -118,6 +125,7 @@ export const projects = [
   {
     title: "Viitevarasto",
     organization: "University of Helsinki",
+    type: "Project",
     year: "2022",
     description:
       "This is a BibTeX references management system.  It is a group project for a software production course. The idea is that the user can upload their BibTeX references onto the application and select which ones to compile into a references file for whatever document they are working on. This avoids having to manually manage the BibTeX file and updating the references throughout the document, and it also makes adding new references easier.",
@@ -134,6 +142,8 @@ export const projects = [
   {
     title: "GParticles",
     year: "2021",
+    organization: "",
+    type: "Hobby Project",
     description: "Mobile art project ",
     technologies: ["Unity", "C#"] satisfies Technology[],
     googlePlayUrl:

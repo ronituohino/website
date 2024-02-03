@@ -2,42 +2,67 @@
 import Link from "@components/Link.astro";
 import Layout from "@layouts/Layout.astro";
 import "swiper/css";
-import "swiper/css/pagination";
 
 import { projects } from "./projects/projects";
+import { Image } from "astro:assets";
+const shownProjects = projects.filter((p) => !p.hidden);
+
+type ImagesObject = { [key: string]: Function };
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "./**/*.{jpeg,jpg,png,gif}"
+) as ImagesObject;
+
+let images: ImagesObject = {};
+Object.entries(allImages).forEach(([key, func]) => {
+  const [_a, _b, project, image] = key.split("/");
+  images[`${project}/${image}`] = func;
+});
 ---
 
 <Layout
   title="Roni Tuohino"
-  description="Hey, need a website or service? Hit me up!"
+  description="Hey, need a website or webservice? Hit me up!"
 >
-  <main>
-    <div class="swiper">
-      <ol class="swiper-wrapper">
-        {
-          projects.map((project) => {
-            return (
-              <li class="swiper-slide">
-                <Link target="_self" href={`/projects/${project.slug}`}>
-                  {project.title}
-                </Link>
-              </li>
-            );
-          })
-        }
-      </ol>
-      <div class="bg"></div>
+  <div class="swiper">
+    <ol class="swiper-wrapper">
+      {
+        shownProjects.map((project) => {
+          return (
+            <li class="swiper-slide">
+              <Link target="_self" href={`/projects/${project.slug}`}>
+                {project.title}
+                <p class="details">
+                  {project.year} / {project.organization || project.type}
+                </p>
+              </Link>
+            </li>
+          );
+        })
+      }
+    </ol>
 
-      <img class="project-image" />
-    </div>
-  </main>
+    {
+      shownProjects.map((project) => {
+        const mainImage = project.images[0];
+        return (
+          <Image
+            src={images[`${project.slug}/${mainImage.file}`]()}
+            alt={mainImage.alt}
+            loading="lazy"
+            class={`image ${project.slug}-image`}
+            aria-hidden="true"
+          />
+        );
+      })
+    }
+  </div>
 </Layout>
 
 <script>
   import Swiper from "swiper";
   import { Mousewheel, Keyboard } from "swiper/modules";
-  import { projects } from "./projects/projects";
 
+  import { projects, type Project } from "./projects/projects";
   const shownProjects = projects.filter((p) => !p.hidden);
 
   const swiper = new Swiper(".swiper", {
@@ -56,22 +81,33 @@ import { projects } from "./projects/projects";
     pagination: {
       el: ".swiper-pagination",
     },
+
+    on: {
+      afterInit: (s) => enableImage(shownProjects[s.activeIndex]),
+    },
   });
+
+  function enableImage(project: Project) {
+    const imgEl = document.querySelector(
+      `.${project.slug}-image`
+    ) as HTMLImageElement;
+    imgEl.ariaHidden = "false";
+  }
 
   swiper.on("sliderMove", (s) => {});
   swiper.on("slideChange", (s) => {
-    const index = s.activeIndex;
-    localStorage.setItem("activeSlide", index.toString());
+    localStorage.setItem("activeSlide", s.activeIndex.toString());
 
-    const project = shownProjects[index];
+    Array.from(
+      document.querySelectorAll(".image") as NodeListOf<HTMLImageElement>
+    ).forEach((el) => (el.ariaHidden = "true"));
+
+    const project = shownProjects[s.activeIndex];
+    enableImage(project);
   });
 </script>
 
 <style>
-  main {
-    height: 100%;
-    position: relative;
-  }
   .swiper {
     width: 100%;
     height: 100%;
@@ -98,12 +134,41 @@ import { projects } from "./projects/projects";
     align-items: center;
     justify-content: end;
     text-align: end;
-    background-color: blue;
     font-size: 2rem;
     text-transform: uppercase;
   }
-  .bg {
-    width: 100%;
-    height: 100%;
+  .swiper-slide .details {
+    font-size: 1rem;
+  }
+
+  .image {
+    position: absolute;
+    display: inline;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: min-content;
+    max-height: 50%;
+    object-fit: contain;
+    object-position: 50% 0;
+  }
+  .image[aria-hidden="true"] {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .swiper {
+      height: 100%;
+      transform: none;
+    }
+
+    .image {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      height: auto;
+      max-height: none;
+    }
   }
 </style>
